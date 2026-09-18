@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Custom QR Code Generation - SoftDev</title>
+
+    <meta name="description" content="This project implements an automated system for removing backgrounds and applying custom branding to QR codes. It features intelligent image processing." />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      href="https://cdn-icons-png.flaticon.com/512/7867/7867852.png"
+      type="image/png"
+    />
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../global.min.css" />
+    <link rel="stylesheet" href="../index.min.css" />
+    <link rel="stylesheet" href="./n8n.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,800&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <div class="website-10-responsive">
+      <div class="upper-gradient1"></div>
+      <div class="lower-gradient1"></div>
+
+      <div class="nav-bar">
+        <div class="things-to-make-it-responsive">
+          <div class="things-to-make-it-responsive-child"></div>
+          <div class="things-to-make-it-responsive-child"></div>
+        </div>
+      </div>
+      <nav class="nav-large">
+        <div class="nav-background-overlay"></div>
+        <div class="content4">
+          <div class="navigation1">
+            <a
+              href="../index.html#about"
+              class="about-me"
+              style="text-decoration: none; color: inherit"
+            >
+              <div class="about5">About me</div>
+            </a>
+            <a
+              href="../index.html#experience"
+              class="about-me"
+              style="text-decoration: none; color: inherit"
+            >
+              <div class="about5">Experience</div>
+            </a>
+
+            <a
+              href="qrcode.html"
+              class="about-me"
+              style="text-decoration: none; color: inherit"
+            >
+              <div class="about5">Projects</div>
+            </a>
+
+            <a
+              href="../index.html#testimonials"
+              class="about-me"
+              style="text-decoration: none; color: inherit"
+            >
+              <div class="about5">Testimonials</div>
+            </a>
+
+            <a
+              href="../index.html#connect"
+              class="about-me"
+              style="text-decoration: none; color: inherit"
+            >
+              <div class="about5">Connect</div>
+            </a>
+          </div>
+          <a
+            href="https://calendly.com/nashitsaleem"
+            target="_blank"
+            style="text-decoration: none"
+          >
+            <div class="book-a-call3">
+              <img
+                class="download-02-icon1"
+                alt=""
+                src="../public/download02.svg"
+              />
+              <div class="view-all-projects6">Book A Call</div>
+              <img
+                class="arrow-up-right-03-icon2"
+                alt=""
+                src="../public/arrowupright031.svg"
+              />
+            </div>
+          </a>
+        </div>
+      </nav>
+
+      <nav class="nav-small">
+        <div class="nav-background-overlay"></div>
+
+        <img
+          class="menu-icon"
+          src="../public/menu02.svg"
+          alt="Menu"
+          id="mobileMenuBtn"
+        />
+
+        <a
+          href="https://calendly.com/nashitsaleem"
+          target="_blank"
+          style="text-decoration: none"
+        >
+          <div class="book-a-call3">
+            <img
+              class="download-02-icon1"
+              alt=""
+              src="../public/download02.svg"
+            />
+            <div class="view-all-projects6">Book A Call</div>
+            <img
+              class="arrow-up-right-03-icon2"
+              alt=""
+              src="../public/arrowupright031.svg"
+            />
+          </div>
+        </a>
+      </nav>
+
+      <nav id="mobileNavContainer" class="mobile-nav-container">
+        <div class="mobile-nav">
+          <div class="mobile-nav-header">
+            <span class="close-icon" id="closeMobileNav">&times;</span>
+          </div>
+          <div class="mobile-menu-items">
+            <div class="mobile-menu-left">
+              <a href="../index.html#about" class="mobile-link">About Me</a>
+              <a href="../index.html#experience" class="mobile-link">Experience</a>
+              <a href="qrcode.html" class="mobile-link">Projects</a>
+              <a href="../index.html#testimonials" class="mobile-link">Testimonials</a>
+              <a href="../index.html#connect" class="mobile-link">Connect</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <main class="container">
+        <!-- Back Navigation -->
+        <!-- <div class="back-nav" onclick="window.history.back()">
+            <span>←</span>
+            <span>Back to Projects</span>
+        </div> -->
+
+        <!-- Project Header -->
+        <section class="project-header">
+          <div class="project-info">
+            <i><h1>Custom QR Code Generation</h1></i>
+            <i><p class="project-subtitle">Python, Image Processing</p></i>
+            <p class="project-description">
+              This project implements an automated system for removing
+              backgrounds and applying custom branding to QR codes. It features
+              intelligent image processing that automatically extracts portraits
+              from uploaded images and integrates them with QR code designs,
+              reducing manual editing time and effort. The system generates
+              personalized, branded QR codes while maintaining scan
+              functionality and visual appeal. By streamlining the customization
+              process, it improves brand consistency and enhances user
+              engagement with QR code materials.
+            </p>
+          </div>
+          <div class="project-visual">
+            <img
+              class="n8nImage"
+              alt=""
+              src="../assets/img/Nashit Profile/Custom QR CODE Development.png"
+            />
+          </div>
+        </section>
+
+        <!-- Key Metrics -->
+        <section class="metrics-section">
+          <h2 class="section-title">Key Metrics</h2>
+          <div class="metrics-grid">
+            <div class="metric-card">
+              <div class="metric-icon">🎯</div>
+              <div class="metric-value">95%</div>
+              <div class="metric-label">Customer Satisfaction</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-icon">⚡</div>
+              <div class="metric-value">&lt;2s</div>
+              <div class="metric-label">Response Time</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-icon">👥</div>
+              <div class="metric-value">50K+</div>
+              <div class="metric-label">Queries Handled</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-icon">🎯</div>
+              <div class="metric-value">95%</div>
+              <div class="metric-label">Accuracy Rate</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Technologies Used -->
+        <section class="tech-section">
+          <h2 class="section-title">Technologies Used</h2>
+          <div class="tech-list unified-list">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">OpenCV</span>
+            <span class="tech-tag">Matplotlib</span>
+
+          </div>
+        </section>
+
+        <!-- How It Works -->
+        <section class="how-it-works-section">
+          <h2 class="section-title">How It Works</h2>
+          <div class="how-it-works-steps">
+            <div class="how-it-works-step">
+              <div class="how-it-works-number">1</div>
+              <h3>Image Upload</h3>
+              <p>A portrait image is uploaded, and OpenCV isolates the subject by automatically removing the background.</p>
+            </div>
+            <div class="how-it-works-step">
+              <div class="how-it-works-number">2</div>
+              <h3>Design Integration</h3>
+              <p>The extracted portrait is composited with the QR code design, preserving scan functionality while applying custom branding.</p>
+            </div>
+            <div class="how-it-works-step">
+              <div class="how-it-works-number">3</div>
+              <h3>Branded Output</h3>
+              <p>Matplotlib renders the final branded QR code as a ready-to-use image, tested to confirm it still scans correctly.</p>
+            </div>
+          </div>
+        </section>
+
+        <h2 class="section-title">Results & Impact</h2>
+        <!-- Results & Impact -->
+        <section class="results-section">
+          <div class="results-grid">
+            <div class="result-item">
+              <div class="result-dot"></div>
+              <div class="result-text">Reduced customer wait times by 80%</div>
+            </div>
+            <div class="result-item">
+              <div class="result-dot"></div>
+              <div class="result-text">
+                Improved customer satisfaction scores by 35%
+              </div>
+            </div>
+            <div class="result-item">
+              <div class="result-dot"></div>
+              <div class="result-text">Decreased operational costs by 60%</div>
+            </div>
+            <div class="result-item">
+              <div class="result-dot"></div>
+              <div class="result-text">
+                Handled 95% of queries without human intervention
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="why-it-matters-section">
+          <h2 class="section-title">Business Impact</h2>
+          <p class="why-it-matters-text">
+            Brand and marketing teams producing personalized QR codes for events, membership cards, or promotions typically rely on manual photo editing for each one, a slow process that does not scale well. By automatically removing backgrounds and compositing portraits into branded QR code designs, this system turns that manual design work into a repeatable process. Teams can produce large batches of personalized, on-brand codes quickly, without a designer touching each image individually or risking codes that no longer scan correctly.
+          </p>
+        </section>
+
+        <div class="navigation-buttons-corner">
+          <a href="wordpress.html" class="nav-btn back-btn">
+            <i class="fa-solid fa-arrow-left"></i> Back
+          </a>
+          <a href="video.html" class="nav-btn next-btn">
+            Next <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </main>
+
+      <footer class="copyright">
+        <div class="copyright-2025-container1">
+          <span class="softdev1">Copyright © 2025 </span>
+          <span class="softdev">
+            <i class="softdev2">SoftDev.</i>
+          </span>
+          <span>
+            <span class="softdev"> </span>
+            <span class="softdev1">All Rights Reserved.</span>
+          </span>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      // <<<<<<< Updated_Website
+      document.addEventListener("DOMContentLoaded", () => {
+        const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+        const mobileNav = document.getElementById("mobileNavContainer");
+        const closeMobileNav = document.getElementById("closeMobileNav");
+
+        const openNav = () => (mobileNav.style.display = "flex");
+        const hideNav = () => (mobileNav.style.display = "none");
+
+        mobileMenuBtn.addEventListener("click", openNav);
+        closeMobileNav.addEventListener("click", hideNav);
+        mobileNav.addEventListener(
+          "click",
+          (e) => e.target === mobileNav && hideNav()
+        );
+
+        /* ⬇ NEW: close as soon as the page scrolls */
+        window.addEventListener("scroll", hideNav, { passive: true });
+      });
+    </script>
+  </body>
+</html>

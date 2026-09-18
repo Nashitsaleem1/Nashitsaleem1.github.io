@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gmail Personalized Response - SoftDev</title>
+
+    <meta name="description" content="Built an automated email response system for Beth Psychiatry using Google Apps Script. The system analyzes incoming emails and sends tailored replies." />
+    <link rel="icon" href="../assets/img/logo3.png" type="image/png" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
+    <!-- Font Awesome: non-render-blocking -->
+    <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" /></noscript>
+    <!-- Google Fonts: trimmed to used weights only, non-render-blocking -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" /></noscript>
+    <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.min.css" rel="stylesheet" />
+    <link href="../assets/css/project.min.css" rel="stylesheet" />
+    <link href="../assets/css/main.min.css" rel="stylesheet" />
+
+    <style>
+      /* Styles extracted from inline attributes */
+      .btn-back   { margin-right: 15px; background-color: #404040; }
+      .link-plain { text-decoration: none; }
+    </style>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JLQ8LB282S"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag("js", new Date());
+      gtag("config", "G-JLQ8LB282S");
+    </script>
+
+    <!-- Meta Pixel -->
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window,document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '754199771022007');
+      fbq('track', 'PageView');
+    </script>
+    <noscript>
+      <img height="1" width="1" style="display:none"
+        src="https://www.facebook.com/tr?id=754199771022007&ev=PageView&noscript=1" />
+    </noscript>
+    <!-- End Meta Pixel -->
+
+    <script defer src="../assets/js/components.min.js"></script>
+  </head>
+  <body class="nashit-page">
+    <div id="nav-placeholder"></div>
+
+    <section class="project-hero-section">
+      <div class="hero-container">
+        <div class="hero-content">
+          <div class="project-category">
+            <i class="fas fa-circle"></i>
+            Automation
+          </div>
+          <h1 class="hero-title">
+            <span>Gmail</span><br />Personalized Response
+          </h1>
+          <p class="hero-description">
+            Built an automated email response system for Beth Psychiatry using
+            Google Apps Script. The system analyzes incoming emails and sends
+            tailored replies based on message type ensuring timely, personalized
+            communication while reducing manual effort
+          </p>
+          <a href="../index.html#projects" class="cta-button btn-back">Back To Projects</a>
+          <a href="gmail-personalized-response.html" class="cta-button">View Live Project</a>
+        </div>
+
+        <div class="hero-visual">
+          <div class="dashboard-mockup">
+            <div class="dashboard-main">
+              <img id="mainDisplay" src="../assets/img/softdev/gmail.webp" alt="Gmail Personalized Response" />
+            </div>
+            <div class="secondary-mockups">
+              <div class="secondary-mockup" onclick="changeImage('../assets/img/softdev/gmail.webp', this)">
+                <img src="../assets/img/softdev/gmail.webp" alt="Thumbnail 1" loading="lazy" />
+              </div>
+              <div class="secondary-mockup" onclick="changeImage('../assets/img/Nashit Profile/Gmail AUTOMATION customized responses to emails.png', this)">
+                <img src="../assets/img/Nashit Profile/Gmail AUTOMATION customized responses to emails.png" alt="Thumbnail 2" loading="lazy" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="technologies-section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-label">
+            <i class="fas fa-circle"></i>
+            <span>Tech Stack</span>
+          </div>
+          <h2 class="section-title">Technologies Used</h2>
+          <p class="section-description">Built with cutting-edge technologies to ensure scalability, reliability, and performance</p>
+        </div>
+        <div class="technologies-grid2">
+          <div class="tech-badge-item2">
+            <img src="../assets/img/softdev/appscript.webp" alt="Google Apps Script" class="tech-icon2" loading="lazy" />
+            <span>Apps Script</span>
+          </div>
+          <div class="tech-badge-item2">
+            <img src="../assets/img/softdev/email.webp" alt="Gmail" class="tech-icon2" loading="lazy" />
+            <span>Gmail API</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="how-it-works-section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-label">
+            <i class="fas fa-circle"></i>
+            <span>Process</span>
+          </div>
+          <h2 class="section-title">How It Works</h2>
+          <p class="section-description">A closer look at the automated workflow behind the results</p>
+        </div>
+        <div class="how-it-works-steps">
+          <div class="how-it-works-step">
+            <div class="how-it-works-number">1</div>
+            <h3>Incoming Email Detection</h3>
+            <p>The Gmail API monitors the inbox and picks up new patient emails as soon as they arrive, without staff intervention.</p>
+          </div>
+          <div class="how-it-works-step">
+            <div class="how-it-works-number">2</div>
+            <h3>Message Type Analysis</h3>
+            <p>Google Apps Script parses each email's content to identify the message type and determine the appropriate response category.</p>
+          </div>
+          <div class="how-it-works-step">
+            <div class="how-it-works-number">3</div>
+            <h3>Personalized Auto-Reply</h3>
+            <p>A tailored reply is generated and sent automatically based on the classification, keeping communication timely and consistent.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="results-section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-label">
+            <i class="fas fa-circle"></i>
+            <span>Metrics</span>
+          </div>
+          <h2 class="section-title">Results & Impact</h2>
+          <p class="section-description">Measurable outcomes that demonstrate the real-world value delivered to the client</p>
+        </div>
+        <div class="results-container">
+          <div class="results-list">
+            <div class="result-item">
+              <span class="result-text">Automatically responded to 1,000+ patient emails monthly</span>
+            </div>
+            <div class="result-item">
+              <span class="result-text">Increased patient engagement and satisfaction through personalized, context-aware replies</span>
+            </div>
+            <div class="result-item">
+              <span class="result-text">Eliminated 15+ hours of manual email handling per week for administrative staff</span>
+            </div>
+            <div class="result-item">
+              <span class="result-text">Improved workflow efficiency and response consistency by 40%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="why-it-matters-section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-label">
+            <i class="fas fa-circle"></i>
+            <span>Why It Matters</span>
+          </div>
+          <h2 class="section-title">Business Impact</h2>
+        </div>
+        <p class="why-it-matters-text">
+          For a healthcare practice like Beth Psychiatry, a high volume of incoming patient emails can quickly overwhelm front-desk staff and lead to slow or inconsistent replies. By classifying each message and responding automatically with a relevant, well-matched reply, the system keeps patients feeling attended to without pulling administrative staff away from other responsibilities. That translates into hours reclaimed each week and a communication experience that stays consistent as the practice's patient volume grows.
+        </p>
+      </div>
+    </section>
+
+    <section class="next-project-section">
+      <div class="next-project-container">
+        <div class="project-info">
+          <a href="shopify-product-combinations.html" class="link-plain">
+            <h4 class="next-label">Next Project</h4>
+            <h2 class="project-title">Shopify <br />Product <br />Combinations</h2>
+          </a>
+        </div>
+        <div class="project-preview">
+          <a href="shopify-product-combinations.html" class="preview-card link-plain">
+            <img src="../assets/img/softdev/shopify-product.webp" alt="Shopify Product Combinations" loading="lazy" />
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-content">
+          <h2 class="cta-title">Interested in a similar project?</h2>
+          <p class="cta-description">Let's discuss how we can build something great together.</p>
+          <a href="https://calendly.com/nashitsaleem" target="_blank" class="cta-primary-btn">
+            Start Your Project
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        if (typeof AOS !== "undefined") {
+          AOS.init({ duration: 1000, easing: "ease-in-out", once: true, mirror: false });
+        }
+        const bookingButton = document.getElementById("bookingBtn");
+        if (bookingButton) {
+          bookingButton.addEventListener("click", function () {
+            gtag("event", "click_book_now", { button_id: "bookingBtn", button_text: "Book Now" });
+          });
+        }
+        const dropdown = document.getElementById("bookingDropdown");
+        if (dropdown) {
+          dropdown.addEventListener("click", function (event) {
+            const link = event.target.closest("a");
+            if (!link) return;
+            const linkText = link.innerText.trim();
+            const eventName = linkText.toLowerCase().replace(/\s+/g, "_");
+            gtag("event", eventName, { link_text: linkText, destination_url: link.href });
+          });
+        }
+      });
+
+      const hamburger = document.getElementById("hamburger");
+      const navLinks = document.getElementById("navLinks");
+      const bookingBtn = document.getElementById("bookingBtn");
+      const bookingDropdown = document.getElementById("bookingDropdown");
+      const bookingWrapper = document.getElementById("bookingWrapper");
+
+      hamburger.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+        hamburger.classList.toggle("active");
+        bookingDropdown.classList.remove("active");
+      });
+      bookingBtn.addEventListener("click", (e) => {
+        if (window.innerWidth <= 768) {
+          e.preventDefault();
+          e.stopPropagation();
+          bookingDropdown.classList.toggle("active");
+        }
+      });
+      document.addEventListener("click", (e) => {
+        if (!bookingWrapper.contains(e.target) && window.innerWidth > 768)
+          bookingDropdown.classList.remove("active");
+      });
+      window.addEventListener("resize", () => {
+        if (window.innerWidth > 768) bookingDropdown.classList.remove("active");
+      });
+      document.querySelectorAll(".nav-links > a").forEach((link) => {
+        link.addEventListener("click", () => {
+          navLinks.classList.remove("active");
+          hamburger.classList.remove("active");
+          bookingDropdown.classList.remove("active");
+        });
+      });
+      document.querySelectorAll(".booking-dropdown a").forEach((link) => {
+        link.addEventListener("click", () => {
+          bookingDropdown.classList.remove("active");
+          navLinks.classList.remove("active");
+          hamburger.classList.remove("active");
+        });
+      });
+
+      function changeImage(src, element) {
+        const mainImg = document.getElementById("mainDisplay");
+        mainImg.style.opacity = "0";
+        setTimeout(() => { mainImg.src = src; mainImg.style.opacity = "1"; }, 300);
+        document.querySelectorAll(".secondary-mockup").forEach((thumb) => thumb.classList.remove("active"));
+        element.classList.add("active");
+      }
+    </script>
+  </body>
+</html>
