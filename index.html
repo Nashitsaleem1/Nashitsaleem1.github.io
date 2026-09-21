@@ -25,9 +25,11 @@
       href="https://cdn-icons-png.flaticon.com/512/7867/7867852.png"
       type="image/png"
     />
+    <script src="./assets/js/theme-switcher.js"></script>
     <!-- Stylesheets -->
     <link rel="stylesheet" href="./global.min.css" />
     <link rel="stylesheet" href="./index.min.css" />
+    <link rel="stylesheet" href="./sections.css?v=layout-polish-3" />
 
     <link
       rel="stylesheet"
@@ -41,6 +43,10 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
+    <script
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+      defer
+    ></script>
   </head>
 
   <body>
@@ -61,14 +67,14 @@
             <div class="about-me" onclick="scrollToSection('about')">
               <div class="about5">About Me</div>
             </div>
-            <div class="about-me" onclick="scrollToSection('experience')">
-              <div class="about5">Experience</div>
-            </div>
             <div class="about-me" onclick="scrollToSection('projects')">
               <div class="about5">Projects</div>
             </div>
-            <div class="about-me" onclick="scrollToSection('testimonials')">
-              <div class="about5">Testimonials</div>
+            <div class="about-me" onclick="scrollToSection('experience')">
+              <div class="about5">Experience</div>
+            </div>
+            <div class="about-me" onclick="scrollToSection('writing')">
+              <div class="about5">Writing</div>
             </div>
             <div class="about-me" onclick="scrollToSection('connect')">
               <div class="about5">Connect</div>
@@ -85,7 +91,7 @@
                 alt=""
                 src="./public/download02.svg"
               />
-              <div class="view-all-projects6">Book A Call</div>
+              <div class="view-all-projects6">Email Me</div>
               <img
                 class="arrow-up-right-03-icon2"
                 alt=""
@@ -117,7 +123,7 @@
               alt=""
               src="./public/download02.svg"
             />
-            <div class="view-all-projects6">Book A Call</div>
+            <div class="view-all-projects6">Email Me</div>
             <img
               class="arrow-up-right-03-icon2"
               alt=""
@@ -135,9 +141,9 @@
           <div class="mobile-menu-items">
             <div class="mobile-menu-left">
               <a href="#about" class="mobile-link">About Me</a>
-              <a href="#experience" class="mobile-link">Experience</a>
               <a href="#projects" class="mobile-link">Projects</a>
-              <a href="#testimonials" class="mobile-link">Testimonials</a>
+              <a href="#experience" class="mobile-link">Experience</a>
+              <a href="#writing" class="mobile-link">Writing</a>
               <a href="#connect" class="mobile-link">Connect</a>
             </div>
           </div>
@@ -356,74 +362,119 @@
                     </ul>
                   </div>
                 </div>
-                <div id="experience" class="hints1">
-                  <b class="summary1">Quick Hints:</b>
+                <div class="hints1">
+                  <b class="summary1">Core Focus:</b>
                   <div class="founder-of-softdev-container1">
                     <ul class="python-automation-mysql-github1">
-                      <li class="python">SoftDev</li>
                       <li class="python">
-                        Automation solutions for Startups, E-Commerce,
-                        Healthcare and Engineering.
+                        AI automation systems for startups, e-commerce,
+                        healthcare, and engineering teams.
                       </li>
                       <li class="python">
-                        3+ years building with Python, Selenium, Playwright
+                        Reliable scraping, API, CRM, and reporting workflows
+                        that reduce manual work.
                       </li>
                       <li class="python">
-                        Skilled in scraping, API's, Zapier, n8n
+                        Tooling across Python, Selenium, Playwright, Zapier,
+                        n8n, Make, and custom dashboards.
                       </li>
                       <li>
-                        Obsessed with clean automation, AI Automation &
-                        workflows
+                        Clean handoffs, measurable results, and automations
+                        that are easy to maintain.
                       </li>
                     </ul>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="numbers">
-              <div class="experience2">
-                <div class="div">
-                  <div class="parent">
-                    <b class="b">3</b>
-                    <b class="b1">+</b>
-                  </div>
-                </div>
-                <div class="years-of-experience-container1">
-                  <p class="we-help-businesses">Years of</p>
-                  <p class="we-help-businesses">experience</p>
-                </div>
-              </div>
-              <div class="experience2">
-                <div class="div1">
-                  <div class="parent">
-                    <b class="b">120</b>
-                    <b class="b1">+</b>
-                  </div>
-                </div>
-                <div class="years-of-experience-container1">
-                  <p class="we-help-businesses">Completed</p>
-                  <p class="we-help-businesses">Projects</p>
-                </div>
-              </div>
-              <div class="client-satisfaction1">
-                <div class="div">
-                  <div class="parent">
-                    <b class="b">100</b>
-                    <b class="b1">%</b>
-                  </div>
-                </div>
-                <div class="years-of-experience-container1">
-                  <p class="we-help-businesses">Client</p>
-                  <p class="we-help-businesses">Satisfaction</p>
-                </div>
-              </div>
-            </div>
-            <a href="./public/Nashit.pdf" download class="download-btn">
+            <a
+              href="./public/Nashit.pdf"
+              download
+              class="download-btn"
+              id="resumeRequestBtn"
+            >
               <i class="fa fa-download"></i> Download My Resume
             </a>
           </div>
         </div>
       </div>
+
+      <section id="what-i-build" class="portfolio-section-block build-strip-section">
+        <div class="heading1 compact-heading">
+          <div class="sub-heading">
+            <div class="sub-heading-child"></div>
+            <div class="portfolio">What I Build</div>
+          </div>
+          <div class="latest-projects">
+            <span class="latest">Automation </span>
+            <i class="nashit-saleem6">That Ships</i>
+          </div>
+        </div>
+        <p class="section-intro">
+          Practical AI, automation, and data systems that replace repetitive
+          work with reliable workflows.
+        </p>
+        <div class="build-marquee" aria-label="What Nashit builds">
+          <div class="build-track">
+            <span>AI Automation</span>
+            <span>Python Bots</span>
+            <span>LLM Agents</span>
+            <span>Web Scraping</span>
+            <span>API Integrations</span>
+            <span>n8n Workflows</span>
+            <span>Zapier Systems</span>
+            <span>CRM Automation</span>
+            <span>E-Commerce Ops</span>
+            <span>Healthcare Intake</span>
+            <span>Google Sheets Apps</span>
+            <span>CAD Automation</span>
+            <span>AI Automation</span>
+            <span>Python Bots</span>
+            <span>LLM Agents</span>
+            <span>Web Scraping</span>
+            <span>API Integrations</span>
+            <span>n8n Workflows</span>
+            <span>Zapier Systems</span>
+            <span>CRM Automation</span>
+            <span>E-Commerce Ops</span>
+            <span>Healthcare Intake</span>
+            <span>Google Sheets Apps</span>
+            <span>CAD Automation</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="work" class="portfolio-section-block work-section">
+        <div class="heading1 compact-heading">
+          <div class="sub-heading">
+            <div class="sub-heading-child"></div>
+            <div class="portfolio">Work</div>
+          </div>
+          <div class="latest-projects">
+            <span class="latest">Work In </span>
+            <i class="nashit-saleem6">Numbers</i>
+          </div>
+        </div>
+
+        <div class="work-summary" aria-label="Work highlights">
+          <div class="work-stat">
+            <strong>120+</strong>
+            <span>Projects shipped</span>
+          </div>
+          <div class="work-stat">
+            <strong>3+</strong>
+            <span>Years building</span>
+          </div>
+          <div class="work-stat">
+            <strong>1</strong>
+            <span>IEEE research</span>
+          </div>
+          <div class="work-stat">
+            <strong>20k</strong>
+            <span>Calls/month handled</span>
+          </div>
+        </div>
+      </section>
 
       <div id="projects" class="my-portfolio1">
         <img class="vector-icon13" alt="" src="./public/vector1.svg" />
@@ -467,6 +518,7 @@
         <!-- Crawlable fallback: full project list for search engines / no-JS clients -->
         <noscript>
           <ul class="projects-noscript-list">
+            <li><a href="projects/albarakah-enterprises-ecommerce.html">Albarakah Enterprises E-Commerce</a></li>
             <li><a href="projects/clinic.html">Clinic Forms Automation</a></li>
             <li><a href="projects/dxf.html">DXF Files Automation</a></li>
             <li><a href="projects/excel.html">Excel Result Card Automation</a></li>
@@ -519,16 +571,381 @@
         </div>
       </div>
 
+      <section id="how-i-work" class="portfolio-section-block process-section">
+        <div class="heading1 compact-heading">
+          <div class="sub-heading">
+            <div class="sub-heading-child"></div>
+            <div class="portfolio">How I Work</div>
+          </div>
+          <div class="latest-projects">
+            <span class="latest">From idea to </span>
+            <i class="nashit-saleem6">automation.</i>
+          </div>
+        </div>
+        <div class="process-grid">
+          <article class="process-card">
+            <span>01</span>
+            <h3>Map the workflow</h3>
+            <p>I break down the manual process, data sources, rules, and edge cases before building.</p>
+          </article>
+          <article class="process-card">
+            <span>02</span>
+            <h3>Build the system</h3>
+            <p>I connect APIs, browsers, AI agents, databases, and dashboards into one reliable flow.</p>
+          </article>
+          <article class="process-card">
+            <span>03</span>
+            <h3>Test and hand off</h3>
+            <p>I validate the automation with real scenarios and leave it clean enough to run every day.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="experience" class="portfolio-section-block experience-section">
+        <div class="heading1 compact-heading">
+          <div class="sub-heading">
+            <div class="sub-heading-child"></div>
+            <div class="portfolio">Experience</div>
+          </div>
+          <div class="latest-projects">
+            <span class="latest">Work & </span>
+            <i class="nashit-saleem6">Education</i>
+          </div>
+        </div>
+
+        <div class="experience-shell">
+          <div class="experience-tabs" role="tablist" aria-label="Experience type">
+            <button
+              type="button"
+              class="experience-tab active"
+              data-experience-tab="work"
+              aria-selected="true"
+              aria-controls="work-panel"
+            >
+              Work
+            </button>
+            <button
+              type="button"
+              class="experience-tab"
+              data-experience-tab="education"
+              aria-selected="false"
+              aria-controls="education-panel"
+            >
+              Education
+            </button>
+          </div>
+
+          <div class="experience-panels">
+            <div
+              class="experience-panel active"
+              id="work-panel"
+              data-experience-panel="work"
+            >
+              <article class="experience-card">
+                <div class="experience-meta">
+                  <span>SoftDev</span>
+                  <span>Current</span>
+                </div>
+                <h3>Founder & AI Automation Engineer</h3>
+                <p>
+                  Building custom automation systems for teams across
+                  healthcare, e-commerce, engineering, HR, and operations.
+                </p>
+                <ul>
+                  <li>
+                    Delivered Python, Playwright, Selenium, API, and workflow
+                    automation systems for real client operations.
+                  </li>
+                  <li>
+                    Designed AI receptionists, lead bots, document processors,
+                    CRM automations, and data pipelines.
+                  </li>
+                  <li>
+                    Helps teams reduce repetitive manual work and scale without
+                    adding extra operational load.
+                  </li>
+                </ul>
+              </article>
+
+              <article class="experience-card">
+                <div class="experience-meta">
+                  <span>Upwork & Client Projects</span>
+                  <span>Top-Rated</span>
+                </div>
+                <h3>Python Developer & Automation Specialist</h3>
+                <p>
+                  Shipping focused automation builds for international clients
+                  across forms, marketplaces, CRMs, reporting, and outreach.
+                </p>
+                <ul>
+                  <li>
+                    Built scalable scrapers, integrations, browser automations,
+                    and AI-assisted workflows.
+                  </li>
+                  <li>
+                    Worked with tools including Python, FastAPI, Django,
+                    React, n8n, Make, Zapier, and cloud services.
+                  </li>
+                  <li>
+                    Delivered systems handling high-volume data extraction,
+                    appointment workflows, and operational routing.
+                  </li>
+                </ul>
+              </article>
+            </div>
+
+            <div
+              class="experience-panel"
+              id="education-panel"
+              data-experience-panel="education"
+            >
+              <article class="experience-card">
+                <div class="experience-meta">
+                  <span>Gebze Technical University</span>
+                  <span>Current</span>
+                </div>
+                <h3>Master's in Artificial Intelligence</h3>
+                <p>
+                  Research-focused graduate work in machine learning, computer
+                  vision, and applied AI systems.
+                </p>
+                <ul>
+                  <li>
+                    Exploring AI applications across automation, agriculture,
+                    analytics, and visual intelligence.
+                  </li>
+                  <li>
+                    Applies research thinking to client systems that need clear
+                    evaluation, reliability, and measurable impact.
+                  </li>
+                </ul>
+              </article>
+
+              <article class="experience-card">
+                <div class="experience-meta">
+                  <span>Engineering & AI Projects</span>
+                  <span>Foundation</span>
+                </div>
+                <h3>Applied Engineering, Automation & Machine Learning</h3>
+                <p>
+                  Built a technical foundation across software engineering,
+                  data analytics, automation, and AI model development.
+                </p>
+                <ul>
+                  <li>
+                    Published research in 2024 International Conference on
+                    Digital Futures and Transformative Technologies.
+                  </li>
+                  <li>
+                    Created AI, image-processing, automation, and data projects
+                    using Python, MATLAB, SQL, Java, C++, and R.
+                  </li>
+                </ul>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="expertise" class="portfolio-section-block expertise-section">
+        <div class="heading1 compact-heading">
+          <div class="sub-heading">
+            <div class="sub-heading-child"></div>
+            <div class="portfolio">Expertise</div>
+          </div>
+          <div class="latest-projects">
+            <span class="latest">Systems I </span>
+            <i class="nashit-saleem6">Know Deeply</i>
+          </div>
+        </div>
+        <p class="section-intro">
+          Experience across automation, AI, scraping, integrations, and
+          full-stack products, grounded in shipped client work.
+        </p>
+
+        <div class="expertise-grid">
+          <article class="expertise-card">
+            <h3>AI Agents & Workflow Automation</h3>
+            <p>
+              Multi-step systems that connect prompts, tools, CRMs, documents,
+              and databases into reliable operating workflows.
+            </p>
+            <div class="expertise-tags">
+              <span>OpenAI</span>
+              <span>n8n</span>
+              <span>Zapier</span>
+              <span>Make</span>
+              <span>LangChain</span>
+            </div>
+            <p class="expertise-applied">
+              Applied in projects: n8n AI Agent, AI receptionists, CRM follow-ups.
+            </p>
+          </article>
+
+          <article class="expertise-card">
+            <h3>Python Automation & Web Scraping</h3>
+            <p>
+              Browser automation, data extraction, form processing, and repeatable
+              Python scripts built for high-volume operational work.
+            </p>
+            <div class="expertise-tags">
+              <span>Python</span>
+              <span>Playwright</span>
+              <span>Selenium</span>
+              <span>Scrapy</span>
+              <span>Pandas</span>
+            </div>
+            <p class="expertise-applied">
+              Applied in projects: Twitter scraper, eBay tools, clinic forms.
+            </p>
+          </article>
+
+          <article class="expertise-card">
+            <h3>API Integrations & Data Pipelines</h3>
+            <p>
+              Connected systems that move clean data between tools, normalize
+              records, and keep dashboards or downstream actions up to date.
+            </p>
+            <div class="expertise-tags">
+              <span>FastAPI</span>
+              <span>Django</span>
+              <span>REST APIs</span>
+              <span>MySQL</span>
+              <span>Google Sheets</span>
+            </div>
+            <p class="expertise-applied">
+              Applied in projects: RingCentral, HubSpot, ClickUp, QuickBooks.
+            </p>
+          </article>
+
+          <article class="expertise-card">
+            <h3>Full-Stack Automation Products</h3>
+            <p>
+              Client-ready tools with backend logic, frontend views, databases,
+              and deployment paths for teams that need a working product.
+            </p>
+            <div class="expertise-tags">
+              <span>React</span>
+              <span>Node.js</span>
+              <span>FastAPI</span>
+              <span>Docker</span>
+              <span>Cloud</span>
+            </div>
+            <p class="expertise-applied">
+              Applied in projects: full-stack automation platform, dashboards.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="writing" class="portfolio-section-block writing-section">
+        <div class="heading1 compact-heading">
+          <div class="sub-heading">
+            <div class="sub-heading-child"></div>
+            <div class="portfolio">Writing</div>
+          </div>
+          <div class="latest-projects">
+            <span class="latest">Ideas That </span>
+            <i class="nashit-saleem6">Ship</i>
+          </div>
+        </div>
+        <p class="section-intro">
+          Long-form articles on AI agents, automation systems, and the thinking
+          behind the work.
+        </p>
+
+        <div class="writing-grid" aria-label="Featured writing">
+          <a
+            class="writing-card"
+            href="./writing/ai-agents-digital-teammates.html"
+          >
+            <div class="writing-card-top">
+              <span class="writing-pill">Article 01 - AI Agents</span>
+              <span class="writing-arrow" aria-hidden="true">
+                <i class="fa-solid fa-arrow-right"></i>
+              </span>
+            </div>
+            <h3>AI Agents: From Chatbots to Digital Teammates</h3>
+            <p>
+              How modern AI agents plan, use tools, and complete useful
+              business workflows with the right guardrails.
+            </p>
+            <div class="writing-divider"></div>
+            <div class="writing-footer">
+              <span class="writing-date">September 19, 2026</span>
+              <span class="writing-read-time">6 min read</span>
+            </div>
+            <div class="writing-tags">
+              <span>Automation</span>
+              <span>Business Systems</span>
+            </div>
+          </a>
+
+          <a class="writing-card" href="./writing/rag-pipelines-right-knowledge.html">
+            <div class="writing-card-top">
+              <span class="writing-pill">Article 02 - RAG Pipelines</span>
+              <span class="writing-arrow" aria-hidden="true">
+                <i class="fa-solid fa-arrow-right"></i>
+              </span>
+            </div>
+            <h3>RAG Pipelines: Giving AI the Right Knowledge</h3>
+            <p>
+              A practical guide to retrieval-augmented generation and building a
+              system that responds from your information.
+            </p>
+            <div class="writing-divider"></div>
+            <div class="writing-footer">
+              <span class="writing-date">September 18, 2026</span>
+              <span class="writing-read-time">7 min read</span>
+            </div>
+            <div class="writing-tags">
+              <span>Generative AI</span>
+              <span>Knowledge Bases</span>
+            </div>
+          </a>
+
+          <a class="writing-card" href="./writing/ai-call-receptionists.html">
+            <div class="writing-card-top">
+              <span class="writing-pill">Article 03 - Voice AI</span>
+              <span class="writing-arrow" aria-hidden="true">
+                <i class="fa-solid fa-arrow-right"></i>
+              </span>
+            </div>
+            <h3>AI Call Receptionists: Better Calls Without Longer Queues</h3>
+            <p>
+              How AI voice receptionists can field routine calls, qualify
+              opportunities, and hand off the moments that need a human.
+            </p>
+            <div class="writing-divider"></div>
+            <div class="writing-footer">
+              <span class="writing-date">September 17, 2026</span>
+              <span class="writing-read-time">5 min read</span>
+            </div>
+            <div class="writing-tags">
+              <span>Voice AI</span>
+              <span>Customer Experience</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="writing-actions">
+          <a class="writing-button" href="./writing/">
+            <span>View All Articles</span>
+            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+          </a>
+        </div>
+      </section>
+
       <div id="testimonials" class="testimonials">
         <div class="content2">
           <div class="heading3">
             <div class="sub-heading2">
               <div class="sub-heading-child"></div>
-              <div class="portfolio">Clients Testimonials</div>
+              <div class="portfolio">Impact</div>
             </div>
             <div class="the-impact-of-container1">
-              <span class="latest">The Impact Of Our Work </span>
-              <i class="softdev">Clients Testimonials</i>
+              <span class="latest">Impact Of </span>
+              <i class="softdev">Our Work</i>
             </div>
           </div>
           <div class="reviews">
@@ -730,7 +1147,7 @@
                 alt=""
                 src="./public/arrowrightdouble@2x.jpeg"
               />
-              <div class="view-all-projects4">Book A Call</div>
+              <div class="view-all-projects4">Email Me</div>
               <img
                 class="arrow-up-right-03-icon2"
                 alt=""
@@ -812,12 +1229,70 @@
       </div>
     </div>
 
+    <div class="resume-modal" id="resumeModal" aria-hidden="true">
+      <div class="resume-modal-backdrop" data-resume-close></div>
+      <div
+        class="resume-modal-card"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="resumeModalTitle"
+      >
+        <button
+          type="button"
+          class="resume-modal-close"
+          data-resume-close
+          aria-label="Close resume email form"
+        >
+          &times;
+        </button>
+        <span class="resume-modal-eyebrow">Resume</span>
+        <h2 id="resumeModalTitle">Get Nashit's resume</h2>
+        <p>
+          Enter your name and email. I&apos;ll send the resume straight to your
+          inbox.
+        </p>
+        <form id="resumeEmailForm" class="resume-email-form">
+          <div class="resume-form-grid">
+            <label for="resumeName">Name</label>
+            <input
+              type="text"
+              id="resumeName"
+              name="name"
+              autocomplete="name"
+              placeholder="Your name"
+              required
+            />
+
+            <label for="resumeEmail">Email address</label>
+            <input
+              type="email"
+              id="resumeEmail"
+              name="email"
+              autocomplete="email"
+              placeholder="you@example.com"
+              required
+            />
+          </div>
+          <button type="submit" id="resumeSubmitBtn">Send Resume</button>
+          <p id="resumeFormStatus" class="resume-form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+
     <script>
       // ============ STATE MANAGEMENT ============
       let allProjects = [];
       let showAllProjects = false;
       let currentFilter = "all";
       const INITIAL_DISPLAY_COUNT = 6;
+      const RESUME_EMAIL_CONFIG = {
+        publicKey: "orYdRQjPFORh-Eful",
+        // Copy this exactly from EmailJS Dashboard > Email Services.
+        serviceId: "service_9n8c0pc",
+        templateId: "template_zegz9f4",
+        resumeUrl: new URL("./public/Nashit.pdf", window.location.href).href,
+        fromName: "Nashit Saleem",
+      };
 
       // ============ HELPER FUNCTIONS ============
       function normalizeCategory(category) {
@@ -867,6 +1342,8 @@
       // ============ INITIALIZATION ============
       document.addEventListener("DOMContentLoaded", function () {
         initMobileMenu();
+        initExperienceTabs();
+        initResumeEmailFlow();
         fetchProjects();
       });
 
@@ -886,6 +1363,174 @@
           (e) => e.target === mobileNav && hideNav(),
         );
         window.addEventListener("scroll", hideNav, { passive: true });
+      }
+
+      // ============ EXPERIENCE TABS ============
+      function initExperienceTabs() {
+        const tabs = document.querySelectorAll("[data-experience-tab]");
+        const panels = document.querySelectorAll("[data-experience-panel]");
+
+        tabs.forEach((tab) => {
+          tab.addEventListener("click", () => {
+            const target = tab.getAttribute("data-experience-tab");
+
+            tabs.forEach((item) => {
+              const isActive = item === tab;
+              item.classList.toggle("active", isActive);
+              item.setAttribute("aria-selected", String(isActive));
+            });
+
+            panels.forEach((panel) => {
+              panel.classList.toggle(
+                "active",
+                panel.getAttribute("data-experience-panel") === target,
+              );
+            });
+          });
+        });
+      }
+
+      // ============ RESUME EMAIL FLOW ============
+      function initResumeEmailFlow() {
+        const trigger = document.getElementById("resumeRequestBtn");
+        const modal = document.getElementById("resumeModal");
+        const form = document.getElementById("resumeEmailForm");
+        const nameInput = document.getElementById("resumeName");
+        const emailInput = document.getElementById("resumeEmail");
+        const status = document.getElementById("resumeFormStatus");
+        const submitBtn = document.getElementById("resumeSubmitBtn");
+
+        if (!trigger || !modal || !form || !nameInput || !emailInput || !status || !submitBtn) {
+          return;
+        }
+
+        const setStatus = (message, type = "") => {
+          status.textContent = message;
+          status.dataset.type = type;
+        };
+
+        const openModal = () => {
+          modal.classList.add("active");
+          modal.setAttribute("aria-hidden", "false");
+          document.body.classList.add("resume-modal-open");
+          setStatus("");
+          nameInput.focus();
+        };
+
+        const closeModal = () => {
+          modal.classList.remove("active");
+          modal.setAttribute("aria-hidden", "true");
+          document.body.classList.remove("resume-modal-open");
+          form.reset();
+          setStatus("");
+        };
+
+        trigger.addEventListener("click", (event) => {
+          event.preventDefault();
+          openModal();
+        });
+
+        modal.querySelectorAll("[data-resume-close]").forEach((button) => {
+          button.addEventListener("click", closeModal);
+        });
+
+        document.addEventListener("keydown", (event) => {
+          if (event.key === "Escape" && modal.classList.contains("active")) {
+            closeModal();
+          }
+        });
+
+        form.addEventListener("submit", async (event) => {
+          event.preventDefault();
+
+          const userName = nameInput.value.trim();
+          const email = emailInput.value.trim();
+
+          if (!userName) {
+            setStatus("Please enter your name.", "error");
+            nameInput.focus();
+            return;
+          }
+
+          if (!emailInput.checkValidity()) {
+            setStatus("Please enter a valid email address.", "error");
+            emailInput.focus();
+            return;
+          }
+
+          const { publicKey, serviceId, templateId, resumeUrl, fromName } =
+            RESUME_EMAIL_CONFIG;
+
+          if (!publicKey || !serviceId || !templateId) {
+            setStatus(
+              "Email sending is not configured yet. Add your EmailJS keys in the resume config.",
+              "error",
+            );
+            return;
+          }
+
+          if (!window.emailjs) {
+            setStatus(
+              "Email service could not load. Please try again in a moment.",
+              "error",
+            );
+            return;
+          }
+
+          submitBtn.disabled = true;
+          submitBtn.textContent = "Sending...";
+          setStatus("Sending resume...", "info");
+
+          try {
+            const templateParams = {
+              name: userName,
+              email,
+              reply_to: email,
+              to_email: email,
+              to_name: userName,
+              user_name: userName,
+              user_email: email,
+              resume_url: resumeUrl,
+              resume_attachment: resumeUrl,
+              from_name: fromName,
+              website_url: window.location.origin,
+              message: `Please send Nashit Saleem's resume to ${userName} at ${email}.`,
+            };
+
+            await emailjs.send(
+              serviceId,
+              templateId,
+              templateParams,
+              { publicKey },
+            );
+            setStatus("Done. The resume has been sent to your email.", "success");
+            form.reset();
+          } catch (error) {
+            console.error("Resume email failed:", error);
+            const errorText = String(error?.text || error?.message || error?.status || "");
+            let emailError =
+              "Email service is not ready yet. Please try again later.";
+
+            if (/service id not found/i.test(errorText)) {
+              emailError =
+                "Email service is not connected yet. Please update the EmailJS Service ID.";
+            } else if (/template/i.test(errorText) && /not found/i.test(errorText)) {
+              emailError =
+                "Email template is not connected yet. Please update the EmailJS Template ID.";
+            } else if (/origin|domain|cors/i.test(errorText)) {
+              emailError =
+                "This website is not allowed in EmailJS yet. Please add the site domain in EmailJS.";
+            }
+
+            setStatus(
+              emailError,
+              "error",
+            );
+          } finally {
+            submitBtn.disabled = false;
+            submitBtn.textContent = "Send Resume";
+          }
+        });
       }
 
       // ============ FILTER FUNCTIONALITY ============
@@ -940,9 +1585,9 @@
           const projectURL = project.Filename
             ? `projects/${project.Filename.trim()}.html`
             : "#";
-          const imageURL = project.Image_name
-            ? `assets/img/softdev/${project.Image_name.trim()}`
-            : "";
+          const primaryCategory = project.Category
+            ? project.Category.split(",")[0].trim()
+            : "Project";
 
           const card = document.createElement("div");
           card.className = "project-card project-card--clickable";
@@ -956,10 +1601,11 @@
           card.onclick = () => { if (projectURL !== "#") window.location.href = projectURL; };
 
           card.innerHTML = `
-            <div class="project-header">
-              <img class="project-header-img" src="${imageURL}" alt="${project.Title}" />
-            </div>
             <div class="project-content">
+              <div class="project-card-meta">
+                <span>${String(index + 1).padStart(2, "0")}</span>
+                <span>${primaryCategory}</span>
+              </div>
               <h3 class="project-title">${project.Title}</h3>
               <p class="project-description">${project.Description}</p>
               <div class="project-stats">

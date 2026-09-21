@@ -1,0 +1,523 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Albarakah Enterprises E-Commerce - SoftDev</title>
+
+    <meta name="description" content="Designed and developed an e-commerce storefront for Albarakah Enterprises with a responsive catalog, streamlined ordering flow, and scalable content management." />
+    <link
+      rel="icon"
+      href="https://cdn-icons-png.flaticon.com/512/7867/7867852.png"
+      type="image/png"
+    />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
+    <!-- Font Awesome: non-render-blocking -->
+    <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" /></noscript>
+    <!-- Google Fonts: trimmed to used weights only, non-render-blocking -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" /></noscript>
+    <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.min.css" rel="stylesheet" />
+    <link href="../assets/css/project.min.css" rel="stylesheet" />
+    <link href="../assets/css/main.min.css" rel="stylesheet" />
+
+    <style>
+      .btn-back { margin-right: 15px; background-color: #404040; }
+      .link-plain { text-decoration: none; }
+
+      .project-hero-section ~ section {
+        margin-top: 14rem;
+      }
+
+      .albarakah-dashboard {
+        min-height: 420px;
+        padding: 24px;
+        border-radius: 20px;
+        background:
+          linear-gradient(135deg, rgba(220, 38, 38, 0.12), rgba(10, 10, 10, 0.92)),
+          radial-gradient(circle at top right, rgba(220, 38, 38, 0.2), transparent 38%);
+      }
+
+      .albarakah-dashboard::before {
+        content: none;
+        background-image: none !important;
+      }
+
+      .store-window {
+        height: 100%;
+        min-height: 372px;
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+        gap: 18px;
+        padding: 18px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 16px;
+        background: rgba(10, 10, 10, 0.66);
+        overflow: hidden;
+      }
+
+      .store-topbar,
+      .store-checkout-row,
+      .store-tech-strip {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 14px;
+      }
+
+      .store-brand {
+        color: #fff;
+        font-size: 1.05rem;
+        font-weight: 700;
+      }
+
+      .store-status {
+        color: #ef4444;
+        font-size: 0.78rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .store-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .store-product {
+        display: flex;
+        min-height: 116px;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 14px;
+        border: 1px solid rgba(255, 255, 255, 0.09);
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.04);
+      }
+
+      .product-icon {
+        width: 38px;
+        height: 38px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+        background: rgba(220, 38, 38, 0.16);
+      }
+
+      .product-icon img {
+        width: 24px;
+        height: 24px;
+        object-fit: contain;
+      }
+
+      .store-product strong {
+        margin-top: 18px;
+        color: #fff;
+        font-size: 0.98rem;
+        line-height: 1.25;
+      }
+
+      .store-product span {
+        color: rgba(255, 255, 255, 0.62);
+        font-size: 0.78rem;
+      }
+
+      .store-checkout-row {
+        padding: 14px;
+        border: 1px solid rgba(220, 38, 38, 0.22);
+        border-radius: 12px;
+        background: rgba(220, 38, 38, 0.08);
+      }
+
+      .checkout-copy {
+        display: grid;
+        gap: 2px;
+      }
+
+      .checkout-copy strong {
+        color: #fff;
+        font-size: 0.95rem;
+      }
+
+      .checkout-copy span {
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 0.78rem;
+      }
+
+      .checkout-total {
+        color: #ef4444;
+        font-size: 1.45rem;
+        font-weight: 800;
+      }
+
+      .store-tech-strip {
+        justify-content: flex-start;
+        flex-wrap: wrap;
+      }
+
+      .store-tech-strip img {
+        width: 34px;
+        height: 34px;
+        object-fit: contain;
+        padding: 6px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.04);
+      }
+
+      @media (max-width: 768px) {
+        .albarakah-dashboard {
+          min-height: auto;
+          padding: 16px;
+        }
+
+        .store-window {
+          min-height: auto;
+        }
+
+        .store-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .store-checkout-row {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+      }
+    </style>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JLQ8LB282S"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag("js", new Date());
+      gtag("config", "G-JLQ8LB282S");
+    </script>
+
+    <!-- Meta Pixel -->
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window,document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '754199771022007');
+      fbq('track', 'PageView');
+    </script>
+    <noscript>
+      <img height="1" width="1" style="display:none"
+        src="https://www.facebook.com/tr?id=754199771022007&ev=PageView&noscript=1" />
+    </noscript>
+    <!-- End Meta Pixel -->
+
+    <script defer src="../assets/js/components.min.js"></script>
+  </head>
+  <body class="nashit-page">
+    <div id="nav-placeholder"></div>
+
+    <section class="project-hero-section">
+      <div class="hero-container">
+        <div class="hero-content">
+          <div class="project-category">
+            <i class="fas fa-circle"></i>
+            E-commerce
+          </div>
+          <h1 class="hero-title">
+            <span>Albarakah Enterprises</span><br />E-Commerce Platform
+          </h1>
+          <p class="hero-description">
+            Designed and developed a responsive e-commerce storefront for
+            Albarakah Enterprises, giving customers a clean way to browse
+            products, understand offerings, and move toward inquiry or checkout.
+            The build focuses on reliable catalog management, mobile-first
+            shopping, and an admin workflow that makes future product updates
+            simple for the business team.
+          </p>
+          <a href="../index.html#projects" class="cta-button btn-back">Back To Projects</a>
+          <a href="albarakah-enterprises-ecommerce.html" class="cta-button">View Live Project</a>
+        </div>
+
+        <div class="hero-visual">
+          <div class="dashboard-mockup">
+            <div class="dashboard-main albarakah-dashboard">
+              <div class="store-window" aria-label="Albarakah e-commerce interface preview">
+                <div class="store-topbar">
+                  <span class="store-brand">Albarakah Enterprises</span>
+                  <span class="store-status">Storefront Ready</span>
+                </div>
+                <div class="store-grid">
+                  <div class="store-product">
+                    <span class="product-icon">
+                      <img src="../assets/img/softdev/cart-36-128.webp" alt="" loading="lazy" />
+                    </span>
+                    <strong>Product Catalog</strong>
+                    <span>Structured categories</span>
+                  </div>
+                  <div class="store-product">
+                    <span class="product-icon">
+                      <img src="../assets/img/softdev/stripe.webp" alt="" loading="lazy" />
+                    </span>
+                    <strong>Checkout Flow</strong>
+                    <span>Payment-ready path</span>
+                  </div>
+                  <div class="store-product">
+                    <span class="product-icon">
+                      <img src="../assets/img/softdev/wordpress.webp" alt="" loading="lazy" />
+                    </span>
+                    <strong>Admin Control</strong>
+                    <span>Simple updates</span>
+                  </div>
+                </div>
+                <div class="store-checkout-row">
+                  <span class="checkout-copy">
+                    <strong>Mobile-first shopping journey</strong>
+                    <span>Catalog, inquiry, checkout, and content updates in one system.</span>
+                  </span>
+                  <span class="checkout-total">100%</span>
+                </div>
+                <div class="store-tech-strip" aria-label="Technology logos">
+                  <img src="../assets/img/softdev/wordpress.webp" alt="WordPress" loading="lazy" />
+                  <img src="../assets/img/softdev/php.webp" alt="PHP" loading="lazy" />
+                  <img src="../assets/img/softdev/js.webp" alt="JavaScript" loading="lazy" />
+                  <img src="../assets/img/softdev/stripe.webp" alt="Stripe" loading="lazy" />
+                  <img src="../assets/img/softdev/mysql.webp" alt="MySQL" loading="lazy" />
+                  <img src="../assets/img/softdev/css.webp" alt="CSS" loading="lazy" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="technologies-section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-label">
+            <i class="fas fa-circle"></i>
+            <span>Tech Stack</span>
+          </div>
+          <h2 class="section-title">Technologies Used</h2>
+          <p class="section-description">Built with practical web technologies for a reliable storefront, easy updates, and a smooth buying journey</p>
+        </div>
+        <div class="technologies-grid2">
+          <div class="tech-badge-item2">
+            <img src="../assets/img/softdev/wordpress.webp" alt="WordPress" class="tech-icon2" loading="lazy" />
+            <span>WordPress</span>
+          </div>
+          <div class="tech-badge-item2">
+            <img src="../assets/img/softdev/php.webp" alt="PHP" class="tech-icon2" loading="lazy" />
+            <span>PHP</span>
+          </div>
+          <div class="tech-badge-item2">
+            <img src="../assets/img/softdev/js.webp" alt="JavaScript" class="tech-icon2" loading="lazy" />
+            <span>JavaScript</span>
+          </div>
+          <div class="tech-badge-item2">
+            <img src="../assets/img/softdev/stripe.webp" alt="Stripe" class="tech-icon2" loading="lazy" />
+            <span>Stripe</span>
+          </div>
+          <div class="tech-badge-item2">
+            <img src="../assets/img/softdev/mysql.webp" alt="MySQL" class="tech-icon2" loading="lazy" />
+            <span>MySQL</span>
+          </div>
+          <div class="tech-badge-item2">
+            <img src="../assets/img/softdev/css.webp" alt="CSS" class="tech-icon2" loading="lazy" />
+            <span>Responsive CSS</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="how-it-works-section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-label">
+            <i class="fas fa-circle"></i>
+            <span>Process</span>
+          </div>
+          <h2 class="section-title">How It Works</h2>
+          <p class="section-description">A clean storefront flow built around product discovery, ordering, and business-side control</p>
+        </div>
+        <div class="how-it-works-steps">
+          <div class="how-it-works-step">
+            <div class="how-it-works-number">1</div>
+            <h3>Catalog Structure</h3>
+            <p>Products and categories are organized into a clear storefront so visitors can understand the offering quickly and browse without friction.</p>
+          </div>
+          <div class="how-it-works-step">
+            <div class="how-it-works-number">2</div>
+            <h3>Shopping & Inquiry Flow</h3>
+            <p>The customer journey is shaped around mobile browsing, product detail pages, calls to action, and a checkout or inquiry path that feels simple.</p>
+          </div>
+          <div class="how-it-works-step">
+            <div class="how-it-works-number">3</div>
+            <h3>Admin Handoff</h3>
+            <p>The backend is prepared so the business can update products, content, pricing, and pages without needing a developer for every small change.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="results-section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-label">
+            <i class="fas fa-circle"></i>
+            <span>Metrics</span>
+          </div>
+          <h2 class="section-title">Results & Impact</h2>
+          <p class="section-description">Business outcomes from turning the brand presence into a usable e-commerce experience</p>
+        </div>
+        <div class="results-container">
+          <div class="results-list">
+            <div class="result-item">
+              <span class="result-text">Delivered a responsive e-commerce storefront for desktop, tablet, and mobile shoppers</span>
+            </div>
+            <div class="result-item">
+              <span class="result-text">Centralized product presentation so customers can browse offerings without manual back-and-forth</span>
+            </div>
+            <div class="result-item">
+              <span class="result-text">Created an admin-friendly structure for product, content, and pricing updates</span>
+            </div>
+            <div class="result-item">
+              <span class="result-text">Built a scalable foundation for future product lines, promotions, analytics, and payment improvements</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="why-it-matters-section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-label">
+            <i class="fas fa-circle"></i>
+            <span>Why It Matters</span>
+          </div>
+          <h2 class="section-title">Business Impact</h2>
+        </div>
+        <p class="why-it-matters-text">
+          For a growing commerce business, relying only on manual conversations, scattered product details, or social posts makes it harder for customers to trust the buying process. A dedicated e-commerce platform gives Albarakah Enterprises a clearer digital storefront, keeps product information in one place, and makes the shopping journey repeatable. That helps the team look more professional online while making future catalog expansion much easier to manage.
+        </p>
+      </div>
+    </section>
+
+    <section class="next-project-section">
+      <div class="next-project-container">
+        <div class="project-info">
+          <a href="shopify-product-combinations.html" class="link-plain">
+            <h4 class="next-label">Next Project</h4>
+            <h2 class="project-title">Shopify<br />Product<br />Combinations</h2>
+          </a>
+        </div>
+        <div class="project-preview">
+          <a href="shopify-product-combinations.html" class="preview-card link-plain">
+            <img src="../assets/img/softdev/shopify-product.webp" alt="Shopify Product Combinations" loading="lazy" />
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-content">
+          <h2 class="cta-title">Interested in a similar project?</h2>
+          <p class="cta-description">Let's discuss how we can build something great together.</p>
+          <a href="https://calendly.com/nashitsaleem" target="_blank" class="cta-primary-btn">
+            Start Your Project
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        if (typeof AOS !== "undefined") {
+          AOS.init({ duration: 1000, easing: "ease-in-out", once: true, mirror: false });
+        }
+        const bookingButton = document.getElementById("bookingBtn");
+        if (bookingButton) {
+          bookingButton.addEventListener("click", function () {
+            gtag("event", "click_book_now", { button_id: "bookingBtn", button_text: "Book Now" });
+          });
+        }
+        const dropdown = document.getElementById("bookingDropdown");
+        if (dropdown) {
+          dropdown.addEventListener("click", function (event) {
+            const link = event.target.closest("a");
+            if (!link) return;
+            const linkText = link.innerText.trim();
+            const eventName = linkText.toLowerCase().replace(/\s+/g, "_");
+            gtag("event", eventName, { link_text: linkText, destination_url: link.href });
+          });
+        }
+      });
+
+      const hamburger = document.getElementById("hamburger");
+      const navLinks = document.getElementById("navLinks");
+      const bookingBtn = document.getElementById("bookingBtn");
+      const bookingDropdown = document.getElementById("bookingDropdown");
+      const bookingWrapper = document.getElementById("bookingWrapper");
+
+      if (hamburger && navLinks) {
+        hamburger.addEventListener("click", () => {
+          navLinks.classList.toggle("active");
+          hamburger.classList.toggle("active");
+          if (bookingDropdown) bookingDropdown.classList.remove("active");
+        });
+      }
+      if (bookingBtn && bookingDropdown) {
+        bookingBtn.addEventListener("click", (e) => {
+          if (window.innerWidth <= 768) {
+            e.preventDefault();
+            e.stopPropagation();
+            bookingDropdown.classList.toggle("active");
+          }
+        });
+      }
+      document.addEventListener("click", (e) => {
+        if (
+          bookingWrapper &&
+          bookingDropdown &&
+          !bookingWrapper.contains(e.target) &&
+          window.innerWidth > 768
+        )
+          bookingDropdown.classList.remove("active");
+      });
+      window.addEventListener("resize", () => {
+        if (bookingDropdown && window.innerWidth > 768)
+          bookingDropdown.classList.remove("active");
+      });
+      document.querySelectorAll(".nav-links > a").forEach((link) => {
+        link.addEventListener("click", () => {
+          if (navLinks) navLinks.classList.remove("active");
+          if (hamburger) hamburger.classList.remove("active");
+          if (bookingDropdown) bookingDropdown.classList.remove("active");
+        });
+      });
+      document.querySelectorAll(".booking-dropdown a").forEach((link) => {
+        link.addEventListener("click", () => {
+          if (bookingDropdown) bookingDropdown.classList.remove("active");
+          if (navLinks) navLinks.classList.remove("active");
+          if (hamburger) hamburger.classList.remove("active");
+        });
+      });
+    </script>
+  </body>
+</html>

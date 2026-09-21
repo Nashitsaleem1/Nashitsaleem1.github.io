@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RAG Pipelines: Giving AI the Right Knowledge - Nashit Saleem</title>
+    <meta
+      name="description"
+      content="A practical guide to retrieval-augmented generation and building a system that generates responses based on your information."
+    />
+    <link
+      rel="icon"
+      href="https://cdn-icons-png.flaticon.com/512/7867/7867852.png"
+      type="image/png"
+    />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,800&display=swap"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,800&display=swap"
+      />
+    </noscript>
+    <script src="../assets/js/theme-switcher.js?v=blog-mobile-menu-1"></script>
+    <link rel="stylesheet" href="./writing.css?v=blog-mobile-nav-3" />
+  </head>
+  <body class="insight-page">
+    <header class="writing-site-nav">
+      <div class="writing-site-nav-inner">
+        <button class="writing-menu-btn" type="button" aria-label="Toggle menu" aria-expanded="false">
+          <img src="../public/menu02.svg" alt="" />
+        </button>
+        <nav class="writing-site-links" aria-label="Primary navigation">
+          <a href="../index.html#about">About Me</a>
+          <a href="../index.html#projects">Projects</a>
+          <a href="../index.html#experience">Experience</a>
+          <a href="../index.html#writing">Writing</a>
+          <a href="../index.html#connect">Connect</a>
+        </nav>
+        <a
+          class="writing-book-btn"
+          href="https://calendly.com/nashitsaleem"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Email Me
+        </a>
+      </div>
+    </header>
+
+    <main>
+      <article>
+        <header class="insight-hero">
+          <a class="insight-back-link" href="./index.html">All insights</a>
+          <div class="insight-meta">
+            <span>RAG Pipelines</span>
+            <span>Generative AI</span>
+            <span>Knowledge Bases</span>
+          </div>
+          <h1 class="insight-title">
+            RAG Pipelines: Giving AI the Right Knowledge
+          </h1>
+          <p class="insight-subtitle">
+            A practical guide to retrieval-augmented generation and building a
+            system that generates responses based on your information.
+          </p>
+          <div class="insight-meta">
+            <span>September 18, 2026</span>
+            <span>7 min read</span>
+          </div>
+        </header>
+
+        <div class="insight-body">
+          <p>
+            A language model can generate a plausible response regardless of
+            your company policies, products, or process. Retrieval augmented
+            generation, or RAG, is a technique that closes this gap by
+            retrieving the relevant information before responding.
+          </p>
+
+          <h2>How a RAG pipeline is built</h2>
+          <p>
+            The majority of RAG pipelines have two primary stages: ingestion
+            and retrieval. Ingestion processes documents, splitting them into
+            useful passages, enriching them with any relevant metadata, and
+            transforming them into searchable embeddings. The retrieval step
+            uses the question to find the relevant passages and provides them
+            as context for the model to use when answering the question.
+          </p>
+          <p>
+            The end result is a response based on the information specific to
+            your company.
+          </p>
+
+          <h2>The quality of the retrieval determines the quality of the answer</h2>
+          <p>
+            The quality of the answer depends on the quality of information
+            retrieved. The answer will only be as good as the data passed to it.
+            Documents need to be split into passages based on semantics, not
+            just characters. Tables, headers, permissions, source links, and
+            other information should be retained where possible.
+          </p>
+          <p>
+            Documents should also have metadata added indicating the type,
+            department, effective date, customer, permissions, or other relevant
+            information. Metadata allows for additional filtering during
+            retrieval, increasing relevance and improving privacy and
+            compliance.
+          </p>
+
+          <h2>Measuring effectiveness</h2>
+          <p>
+            The effectiveness of the retrieval process should be measured based
+            on what is most important to your use case. Did the retrieval return
+            the right documents? Is the answer actually using the correct
+            information? Is it possible for the model to respond honestly when
+            it does not know the answer?
+          </p>
+          <p>
+            Visibility into the process is vital and can be achieved through
+            citations in the answer and a feedback button. RAG pipelines are
+            not magical, but with carefully prepared data, smart filtering, and
+            visibility into the process, they turn a generic language model into
+            something truly useful.
+          </p>
+        </div>
+      </article>
+    </main>
+
+    <footer class="writing-page-footer">
+      <span>Copyright © 2025 <em>SoftDev.</em> All Rights Reserved.</span>
+    </footer>
+  </body>
+</html>
