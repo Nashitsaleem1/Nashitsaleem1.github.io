@@ -9,8 +9,8 @@
   window.NashitThemeScriptLoaded = true;
 
   const STORAGE_KEY = "nashit-theme";
-  const EMAIL_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyTOJUs12QHmj0MuIu9cVLiXgydxTxOfDmNv8rfEa7-G9JIC_WiQBbxPQTpm_GiJwCg/exec";
-  const ASSET_VERSION = "email-status-1";
+  const EMAIL_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxa3bCiMm55oH00rBsg6b8KVQXPF8JI4enKbggALffmNNfK2AiAjR4eBIDy-FB-1Yg6/exec";
+  const ASSET_VERSION = "email-endpoint-1";
   const EMAIL_SUCCESS_MESSAGE = "Thanks. Your message has been delivered.";
   const THEMES = new Set(["dark", "light"]);
   const root = document.documentElement;
