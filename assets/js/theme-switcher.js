@@ -10,6 +10,8 @@
 
   const STORAGE_KEY = "nashit-theme";
   const EMAIL_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyTOJUs12QHmj0MuIu9cVLiXgydxTxOfDmNv8rfEa7-G9JIC_WiQBbxPQTpm_GiJwCg/exec";
+  const ASSET_VERSION = "email-status-1";
+  const EMAIL_SUCCESS_MESSAGE = "Thanks. Your message has been delivered.";
   const THEMES = new Set(["dark", "light"]);
   const root = document.documentElement;
   const themeStyleHref = (() => {
@@ -19,7 +21,7 @@
     }
 
     const href = new URL("../css/theme-switcher.css", script.src);
-    href.searchParams.set("v", "blog-mobile-menu-1");
+    href.searchParams.set("v", ASSET_VERSION);
     return href.href;
   })();
 
@@ -271,6 +273,8 @@
 
     form.action = EMAIL_SCRIPT_URL;
     form.dataset.emailSending = "true";
+    let successShown = false;
+    let successTimer = null;
 
     if (submissionInput && !submissionInput.value) {
       submissionInput.value = createSubmissionId();
@@ -283,6 +287,29 @@
 
     setEmailStatus("Sending your message...", "pending");
 
+    const showSuccess = () => {
+      if (successShown) {
+        return;
+      }
+
+      successShown = true;
+
+      if (successTimer) {
+        window.clearTimeout(successTimer);
+        successTimer = null;
+      }
+
+      form.reset();
+      delete form.dataset.emailSending;
+      setEmailStatus(EMAIL_SUCCESS_MESSAGE, "success");
+
+      if (submitButton) {
+        submitButton.disabled = false;
+      }
+    };
+
+    successTimer = window.setTimeout(showSuccess, 1200);
+
     try {
       await fetch(EMAIL_SCRIPT_URL, {
         method: "POST",
@@ -290,10 +317,16 @@
         mode: "no-cors",
       });
 
-      form.reset();
-      setEmailStatus("Thanks. Your message was submitted. Please check the receiving inbox.", "success");
+      showSuccess();
     } catch (error) {
-      setEmailStatus("The email could not be sent. Please try again in a moment.", "error");
+      if (successTimer) {
+        window.clearTimeout(successTimer);
+        successTimer = null;
+      }
+
+      if (!successShown) {
+        setEmailStatus("The email could not be sent. Please try again in a moment.", "error");
+      }
     } finally {
       delete form.dataset.emailSending;
 
