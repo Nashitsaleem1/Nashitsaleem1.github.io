@@ -17,7 +17,7 @@ body.insight-page {
   left: 0;
   right: 0;
   z-index: 1000;
-  padding: 1.7rem 2rem;
+  padding: 2rem 3rem;
 }
 
 .writing-site-nav-inner {
@@ -26,13 +26,20 @@ body.insight-page {
   align-items: center;
   justify-content: space-between;
   gap: 2rem;
-  max-width: 1450px;
   margin: 0 auto;
-  padding: 0.6rem 1.3rem;
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  border-radius: 26px;
-  background-color: rgba(22, 22, 22, 0.88);
-  backdrop-filter: blur(16px);
+  padding: 1rem;
+  border: 0.5px solid #505457;
+  border-radius: 28px;
+  background-color: rgba(36, 41, 45, 0.49);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(100px);
+  -webkit-backdrop-filter: blur(100px);
+}
+
+.writing-nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
 }
 
 .writing-menu-btn {
@@ -64,15 +71,16 @@ body.insight-page {
 .writing-site-links {
   display: flex;
   align-items: center;
-  gap: 5.3rem;
-  margin: 0 auto;
+  gap: 5rem;
+  margin: 0 auto 0 0;
+  padding-left: 1.9rem;
 }
 
 .writing-site-links a {
-  color: #a7a5a5;
-  font-size: 17px;
+  color: #a7a9ab;
+  font-size: 18px;
   font-weight: 400;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.01em;
   text-decoration: none;
   white-space: nowrap;
   transition: color 0.25s ease;
@@ -85,10 +93,12 @@ body.insight-page {
 .writing-book-btn {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 1rem;
-  border-radius: 14px;
-  background-color: #d93f3f;
+  gap: 0.625rem;
+  height: 3.75rem;
+  box-sizing: border-box;
+  padding: 0 1.3rem;
+  border-radius: 15px;
+  background-color: #cc433d;
   color: #ffffff;
   font-size: 18px;
   text-decoration: none;
@@ -98,8 +108,13 @@ body.insight-page {
     transform 0.2s ease;
 }
 
+.writing-book-btn img {
+  display: block;
+  width: 1.625rem;
+}
+
 .writing-book-btn:hover {
-  background-color: #b83333;
+  background-color: #000;
   color: #ffffff;
   transform: translateY(-1px);
 }
@@ -205,6 +220,143 @@ body.insight-page {
 
 .insight-body strong {
   color: #ffffff;
+}
+
+.insight-body h3 {
+  margin: 2.25rem 0 0.75rem;
+  color: #ffffff;
+  font-size: clamp(1.15rem, 2vw, 1.4rem);
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.insight-tldr {
+  margin: 0 0 1rem;
+  padding: 1.5rem 1.75rem;
+  border: 0.5px solid rgba(204, 67, 61, 0.32);
+  border-radius: 20px;
+  background: rgba(204, 67, 61, 0.06);
+}
+
+.insight-body .insight-tldr h2 {
+  margin: 0 0 1rem;
+  font-size: 1.15rem;
+}
+
+.insight-tldr ol {
+  display: grid;
+  gap: 0.6rem;
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.insight-tldr li::marker {
+  color: #d93f3f;
+  font-weight: 700;
+}
+
+.insight-figure {
+  margin: 2rem 0;
+}
+
+.insight-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 0.5px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.insight-table-wrap {
+  margin: 1.5rem 0 2rem;
+  overflow-x: auto;
+  border: 0.5px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+}
+
+.insight-body table {
+  width: 100%;
+  min-width: 34rem;
+  border-collapse: collapse;
+}
+
+.insight-body th,
+.insight-body td {
+  padding: 0.85rem 1.1rem;
+  border-bottom: 0.5px solid rgba(255, 255, 255, 0.1);
+  color: #b7b7b7;
+  font-size: 0.98rem;
+  line-height: 1.6;
+  text-align: left;
+  vertical-align: top;
+}
+
+.insight-body th {
+  background: rgba(204, 67, 61, 0.1);
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.insight-body tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.insight-body td:first-child {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.insight-post-nav {
+  margin-top: 4rem;
+}
+
+.insight-post-nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1.35rem 1.6rem;
+  border: 0.5px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  background: rgba(29, 33, 36, 0.5);
+  color: #ffffff;
+  text-decoration: none;
+  transition:
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.insight-post-nav-prev {
+  justify-content: flex-start;
+}
+
+.insight-post-nav-link:hover {
+  border-color: rgba(204, 67, 61, 0.42);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.insight-nav-label {
+  display: block;
+  margin-bottom: 0.4rem;
+  color: #d93f3f;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.insight-nav-title {
+  display: block;
+  font-size: clamp(1.05rem, 2vw, 1.3rem);
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.insight-nav-icon {
+  flex: 0 0 auto;
+  color: #d93f3f;
 }
 
 .insight-list-grid {
@@ -375,8 +527,13 @@ body.insight-page {
   }
 
   .writing-book-btn {
+    height: auto;
     padding: 0.65rem 0.9rem;
     font-size: 0.86rem;
+  }
+
+  .writing-book-btn img {
+    width: 1rem;
   }
 
   .insight-hero,
@@ -412,6 +569,7 @@ body.insight-page {
   }
 
   .writing-book-btn {
+    height: auto;
     min-height: 2.75rem;
     box-sizing: border-box;
     padding: 0 1rem;

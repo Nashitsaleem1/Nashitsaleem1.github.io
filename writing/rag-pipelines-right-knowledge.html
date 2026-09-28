@@ -28,7 +28,7 @@
       />
     </noscript>
     <script src="../assets/js/theme-switcher.js?v=email-endpoint-1"></script>
-    <link rel="stylesheet" href="./writing.css?v=blog-mobile-nav-3" />
+    <link rel="stylesheet" href="./writing.css?v=blog-mobile-nav-5" />
   </head>
   <body class="insight-page">
     <header class="writing-site-nav">
@@ -50,6 +50,7 @@
           rel="noreferrer"
         >
           Email Me
+          <img alt="" src="../public/arrowupright031.svg" />
         </a>
       </div>
     </header>
@@ -61,74 +62,129 @@
           <div class="insight-meta">
             <span>RAG Pipelines</span>
             <span>Generative AI</span>
-            <span>Knowledge Bases</span>
           </div>
           <h1 class="insight-title">
             RAG Pipelines: Giving AI the Right Knowledge
           </h1>
           <p class="insight-subtitle">
-            A practical guide to retrieval-augmented generation and building a
-            system that generates responses based on your information.
+            A practical guide to retrieval-augmented generation and building a system that generates responses based on your information.
           </p>
           <div class="insight-meta">
             <span>September 18, 2026</span>
-            <span>7 min read</span>
+            <span>11 min read</span>
           </div>
         </header>
 
         <div class="insight-body">
-          <p>
-            A language model can generate a plausible response regardless of
-            your company policies, products, or process. Retrieval augmented
-            generation, or RAG, is a technique that closes this gap by
-            retrieving the relevant information before responding.
-          </p>
+          <section class="insight-tldr" aria-labelledby="tldr-title">
+            <h2 id="tldr-title">TL;DR - 6 takeaways - 15-second read</h2>
+            <ol>
+            <li>RAG is most useful when an AI answer must be grounded in private or fast-changing company knowledge.</li>
+            <li>The retrieval layer matters more than the model choice because bad context produces bad answers.</li>
+            <li>Document preparation, metadata, permissions, and citations decide whether people trust the system.</li>
+            <li>A good pipeline measures retrieval quality separately from answer quality.</li>
+            <li>Costs are controlled by caching, chunk size, model choice, and limiting unnecessary searches.</li>
+            <li>The safest first project is one knowledge source, one audience, and one measurable workflow.</li>
+            </ol>
+          </section>
 
-          <h2>How a RAG pipeline is built</h2>
-          <p>
-            The majority of RAG pipelines have two primary stages: ingestion
-            and retrieval. Ingestion processes documents, splitting them into
-            useful passages, enriching them with any relevant metadata, and
-            transforming them into searchable embeddings. The retrieval step
-            uses the question to find the relevant passages and provides them
-            as context for the model to use when answering the question.
-          </p>
-          <p>
-            The end result is a response based on the information specific to
-            your company.
-          </p>
+          <h2>Introduction</h2>
+          <p>A language model can write a confident answer even when it does not know your policies, product details, pricing rules, service history, or internal process. That is useful for general writing, but risky when a customer, employee, or team member expects an answer based on your actual documents.</p>
+          <p>Retrieval-augmented generation, usually called RAG, closes that gap. Before the model answers, the system searches your approved knowledge base, retrieves the most relevant passages, and passes those passages into the prompt. The response is then shaped by the material your business controls rather than by the model&#39;s memory alone.</p>
+          <p>This matters because most business knowledge is not static. Policies change. Product pages get updated. Client notes live in a CRM. Support fixes appear in tickets before they appear in manuals. A RAG pipeline gives AI a way to use that changing information without retraining a model every week.</p>
+          <h2>What is a RAG pipeline?</h2>
+          <p>A RAG pipeline is the set of steps that turns business knowledge into searchable context for an AI system. It usually has two large halves: ingestion and retrieval.</p>
+          <p>Ingestion prepares the source material. It reads documents, pages, spreadsheets, tickets, transcripts, and database records. It splits them into meaningful sections, adds metadata, converts the sections into embeddings, and stores them in a search layer.</p>
+          <p>Retrieval happens when a user asks a question. The system understands the question, searches for the most relevant sections, filters by permissions and metadata, and gives the model only the pieces it should use.</p>
+          <p>The final answer may look like a normal chat response, but the difference is important. A normal chatbot guesses from its training. A RAG system answers with evidence from your own information.</p>
+          <h2>RAG capabilities at a glance</h2>
+          <div class="insight-table-wrap"><table><thead><tr><th>Capability</th><th>What it does</th><th>Why it matters</th></tr>
+          </thead>
+          <tbody><tr><td>Document ingestion</td><td>Pulls content from files, websites, CRMs, drives, and databases</td><td>Keeps the system connected to the places where knowledge already lives</td></tr>
+          <tr><td>Chunking</td><td>Splits content into useful passages</td><td>Makes retrieval precise instead of dumping full documents into the prompt</td></tr>
+          <tr><td>Metadata</td><td>Adds tags such as department, date, customer, region, and access level</td><td>Improves filtering, privacy, and relevance</td></tr>
+          <tr><td>Vector search</td><td>Finds passages with similar meaning</td><td>Handles natural questions even when the words are not an exact match</td></tr>
+          <tr><td>Keyword search</td><td>Finds exact names, IDs, and phrases</td><td>Prevents semantic search from missing precise terms</td></tr>
+          <tr><td>Reranking</td><td>Reorders results after the first search</td><td>Pushes the best evidence to the top</td></tr>
+          <tr><td>Prompt assembly</td><td>Combines instructions, retrieved context, and user question</td><td>Controls how the model should answer</td></tr>
+          <tr><td>Citations</td><td>Shows where the answer came from</td><td>Builds trust and helps users verify the response</td></tr>
+          <tr><td>Evaluation</td><td>Tests retrieval and answer accuracy</td><td>Shows whether the system is improving or drifting</td></tr>
+          </tbody>
+          </table>
+          </div>
+          <h2>How a RAG pipeline works</h2>
+          <p>A practical RAG workflow starts when new content enters the system. That content might be uploaded by an editor, pulled from GitHub, synced from Google Drive, read from a help desk, or fetched from a database.</p>
+          <p>The ingestion job cleans the content, removes repeated navigation text, extracts useful structure, and splits the material into chunks. Each chunk should be small enough to retrieve precisely but large enough to preserve meaning.</p>
+          <p>Next, the system creates embeddings. An embedding is a numeric representation of the meaning of a passage. Similar ideas land near each other in vector space, so a question about &quot;refund after delivery failure&quot; can find a policy that says &quot;replacement or reimbursement for missed shipment.&quot;</p>
+          <p>When the user asks a question, the system embeds the question, searches the vector database, applies filters, optionally reranks the results, and sends the strongest evidence into the model. The model then writes the answer and cites the sources it used.</p>
+          <figure class="insight-figure"><img src="https://softdev.me/assets/img/softdev/blog/rag-vs-plain-ai.svg" alt="Comparison of an AI answering from memory alone versus a RAG system that searches company documents and cites sources" loading="lazy" /></figure>
+          <h2>Retrieval vs fine tuning vs search</h2>
+          <p>RAG is not the same as fine tuning. Fine tuning changes how a model behaves. RAG changes what information the model sees at answer time.</p>
+          <p>Use RAG when the knowledge changes often, must stay private, needs citations, or belongs to a specific customer, product, or team. Use fine tuning when the model needs to follow a repeated style, classify something in a consistent way, or learn a narrow task pattern that does not depend on live documents.</p>
+          <p>Traditional search still matters. In many business systems, exact names, invoice numbers, SKUs, ticket IDs, and legal terms need keyword matching. The strongest RAG systems often combine keyword search, vector search, filters, and reranking instead of relying on one method.</p>
+          <h2>Data preparation</h2>
+          <p>The quality of a RAG answer starts before the model sees anything. If source documents are duplicated, outdated, incomplete, or poorly formatted, the pipeline will retrieve confusion.</p>
+          <p>Good preparation removes headers and footers that repeat on every page, preserves tables, keeps section titles with the paragraphs they describe, and stores the original source link. For PDFs, OCR quality matters. For websites, navigation and cookie banners should be removed. For spreadsheets, column names must travel with the rows.</p>
+          <p>Versioning also matters. If a policy changed last month, the system should know which version is current. If an old document must remain available for audit reasons, it should be marked as archived instead of competing with the live answer.</p>
+          <figure class="insight-figure"><img src="https://softdev.me/assets/img/softdev/doc-processing.jpeg" alt="Unstructured documents being processed into structured, searchable data" loading="lazy" /></figure>
+          <h2>Chunking and metadata</h2>
+          <p>Chunking sounds simple, but it is one of the biggest quality levers. Splitting every 500 characters usually breaks context. Splitting by heading, paragraph, table, or logical unit gives the model better material.</p>
+          <p>Metadata turns retrieval from a broad search into a controlled search. A support agent should not see finance-only material. A customer-facing answer should not use an internal draft. A sales assistant may need only public case studies and approved pitch language.</p>
+          <p>Useful metadata often includes content type, department, owner, updated date, customer, product line, region, permissions, and lifecycle status. With good metadata, the system can answer &quot;What is our enterprise refund policy in the UK?&quot; without mixing in old US small-business terms.</p>
+          <h2>Embeddings and vector databases</h2>
+          <p>Embeddings make semantic search possible. The embedding model converts each chunk into a vector, and the vector database stores those vectors for fast similarity search.</p>
+          <p>The database choice depends on scale, latency, hosting preference, and existing infrastructure. Smaller projects can start with managed services or a Postgres extension. Larger systems may use a dedicated vector database with hybrid search, metadata filters, and high availability.</p>
+          <p>The model choice also matters, but it is not magic. Better embeddings help, yet they cannot rescue messy content. A clean knowledge base with a decent embedding model usually beats a chaotic knowledge base with the newest model.</p>
+          <h2>Retrieval quality</h2>
+          <p>Retrieval quality asks a simple question: did the pipeline fetch the right evidence? If the answer is no, the final response will struggle no matter which language model writes it.</p>
+          <p>Teams should test retrieval with real questions. For each question, mark the ideal source passages. Then measure whether the search retrieves those passages in the top results. This creates a concrete way to improve chunking, metadata, filters, query rewriting, and reranking.</p>
+          <p>Retrieval should also support &quot;I do not know.&quot; If no strong evidence is found, the best answer is often a safe refusal or a request for more context. A confident answer without evidence is the failure mode RAG was supposed to prevent.</p>
+          <h2>Prompt assembly and citations</h2>
+          <p>Prompt assembly is where the system tells the model how to use the retrieved context. The instruction should make the rule clear: answer only from the provided sources, cite the sources, and say when the sources do not contain enough information.</p>
+          <p>Citations are not decoration. They let a support agent, manager, or customer check the answer. They also make debugging easier because the team can see whether the answer came from the wrong source or whether the right source was written poorly.</p>
+          <p>For business use, citations should point to the original page, document, ticket, or record when possible. If the user cannot open the source, the citation is less useful.</p>
+          <h2>Security and permissions</h2>
+          <p>RAG systems must respect access rules. If an employee cannot open a document directly, the AI should not reveal it through a generated answer.</p>
+          <p>This requires permission-aware retrieval. The system should filter results before the model sees them, not after the answer is written. It should also log which sources were used, who asked the question, and which permission filter was applied.</p>
+          <p>Private customer data needs extra care. A multi-tenant system should never let one customer&#39;s material appear in another customer&#39;s answer. The safest design keeps customer boundaries explicit in metadata and tests for leaks before launch.</p>
+          <h2>Evaluation</h2>
+          <p>RAG evaluation should separate retrieval from generation. Retrieval tests ask whether the right sources were found. Generation tests ask whether the final answer was accurate, complete, clear, and properly cited.</p>
+          <p>A useful test set includes common questions, edge cases, questions with no answer, and questions that are easy to confuse. For example, &quot;Can I cancel after onboarding?&quot; may have different answers for monthly, annual, enterprise, and trial customers.</p>
+          <p>Human review is still important. Let subject matter experts rate a sample of answers. Track issues by type: missing source, outdated source, wrong interpretation, weak wording, or permission problem. Each category points to a different fix.</p>
+          <h2>Cost and performance</h2>
+          <p>RAG cost comes from ingestion, storage, search, reranking, and generation. Long prompts and repeated searches can become expensive if the system is not designed carefully.</p>
+          <p>The fastest savings usually come from caching common answers, limiting the number of retrieved chunks, choosing the right model for the task, and avoiding unnecessary reranking. Some questions need a powerful model. Many internal knowledge questions do not.</p>
+          <p>Performance also affects trust. If the answer takes too long, people go back to manual search. A good target is to return useful answers in a few seconds while still giving the user enough evidence to trust the result.</p>
+          <h2>Common failure patterns</h2>
+          <p>The most common RAG failure is poor source hygiene. Teams connect every file they have, including old drafts, duplicate PDFs, and conflicting policy pages. The AI then becomes a faster way to surface confusion.</p>
+          <p>The second failure is ignoring permissions. A demo works with public documents, then breaks when real access rules appear. Permissions should be part of the first design, not a final security patch.</p>
+          <p>The third failure is measuring only the final answer. If the answer is wrong, the team needs to know whether retrieval failed, the source was wrong, or the model interpreted the source badly. Without that separation, every fix becomes guesswork.</p>
+          <h2>Implementation roadmap</h2>
+          <p>Start with one workflow. A good first project might be a support knowledge assistant, an internal policy assistant, or a sales enablement assistant. Avoid trying to connect every department at once.</p>
+          <p>Map the source material, define the users, decide what they are allowed to see, and write twenty to fifty real questions. Build the pipeline against those questions, then test it with people who know the content.</p>
+          <p>Once the first workflow is reliable, expand by adding more sources, better feedback loops, and analytics. The goal is not to make a clever demo. The goal is to create a system people use because it saves time and gives grounded answers.</p>
+          <h2>Who should not use RAG?</h2>
+          <p>RAG is not always the answer. If your content is small, stable, and already easy to search, a normal documentation site may be enough.</p>
+          <p>RAG is also a poor fit when the source material is not trusted. If the business cannot agree which policy is correct, an AI layer will not solve the governance problem. It will only expose it faster.</p>
+          <p>Finally, avoid RAG for decisions that require judgment but have no documented standard. The pipeline can retrieve knowledge, but it cannot invent a policy the company has not written yet.</p>
+          <h2>Conclusion</h2>
+          <p>RAG turns a general language model into a more useful business system by giving it the right knowledge at the right moment. The model is still important, but the real work is in clean content, smart retrieval, permissions, citations, and evaluation.</p>
+          <p>The best RAG projects begin narrow, prove value, and expand carefully. When the pipeline retrieves the right evidence and the answer shows where it came from, teams stop treating AI as a novelty and start treating it as a practical interface to company knowledge.</p>
+          <h2>Frequently asked questions</h2>
+          <h3>Does RAG train the model on my documents?</h3>
+          <p>No. In a normal RAG setup, your documents are retrieved and passed into the prompt at answer time. The model does not need to be retrained to use them.</p>
+          <h3>Can RAG work with private documents?</h3>
+          <p>Yes, but permissions must be built into retrieval. The system should filter private material before it reaches the model.</p>
+          <h3>How many documents do I need to start?</h3>
+          <p>You can start with a small, high-value knowledge base. Quality matters more than volume for the first version.</p>
+          <h3>What is the biggest reason RAG projects fail?</h3>
+          <p>Most failures come from messy source content, weak metadata, or no evaluation process. The model is rarely the only problem.</p>
 
-          <h2>The quality of the retrieval determines the quality of the answer</h2>
-          <p>
-            The quality of the answer depends on the quality of information
-            retrieved. The answer will only be as good as the data passed to it.
-            Documents need to be split into passages based on semantics, not
-            just characters. Tables, headers, permissions, source links, and
-            other information should be retained where possible.
-          </p>
-          <p>
-            Documents should also have metadata added indicating the type,
-            department, effective date, customer, permissions, or other relevant
-            information. Metadata allows for additional filtering during
-            retrieval, increasing relevance and improving privacy and
-            compliance.
-          </p>
-
-          <h2>Measuring effectiveness</h2>
-          <p>
-            The effectiveness of the retrieval process should be measured based
-            on what is most important to your use case. Did the retrieval return
-            the right documents? Is the answer actually using the correct
-            information? Is it possible for the model to respond honestly when
-            it does not know the answer?
-          </p>
-          <p>
-            Visibility into the process is vital and can be achieved through
-            citations in the answer and a feedback button. RAG pipelines are
-            not magical, but with carefully prepared data, smart filtering, and
-            visibility into the process, they turn a generic language model into
-            something truly useful.
-          </p>
+          <nav class="insight-post-nav" aria-label="Post navigation">
+            <a class="insight-post-nav-link" href="./ai-call-receptionists.html">
+              <div><span class="insight-nav-label">Next</span><span class="insight-nav-title">AI Call Receptionists: Better Calls Without Longer Queues</span></div><svg class="insight-nav-icon" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </nav>
         </div>
       </article>
     </main>
