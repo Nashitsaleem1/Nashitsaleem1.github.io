@@ -1,0 +1,559 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nashit Saleem | Deep Learning &amp; Computer Vision</title>
+    <meta
+      name="description"
+      content="Deep learning and computer vision work by Nashit Saleem: object detection, segmentation, OCR and edge deployment."
+    />
+    <!-- Hidden extension site: not linked from the main portfolio and kept out of search results while it holds sample content. Remove this tag when it goes public. -->
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="theme-color" content="#081822" />
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="icon" href="/favicon-48.png" type="image/png" sizes="48x48" />
+    <link rel="icon" href="/favicon-192.png" type="image/png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap"
+    />
+    <link rel="stylesheet" href="./style.css?v=15" />
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+  </head>
+  <body>
+    <!-- All names, numbers and project details below are sample content to be replaced later. -->
+    <svg width="0" height="0" style="position: absolute" aria-hidden="true">
+      <symbol id="star" viewBox="0 0 24 24">
+        <path d="M12 0C12.8 7 17 11.2 24 12C17 12.8 12.8 17 12 24C11.2 17 7 12.8 0 12C7 11.2 11.2 7 12 0Z" />
+      </symbol>
+    </svg>
+
+    <nav class="nav" id="nav" aria-label="Primary">
+      <a href="#home">Home</a>
+      <a href="#works">Works</a>
+      <a href="#about">About</a>
+      <a href="#faq">FAQ</a>
+      <a class="nav-cta" href="mailto:nashitsaleem9@gmail.com">Let's talk</a>
+    </nav>
+
+    <main>
+      <!-- ================= HERO ================= -->
+      <header class="hero" id="home">
+        <div class="arcs" aria-hidden="true">
+          <span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <span class="sparkle" style="left: 11%; top: 34%; width: 26px; height: 26px" aria-hidden="true"><svg><use href="#star" /></svg></span>
+        <span class="sparkle" style="left: 20%; top: 18%; width: 14px; height: 14px; animation-delay: -2s" aria-hidden="true"><svg><use href="#star" /></svg></span>
+        <span class="sparkle dim" style="left: 30%; top: 26%; width: 18px; height: 18px; animation-delay: -4s" aria-hidden="true"><svg><use href="#star" /></svg></span>
+        <span class="sparkle" style="right: 9%; top: 56%; width: 54px; height: 54px; animation-delay: -1s" aria-hidden="true"><svg><use href="#star" /></svg></span>
+        <span class="sparkle dim" style="right: 17%; top: 38%; width: 30px; height: 30px; animation-delay: -3s" aria-hidden="true"><svg><use href="#star" /></svg></span>
+        <span class="sparkle" style="right: 28%; top: 16%; width: 12px; height: 12px; animation-delay: -5s" aria-hidden="true"><svg><use href="#star" /></svg></span>
+
+        <div class="hero-inner">
+          <img class="avatar" src="../favicon-192.png" alt="Nashit Saleem" width="54" height="54" />
+          <div class="badge"><i></i> Available for opportunities</div>
+          <h1>Teaching machines<br class="br-wide" /> to <em>see</em>, learn and understand</h1>
+          <p>
+            I'm Nashit, a deep learning and computer vision engineer.<br class="br-wide" />
+            I build models that detect, segment and understand the visual world.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-light" href="mailto:nashitsaleem9@gmail.com">👋 Let's talk</a>
+            <a class="btn btn-ghost" href="#works">View work <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+
+        <div class="stack" aria-label="Tools and frameworks">
+          <div class="track" data-loop>
+            <span>PyTorch</span>
+            <span>TensorFlow</span>
+            <span>OpenCV</span>
+            <span>YOLO</span>
+            <span>ONNX</span>
+            <span>TensorRT</span>
+            <span>CUDA</span>
+            <span>Hugging Face</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- ================= WORKS ================= -->
+      <section class="section" id="works">
+        <div class="wrap">
+          <div class="head reveal">
+            <span class="eyebrow">Curated work</span>
+            <h2>Featured Case Studies</h2>
+            <p>A few vision and deep learning projects I'm proud of</p>
+          </div>
+
+          <div class="cases">
+            <!-- Case 1: detection -->
+            <article class="card case reveal" style="--glow: rgba(77, 242, 176, 0.2)">
+              <div class="txt">
+                <span class="label">Retail · 2025</span>
+                <h3>Real-time shelf monitoring with object detection</h3>
+                <ul>
+                  <li>mAP@50 improved to 91.4%</li>
+                  <li>Inference down to 18 ms on edge GPU</li>
+                </ul>
+                <a class="btn" href="#">View case study <span aria-hidden="true">↗</span></a>
+              </div>
+              <div class="shot">
+                <div class="win">
+                  <div class="win-bar"><i></i><i></i><i></i><span>detect.py · 18 ms</span></div>
+                  <svg viewBox="0 0 520 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Product detection boxes on a shelf">
+                    <defs>
+                      <linearGradient id="d-bg" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0" stop-color="#173342" />
+                        <stop offset="1" stop-color="#0b1a24" />
+                      </linearGradient>
+                    </defs>
+                    <rect width="520" height="300" fill="url(#d-bg)" />
+                    <g fill="rgba(255,255,255,0.06)">
+                      <rect x="0" y="108" width="520" height="6" />
+                      <rect x="0" y="206" width="520" height="6" />
+                    </g>
+                    <g>
+                      <rect x="34" y="58" width="44" height="50" rx="5" fill="#2b6f8e" />
+                      <rect x="86" y="46" width="40" height="62" rx="5" fill="#8a5bd8" />
+                      <rect x="134" y="62" width="52" height="46" rx="5" fill="#3aa88a" />
+                      <rect x="212" y="52" width="46" height="56" rx="5" fill="#d9664a" />
+                      <rect x="266" y="64" width="42" height="44" rx="5" fill="#2b6f8e" />
+                      <rect x="332" y="48" width="50" height="60" rx="5" fill="#c9a23a" />
+                      <rect x="40" y="148" width="54" height="58" rx="5" fill="#3aa88a" />
+                      <rect x="104" y="160" width="44" height="46" rx="5" fill="#d9664a" />
+                      <rect x="188" y="142" width="48" height="64" rx="5" fill="#8a5bd8" />
+                      <rect x="252" y="156" width="56" height="50" rx="5" fill="#2b6f8e" />
+                      <rect x="346" y="146" width="44" height="60" rx="5" fill="#c9a23a" />
+                      <rect x="410" y="154" width="50" height="52" rx="5" fill="#3aa88a" />
+                      <rect x="60" y="246" width="60" height="50" rx="5" fill="#d9664a" />
+                      <rect x="160" y="238" width="48" height="58" rx="5" fill="#2b6f8e" />
+                      <rect x="270" y="244" width="52" height="52" rx="5" fill="#8a5bd8" />
+                    </g>
+                    <g fill="none" stroke-width="2">
+                      <rect x="30" y="54" width="52" height="58" rx="3" stroke="#cffd7a" />
+                      <rect x="82" y="42" width="48" height="70" rx="3" stroke="#4df2b0" />
+                      <rect x="208" y="48" width="54" height="64" rx="3" stroke="#cffd7a" />
+                      <rect x="328" y="44" width="58" height="68" rx="3" stroke="#ffc857" />
+                      <rect x="184" y="138" width="56" height="72" rx="3" stroke="#4df2b0" />
+                      <rect x="342" y="142" width="52" height="68" rx="3" stroke="#cffd7a" />
+                    </g>
+                    <g font-family="Manrope, sans-serif" font-size="10" font-weight="700" fill="#04130d">
+                      <rect x="30" y="38" width="62" height="16" rx="3" fill="#cffd7a" /><text x="35" y="49">bottle 0.97</text>
+                      <rect x="82" y="26" width="52" height="16" rx="3" fill="#4df2b0" /><text x="87" y="37">box 0.94</text>
+                      <rect x="208" y="32" width="62" height="16" rx="3" fill="#cffd7a" /><text x="213" y="43">can 0.92</text>
+                      <rect x="328" y="28" width="52" height="16" rx="3" fill="#ffc857" /><text x="333" y="39">jar 0.88</text>
+                      <rect x="184" y="122" width="62" height="16" rx="3" fill="#4df2b0" /><text x="189" y="133">bottle 0.95</text>
+                      <rect x="342" y="126" width="52" height="16" rx="3" fill="#cffd7a" /><text x="347" y="137">can 0.91</text>
+                    </g>
+                  </svg>
+                </div>
+              </div>
+            </article>
+
+            <!-- Case 2: segmentation -->
+            <article class="card case reveal" style="--glow: rgba(207, 253, 122, 0.18)">
+              <div class="txt">
+                <span class="label">Agriculture · 2025</span>
+                <h3>Crop disease segmentation from drone imagery</h3>
+                <ul>
+                  <li>Mean IoU of 0.82 across 6 disease classes</li>
+                  <li>Field survey time cut by 70%</li>
+                </ul>
+                <a class="btn" href="#">View case study <span aria-hidden="true">↗</span></a>
+              </div>
+              <div class="shot">
+                <div class="win">
+                  <div class="win-bar"><i></i><i></i><i></i><span>segment · unet-r34</span></div>
+                  <svg viewBox="0 0 520 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Leaf with disease regions highlighted">
+                    <defs>
+                      <radialGradient id="s-bg" cx="0.5" cy="0.45" r="0.8">
+                        <stop offset="0" stop-color="#1a3b2f" />
+                        <stop offset="1" stop-color="#0a1a1a" />
+                      </radialGradient>
+                      <linearGradient id="s-leaf" x1="0" y1="0" x2="1" y2="1">
+                        <stop offset="0" stop-color="#3f9b53" />
+                        <stop offset="1" stop-color="#1f6a3b" />
+                      </linearGradient>
+                    </defs>
+                    <rect width="520" height="300" fill="url(#s-bg)" />
+                    <path d="M120 250C80 150 150 50 300 40C420 34 470 100 440 190C410 270 220 300 120 250Z" fill="url(#s-leaf)" />
+                    <path d="M130 245C220 190 320 130 440 60" stroke="#a6e3a1" stroke-opacity="0.45" stroke-width="3" fill="none" />
+                    <g stroke-opacity="0.2" stroke="#a6e3a1" stroke-width="2" fill="none">
+                      <path d="M200 205C230 170 250 150 270 120" />
+                      <path d="M270 160C310 150 340 130 370 100" />
+                      <path d="M180 140C210 130 240 110 262 80" />
+                    </g>
+                    <g>
+                      <path d="M170 120C150 90 185 70 210 88C232 104 214 142 188 140C180 139 174 130 170 120Z" fill="#ff5f57" fill-opacity="0.55" stroke="#ff5f57" stroke-width="2" />
+                      <path d="M320 190C300 170 322 148 346 156C366 164 362 196 340 202C332 204 326 198 320 190Z" fill="#ffc857" fill-opacity="0.55" stroke="#ffc857" stroke-width="2" />
+                      <path d="M360 80C350 66 372 54 386 64C398 74 388 92 374 92C368 92 364 86 360 80Z" fill="#ff5f57" fill-opacity="0.55" stroke="#ff5f57" stroke-width="2" />
+                    </g>
+                    <g font-family="Manrope, sans-serif" font-size="11" font-weight="700" fill="#fff">
+                      <rect x="24" y="24" width="12" height="12" rx="3" fill="#ff5f57" /><text x="42" y="34">Blight</text>
+                      <rect x="24" y="46" width="12" height="12" rx="3" fill="#ffc857" /><text x="42" y="56">Rust</text>
+                      <rect x="24" y="68" width="12" height="12" rx="3" fill="#3f9b53" /><text x="42" y="78">Healthy</text>
+                    </g>
+                  </svg>
+                </div>
+              </div>
+            </article>
+
+            <!-- Case 3: medical classification -->
+            <article class="card case reveal" style="--glow: rgba(255, 200, 87, 0.15)">
+              <div class="txt">
+                <span class="label">Healthcare · 2024</span>
+                <h3>Explainable chest X-ray classification</h3>
+                <ul>
+                  <li>94% AUC on a held-out test set</li>
+                  <li>Grad-CAM heatmaps for clinician review</li>
+                </ul>
+                <a class="btn" href="#">View case study <span aria-hidden="true">↗</span></a>
+              </div>
+              <div class="shot">
+                <div class="win">
+                  <div class="win-bar"><i></i><i></i><i></i><span>classify · vit-b16</span></div>
+                  <svg viewBox="0 0 520 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="X-ray with heatmap and class probabilities">
+                    <defs>
+                      <radialGradient id="x-lung" cx="0.5" cy="0.5" r="0.6">
+                        <stop offset="0" stop-color="#9fb4c0" stop-opacity="0.8" />
+                        <stop offset="1" stop-color="#3c5260" stop-opacity="0.2" />
+                      </radialGradient>
+                      <radialGradient id="x-heat" cx="0.5" cy="0.5" r="0.5">
+                        <stop offset="0" stop-color="#ff5f57" stop-opacity="0.85" />
+                        <stop offset="0.55" stop-color="#ffc857" stop-opacity="0.5" />
+                        <stop offset="1" stop-color="#ffc857" stop-opacity="0" />
+                      </radialGradient>
+                    </defs>
+                    <rect width="520" height="300" fill="#0a141b" />
+                    <rect x="40" y="26" width="220" height="250" rx="10" fill="#0e1d27" />
+                    <ellipse cx="108" cy="150" rx="46" ry="86" fill="url(#x-lung)" />
+                    <ellipse cx="192" cy="150" rx="46" ry="86" fill="url(#x-lung)" />
+                    <rect x="146" y="56" width="8" height="200" rx="4" fill="#6c8696" fill-opacity="0.6" />
+                    <g stroke="#6c8696" stroke-opacity="0.35" stroke-width="3" fill="none">
+                      <path d="M70 110C110 100 130 104 150 120" />
+                      <path d="M70 140C110 130 130 134 150 150" />
+                      <path d="M230 110C190 100 170 104 150 120" />
+                      <path d="M230 140C190 130 170 134 150 150" />
+                    </g>
+                    <circle cx="190" cy="172" r="40" fill="url(#x-heat)" />
+                    <g font-family="Manrope, sans-serif" font-size="12" font-weight="700" fill="#fff">
+                      <text x="300" y="70">Prediction</text>
+                      <text x="300" y="112" fill-opacity="0.7">Pneumonia</text>
+                      <rect x="300" y="120" width="190" height="10" rx="5" fill="#ffffff" fill-opacity="0.1" />
+                      <rect x="300" y="120" width="177" height="10" rx="5" fill="#cffd7a" />
+                      <text x="470" y="112" text-anchor="end" fill="#cffd7a">93%</text>
+                      <text x="300" y="160" fill-opacity="0.7">Normal</text>
+                      <rect x="300" y="168" width="190" height="10" rx="5" fill="#ffffff" fill-opacity="0.1" />
+                      <rect x="300" y="168" width="14" height="10" rx="5" fill="#4df2b0" />
+                      <text x="470" y="160" text-anchor="end" fill-opacity="0.7">4%</text>
+                      <text x="300" y="208" fill-opacity="0.7">Other</text>
+                      <rect x="300" y="216" width="190" height="10" rx="5" fill="#ffffff" fill-opacity="0.1" />
+                      <rect x="300" y="216" width="8" height="10" rx="4" fill="#ffc857" />
+                      <text x="470" y="208" text-anchor="end" fill-opacity="0.7">3%</text>
+                    </g>
+                  </svg>
+                </div>
+              </div>
+            </article>
+
+            <!-- Case 4: OCR -->
+            <article class="card case reveal" style="--glow: rgba(77, 242, 176, 0.16)">
+              <div class="txt">
+                <span class="label">Fintech · 2024</span>
+                <h3>Invoice OCR and layout understanding pipeline</h3>
+                <ul>
+                  <li>98% field-level extraction accuracy</li>
+                  <li>Processes 5,000 documents per hour</li>
+                </ul>
+                <a class="btn" href="#">View case study <span aria-hidden="true">↗</span></a>
+              </div>
+              <div class="shot">
+                <div class="win">
+                  <div class="win-bar"><i></i><i></i><i></i><span>ocr · layout-parser</span></div>
+                  <svg viewBox="0 0 520 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Document with detected fields and extracted data">
+                    <rect width="520" height="300" fill="#0a141b" />
+                    <rect x="36" y="22" width="224" height="256" rx="6" fill="#e9eef0" />
+                    <g fill="#9aa8b0">
+                      <rect x="54" y="42" width="90" height="10" rx="2" />
+                      <rect x="54" y="78" width="150" height="6" rx="2" />
+                      <rect x="54" y="94" width="120" height="6" rx="2" />
+                      <rect x="54" y="132" width="180" height="6" rx="2" />
+                      <rect x="54" y="148" width="160" height="6" rx="2" />
+                      <rect x="54" y="164" width="170" height="6" rx="2" />
+                      <rect x="54" y="180" width="110" height="6" rx="2" />
+                    </g>
+                    <g fill="none" stroke-width="2">
+                      <rect x="50" y="36" width="100" height="22" rx="3" stroke="#4df2b0" />
+                      <rect x="50" y="72" width="160" height="34" rx="3" stroke="#cffd7a" />
+                      <rect x="150" y="214" width="90" height="26" rx="3" stroke="#ffc857" />
+                    </g>
+                    <text x="160" y="232" font-family="Manrope, sans-serif" font-size="13" font-weight="800" fill="#0b1a24">$1,240.00</text>
+                    <g font-family="Manrope, sans-serif" font-size="9" font-weight="800" fill="#04130d">
+                      <rect x="50" y="26" width="44" height="12" rx="2" fill="#4df2b0" /><text x="54" y="35">VENDOR</text>
+                      <rect x="50" y="62" width="62" height="12" rx="2" fill="#cffd7a" /><text x="54" y="71">BILL TO</text>
+                      <rect x="150" y="204" width="40" height="12" rx="2" fill="#ffc857" /><text x="154" y="213">TOTAL</text>
+                    </g>
+                    <g font-family="ui-monospace, Menlo, Consolas, monospace" font-size="12">
+                      <text x="290" y="64" fill="#ffffff" fill-opacity="0.5">{</text>
+                      <text x="304" y="90" fill="#4df2b0">"vendor"<tspan fill="#fff" fill-opacity="0.6">: </tspan><tspan fill="#cffd7a">"Acme Co."</tspan></text>
+                      <text x="304" y="116" fill="#4df2b0">"bill_to"<tspan fill="#fff" fill-opacity="0.6">: </tspan><tspan fill="#cffd7a">"Demo Ltd."</tspan></text>
+                      <text x="304" y="142" fill="#4df2b0">"date"<tspan fill="#fff" fill-opacity="0.6">: </tspan><tspan fill="#cffd7a">"2025-03-14"</tspan></text>
+                      <text x="304" y="168" fill="#4df2b0">"total"<tspan fill="#fff" fill-opacity="0.6">: </tspan><tspan fill="#ffc857">1240.00</tspan></text>
+                      <text x="304" y="194" fill="#4df2b0">"conf"<tspan fill="#fff" fill-opacity="0.6">: </tspan><tspan fill="#ffc857">0.98</tspan></text>
+                      <text x="290" y="220" fill="#ffffff" fill-opacity="0.5">}</text>
+                    </g>
+                  </svg>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="band" aria-hidden="true">
+          <div class="track" data-loop>
+            <span>Object Detection</span>
+            <span>Image Segmentation</span>
+            <span>Classification</span>
+            <span>Pose Estimation</span>
+            <span>OCR</span>
+            <span>Edge AI</span>
+            <span>Model Optimization</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= BLOG ================= -->
+      <section class="section" id="blog">
+        <div class="wrap">
+          <div class="head reveal">
+            <span class="eyebrow">Thoughts and notes</span>
+            <h2>Read My Narrative</h2>
+            <p>Lessons from training, breaking and shipping vision models</p>
+          </div>
+          <div class="posts">
+            <a class="card post reveal" href="#">
+              <div>
+                <small>Training</small>
+                <h3>Training YOLO on a tiny dataset without overfitting</h3>
+              </div>
+              <span class="round-arrow" aria-hidden="true">→</span>
+            </a>
+            <a class="card post reveal" href="#">
+              <div>
+                <small>Deployment</small>
+                <h3>From PyTorch to TensorRT: shipping models to the edge</h3>
+              </div>
+              <span class="round-arrow" aria-hidden="true">→</span>
+            </a>
+            <a class="card post reveal" href="#">
+              <div>
+                <small>Evaluation</small>
+                <h3>Why a perfect-looking mask still fails in production</h3>
+              </div>
+              <span class="round-arrow" aria-hidden="true">→</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= SERVICES ================= -->
+      <section class="section" id="services">
+        <div class="wrap">
+          <div class="head reveal">
+            <span class="eyebrow">My services</span>
+            <h2>Diverse Services To Meet Needs</h2>
+            <p>From first prototype to a model running in production</p>
+          </div>
+          <div class="services">
+            <article class="card service reveal">
+              <div class="art">
+                <svg viewBox="0 0 200 120" role="img" aria-label="Detection frame">
+                  <rect x="8" y="8" width="184" height="104" rx="10" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.12)" />
+                  <g fill="none" stroke="#cffd7a" stroke-width="2">
+                    <rect x="34" y="34" width="52" height="58" rx="3" />
+                    <rect x="106" y="48" width="58" height="44" rx="3" stroke="#4df2b0" />
+                  </g>
+                  <g stroke="#cffd7a" stroke-width="3" fill="none" stroke-linecap="round">
+                    <path d="M18 28V18H28" /><path d="M182 28V18H172" /><path d="M18 92V102H28" /><path d="M182 92V102H172" />
+                  </g>
+                </svg>
+              </div>
+              <h3>Computer Vision Systems</h3>
+              <p>Detection, tracking and recognition pipelines built around your camera data.</p>
+            </article>
+
+            <article class="card service wide reveal">
+              <div class="art">
+                <div class="chips">
+                  <span class="chip" style="--r: -4deg">Detection</span>
+                  <span class="chip" style="--r: 3deg">Segmentation</span>
+                  <span class="chip" style="--r: -2deg">Classification</span>
+                  <span class="chip" style="--r: 4deg">Tracking</span>
+                  <span class="chip" style="--r: -3deg">Pose</span>
+                  <span class="chip" style="--r: 2deg">OCR</span>
+                  <span class="chip" style="--r: -4deg">Depth</span>
+                  <span class="chip" style="--r: 3deg">Anomaly Detection</span>
+                </div>
+              </div>
+              <h3>Deep Learning Model Development</h3>
+              <p>Custom architectures, fine-tuning and honest evaluation on your own data.</p>
+            </article>
+
+            <article class="card service wide reveal">
+              <div class="art">
+                <div class="bars" aria-label="Latency before and after optimization">
+                  <div><b style="--h: 1"></b>FP32</div>
+                  <div><b style="--h: 0.58"></b>FP16</div>
+                  <div><b style="--h: 0.34"></b>INT8</div>
+                  <div><b style="--h: 0.22"></b>TRT</div>
+                </div>
+              </div>
+              <h3>Optimization and Edge Deployment</h3>
+              <p>Quantization, ONNX and TensorRT to hit real-time latency on small hardware.</p>
+            </article>
+
+            <article class="card service reveal">
+              <div class="art">
+                <div class="flow">
+                  <span>Label</span><i>→</i><span>Train</span><i>→</i><span>Ship</span>
+                </div>
+              </div>
+              <h3>Data and MLOps</h3>
+              <p>Annotation workflows, versioning and monitoring that keep models healthy.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= ABOUT ================= -->
+      <section class="section" id="about">
+        <div class="wrap about">
+          <div class="reveal">
+            <span class="eyebrow">About me</span>
+            <h2>Know who am I</h2>
+            <h3>My journey in few words</h3>
+            <p>
+              I'm a Python engineer focused on deep learning and computer
+              vision. I've trained and shipped models for detection,
+              segmentation and document understanding, from agriculture to
+              retail, and I enjoy the full path from raw data to a model running
+              on real hardware. I'm the founder of SoftDev, where I also build
+              automation systems for businesses.
+            </p>
+            <a class="btn btn-ghost" href="mailto:nashitsaleem9@gmail.com">Get in touch <span aria-hidden="true">→</span></a>
+          </div>
+          <div class="polaroid-wrap reveal">
+            <figure class="polaroid">
+              <img src="../assets/img/nashitsaleem.svg" alt="Nashit Saleem" />
+            </figure>
+            <span class="cursor-tag" aria-hidden="true">
+              <svg viewBox="0 0 16 16" width="16" height="16"><path d="M2 1.5l11 5.2-4.6 1.6L6.7 13z" fill="#cdeed1" stroke="#0b1a24" stroke-width="1" stroke-linejoin="round" /></svg>
+              <em>Nashit Saleem</em>
+            </span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= FAQ ================= -->
+      <section class="section" id="faq">
+        <div class="wrap">
+          <div class="head reveal">
+            <span class="eyebrow">Some doubts</span>
+            <h2>Frequently Asked Questions</h2>
+            <p>Your answers await right here</p>
+          </div>
+          <div class="faq">
+            <aside class="card talk reveal">
+              <h3>Have any more questions or want to start collaborating?</h3>
+              <div class="scan">
+                <svg viewBox="0 0 400 240" role="img" aria-label="Pose estimation keypoints">
+                  <defs>
+                    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+                      <circle cx="1" cy="1" r="1" fill="rgba(255,255,255,0.1)" />
+                    </pattern>
+                  </defs>
+                  <rect width="400" height="240" fill="url(#grid)" />
+                  <g stroke="#cffd7a" stroke-width="3" stroke-linecap="round" fill="none">
+                    <path d="M200 70V130" />
+                    <path d="M200 88L160 112L146 150" />
+                    <path d="M200 88L240 112L254 150" />
+                    <path d="M200 130L176 170L170 212" />
+                    <path d="M200 130L224 170L230 212" />
+                  </g>
+                  <g fill="#4df2b0">
+                    <circle cx="200" cy="48" r="16" fill="none" stroke="#4df2b0" stroke-width="3" />
+                    <circle cx="200" cy="88" r="5" /><circle cx="160" cy="112" r="5" /><circle cx="146" cy="150" r="5" />
+                    <circle cx="240" cy="112" r="5" /><circle cx="254" cy="150" r="5" /><circle cx="200" cy="130" r="5" />
+                    <circle cx="176" cy="170" r="5" /><circle cx="170" cy="212" r="5" /><circle cx="224" cy="170" r="5" /><circle cx="230" cy="212" r="5" />
+                  </g>
+                  <g stroke="rgba(255,255,255,0.5)" stroke-width="3" fill="none" stroke-linecap="round">
+                    <path d="M120 24V14H130" /><path d="M280 24V14H270" /><path d="M120 224V234H130" /><path d="M280 224V234H270" />
+                  </g>
+                </svg>
+              </div>
+              <a class="btn btn-light" href="mailto:nashitsaleem9@gmail.com">👋 Let's talk</a>
+              <small>* Response time is typically around 12 hours</small>
+            </aside>
+
+            <div class="qa reveal">
+              <details open>
+                <summary>Are you available for new projects?</summary>
+                <p>
+                  Yes. I take on a limited number of projects at a time. If you
+                  have a vision or deep learning problem in mind, send me a
+                  short description and we can find out if it's a good fit.
+                </p>
+              </details>
+              <details>
+                <summary>Which frameworks and tools do you work with?</summary>
+                <p>
+                  Mostly PyTorch and TensorFlow for training, OpenCV for
+                  classical vision, and ONNX or TensorRT for deployment. I'm
+                  comfortable with Hugging Face models and tools like CVAT for
+                  labeling.
+                </p>
+              </details>
+              <details>
+                <summary>Can you deploy models to edge devices?</summary>
+                <p>
+                  Yes. I optimize models with quantization and export them for
+                  GPUs, Jetson boards and mobile, aiming for real-time speed
+                  without giving up accuracy.
+                </p>
+              </details>
+              <details>
+                <summary>How do you handle small or messy datasets?</summary>
+                <p>
+                  I start by auditing the data, then use augmentation, transfer
+                  learning and active labeling to get the most out of what
+                  exists, and I'm upfront about what accuracy is realistic.
+                </p>
+              </details>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="foot">
+      <div class="foot-bar">
+        <span>Created by <strong>Nashit Saleem</strong></span>
+        <nav aria-label="Social links">
+          <a href="https://www.linkedin.com/in/nashitsaleem1/" target="_blank" rel="noopener">LinkedIn <span aria-hidden="true">↗</span></a>
+          <a href="https://github.com/Nashitsaleem1/" target="_blank" rel="noopener">GitHub <span aria-hidden="true">↗</span></a>
+          <a href="https://x.com/nashit_saleem" target="_blank" rel="noopener">X <span aria-hidden="true">↗</span></a>
+          <a href="https://nashitsaleem1.github.io/" rel="noopener">Main site <span aria-hidden="true">↗</span></a>
+        </nav>
+      </div>
+    </footer>
+
+    <script src="./script.js?v=1"></script>
+  </body>
+</html>
