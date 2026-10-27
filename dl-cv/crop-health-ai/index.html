@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crop-health AI for smart greenhouses | Nashit Saleem</title>
+    <meta name="description" content="Deep learning models for climate prediction, disease detection and yield estimation, feeding an IoT data warehouse and dashboard." />
+    <!-- Hidden extension site: not linked from the main portfolio and kept out of search results while it holds sample content. Remove this tag when it goes public. -->
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="theme-color" content="#081822" />
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="icon" href="/favicon-48.png" type="image/png" sizes="48x48" />
+    <link rel="icon" href="/favicon-192.png" type="image/png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap"
+    />
+    <link rel="stylesheet" href="../style.css?v=19" />
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+  </head>
+  <body>
+    <!-- HOW TO UPDATE: every "To add" box below is a placeholder. Replace the whole box (the div with class "todo") with your real text, number or image. -->
+    <nav class="nav" id="nav" aria-label="Primary">
+      <a href="../">Home</a>
+      <a href="../#works">Works</a>
+      <a href="../#about">About</a>
+      <a href="../#faq">FAQ</a>
+      <a class="nav-cta" href="mailto:nashitsaleem9@gmail.com">Let's talk</a>
+    </nav>
+
+    <main>
+      <header class="cs-hero">
+        <a class="back" href="../#works"><span aria-hidden="true">←</span> All case studies</a>
+        <span class="label">Research · 2025 – Present</span>
+        <h1>Crop-health AI for smart greenhouses</h1>
+        <p class="lead">Deep learning models for climate prediction, disease detection and yield estimation, feeding an IoT data warehouse and dashboard.</p>
+        <dl class="meta">
+          <div><dt>Role</dt><dd>Owner of the machine learning workstream</dd></div>
+          <div><dt>Timeline</dt><dd>2025 – Present</dd></div>
+          <div><dt>Context</dt><dd>MS thesis at Gebze Technical University, within the TÜBİTAK 1071 bilateral R&amp;D project</dd></div>
+          <div><dt>Tools</dt><dd>YOLO, UNet, LSTM, TSMixer</dd></div>
+        </dl>
+        <div class="cs-visual">
+          <div class="win">
+                  <div class="win-bar"><i></i><i></i><i></i><span>unet · fusarium_wilt</span></div>
+                  <svg viewBox="0 0 520 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Leaf with wilt regions highlighted">
+                    <defs>
+                      <radialGradient id="s-bg" cx="0.5" cy="0.45" r="0.8">
+                        <stop offset="0" stop-color="#1a3b2f" />
+                        <stop offset="1" stop-color="#0a1a1a" />
+                      </radialGradient>
+                      <linearGradient id="s-leaf" x1="0" y1="0" x2="1" y2="1">
+                        <stop offset="0" stop-color="#3f9b53" />
+                        <stop offset="1" stop-color="#1f6a3b" />
+                      </linearGradient>
+                    </defs>
+                    <rect width="520" height="300" fill="url(#s-bg)" />
+                    <path d="M120 250C80 150 150 50 300 40C420 34 470 100 440 190C410 270 220 300 120 250Z" fill="url(#s-leaf)" />
+                    <path d="M130 245C220 190 320 130 440 60" stroke="#a6e3a1" stroke-opacity="0.45" stroke-width="3" fill="none" />
+                    <g stroke-opacity="0.2" stroke="#a6e3a1" stroke-width="2" fill="none">
+                      <path d="M200 205C230 170 250 150 270 120" />
+                      <path d="M270 160C310 150 340 130 370 100" />
+                      <path d="M180 140C210 130 240 110 262 80" />
+                    </g>
+                    <g>
+                      <path d="M170 120C150 90 185 70 210 88C232 104 214 142 188 140C180 139 174 130 170 120Z" fill="#ff5f57" fill-opacity="0.55" stroke="#ff5f57" stroke-width="2" />
+                      <path d="M320 190C300 170 322 148 346 156C366 164 362 196 340 202C332 204 326 198 320 190Z" fill="#ffc857" fill-opacity="0.55" stroke="#ffc857" stroke-width="2" />
+                      <path d="M360 80C350 66 372 54 386 64C398 74 388 92 374 92C368 92 364 86 360 80Z" fill="#ff5f57" fill-opacity="0.55" stroke="#ff5f57" stroke-width="2" />
+                    </g>
+                    <g font-family="Manrope, sans-serif" font-size="11" font-weight="700" fill="#fff">
+                      <rect x="24" y="24" width="12" height="12" rx="3" fill="#ff5f57" /><text x="42" y="34">Wilt</text>
+                      <rect x="24" y="46" width="12" height="12" rx="3" fill="#ffc857" /><text x="42" y="56">Stressed</text>
+                      <rect x="24" y="68" width="12" height="12" rx="3" fill="#3f9b53" /><text x="42" y="78">Healthy</text>
+                    </g>
+                  </svg>
+                </div>
+        </div>
+      </header>
+
+      <div class="cs-wrap">
+        <section class="cs-block reveal" id="overview">
+          <span class="eyebrow">Overview</span>
+          <h2>What this project is</h2>
+          <p>The same TÜBİTAK 1071 project needs models that watch both the crop and the climate. I build the machine learning side: predicting micro-climate parameters, monitoring fruit size from NIR and RGB imagery, detecting Fusarium wilt and estimating yield.</p>
+          <p>These models feed an IoT data warehouse and a dashboard for the greenhouse. I later extended the thesis into a hybrid framework that couples biophysical crop models with deep learning.</p>
+          <div class="glance">
+            <div class="card"><small>Type</small><strong>Research, MS thesis</strong></div>
+            <div class="card"><small>Status</small><strong>Ongoing</strong></div>
+            <div class="card"><small>Data</small><strong>NIR and RGB imagery, IoT climate data</strong></div>
+            <div class="card"><small>Output</small><strong>Paper in preparation (2026)</strong></div>
+          </div>
+        </section>
+
+        <section class="cs-block reveal" id="problem">
+          <span class="eyebrow">The problem</span>
+          <h2>What needed solving</h2>
+          <p>Growers need forecasts and early warnings: what the climate will do, which plants are stressed or wilting, and what the harvest will look like. This work turns images and sensor data into those predictions.</p>
+          <div class="todo"><span class="pill">To add</span><p>Why this mattered: who needed it, how it was done before, and how big the problem was.</p></div>
+        </section>
+
+        <section class="cs-block reveal" id="role">
+          <span class="eyebrow">My role</span>
+          <h2>What I did</h2>
+          <ul class="ticks">
+            <li>Own the machine learning workstream within the 24-month bilateral project.</li>
+            <li>Build the prediction models for micro-climate and yield, and the vision models for Fusarium wilt detection and fruit size monitoring.</li>
+            <li>Extended the thesis into a hybrid framework coupling biophysical crop models with deep learning, including RGB-to-thermal translation for plant stress signals and zero-shot generalisation across greenhouse sites.</li>
+            <li>Contributed methodology, work packages and budget planning to a TÜBİTAK 1001 grant proposal on fungicide effects on root-associated fungi in tomatoes.</li>
+          </ul>
+          <div class="todo"><span class="pill">To add</span><p>Team size, who you worked with, and anything you owned beyond the points above.</p></div>
+        </section>
+
+        <section class="cs-block reveal" id="approach">
+          <span class="eyebrow">Approach</span>
+          <h2>How it works</h2>
+          <ol class="steps">
+            <li><div><h3>Data collection</h3><p>NIR and RGB imagery plus climate data, gathered in an IoT data warehouse.</p></div></li>
+            <li><div><h3>Vision models</h3><p>YOLO and UNet models for Fusarium wilt detection and fruit size monitoring.</p></div></li>
+            <li><div><h3>Time-series forecasting</h3><p>LSTM and TSMixer models for micro-climate prediction and yield estimation.</p></div></li>
+            <li><div><h3>Hybrid modelling</h3><p>Biophysical crop models coupled with deep learning, including RGB-to-thermal translation for plant stress signals.</p></div></li>
+            <li><div><h3>Generalisation</h3><p>Zero-shot generalisation across different greenhouse sites.</p></div></li>
+            <li><div><h3>Dashboard</h3><p>Predictions delivered through the IoT data warehouse and a greenhouse dashboard.</p></div></li>
+          </ol>
+          <div class="todo"><span class="pill">To add</span><p>An architecture or pipeline diagram, plus why you chose these methods over the alternatives.</p></div>
+        </section>
+
+        <section class="cs-block reveal" id="stack">
+          <span class="eyebrow">Tech stack</span>
+          <h2>Tools and methods</h2>
+          <div class="tags">
+            <span class="chip">YOLO</span>
+            <span class="chip">UNet</span>
+            <span class="chip">LSTM</span>
+            <span class="chip">TSMixer</span>
+            <span class="chip">RGB-to-thermal translation</span>
+            <span class="chip">Biophysical crop models</span>
+            <span class="chip">IoT data warehouse</span>
+          </div>
+        </section>
+
+        <section class="cs-block reveal" id="results">
+          <span class="eyebrow">Results</span>
+          <h2>What came out of it</h2>
+          <div class="stats">
+            <div class="card"><strong>—</strong><small>Wilt detection accuracy</small></div>
+            <div class="card"><strong>—</strong><small>Climate forecast error</small></div>
+            <div class="card"><strong>—</strong><small>Yield estimate error</small></div>
+          </div>
+          <div class="table-wrap"><table><thead><tr><th>Task</th><th>Model</th><th>Metric</th><th>Result</th></tr></thead><tbody><tr><td>Fusarium wilt detection</td><td>—</td><td>—</td><td>—</td></tr><tr><td>Micro-climate prediction</td><td>—</td><td>—</td><td>—</td></tr><tr><td>Yield estimation</td><td>—</td><td>—</td><td>—</td></tr></tbody></table></div>
+          <p class="note">Yield estimation and prediction results will appear in a paper currently in preparation (2026).</p>
+          <div class="todo"><span class="pill">To add</span><p>Real numbers for the "—" cells above: accuracy, error, speed or time saved. Only add figures you are happy to make public.</p></div>
+        </section>
+
+        <section class="cs-block reveal" id="gallery">
+          <span class="eyebrow">Gallery</span>
+          <h2>Screenshots and visuals</h2>
+          <div class="gallery">
+            <figure class="todo shot-todo"><span class="pill">To add</span><figcaption>Sample NIR and RGB images</figcaption></figure>
+            <figure class="todo shot-todo"><span class="pill">To add</span><figcaption>Wilt detection or segmentation result</figcaption></figure>
+            <figure class="todo shot-todo"><span class="pill">To add</span><figcaption>Greenhouse dashboard screenshot</figcaption></figure>
+          </div>
+        </section>
+
+        <section class="cs-block reveal" id="links">
+          <span class="eyebrow">Publications and links</span>
+          <h2>Learn more</h2>
+          <div class="card linkcard"><small>In preparation · 2026</small><strong>Yield Estimation and Prediction Models for Smart Greenhouses</strong></div>
+          <div class="todo"><span class="pill">To add</span><p>A link to a paper, demo or public write-up, if there is one you want to show.</p></div>
+        </section>
+
+        <nav class="cs-nav reveal" aria-label="Case study navigation">
+          <a class="prev" href="../tomato-sizing/"><small>Previous</small><span>Non-destructive tomato sizing with stereo vision</span></a>
+          <a class="next" href="../cctv-analytics/"><small>Next</small><span>CCTV analytics on on-prem GPUs</span></a>
+        </nav>
+
+        <section class="cs-cta reveal">
+          <h2>Interested in similar work?</h2>
+          <p>Tell me about your computer vision or deep learning problem and we can see if it's a good fit.</p>
+          <a class="btn btn-light" href="mailto:nashitsaleem9@gmail.com">👋 Let's talk</a>
+        </section>
+      </div>
+    </main>
+
+    <footer class="foot">
+      <div class="foot-bar">
+        <span>Created by <strong>Nashit Saleem</strong></span>
+        <nav aria-label="Social links">
+          <a href="https://www.linkedin.com/in/nashitsaleem1/" target="_blank" rel="noopener">LinkedIn <span aria-hidden="true">↗</span></a>
+          <a href="https://github.com/Nashitsaleem1?tab=repositories" target="_blank" rel="noopener">GitHub <span aria-hidden="true">↗</span></a>
+          <a href="https://twitter.com/Nashitsaleem1" target="_blank" rel="noopener">X <span aria-hidden="true">↗</span></a>
+          <a href="https://nashitsaleem1.github.io/" rel="noopener">Main site <span aria-hidden="true">↗</span></a>
+        </nav>
+      </div>
+    </footer>
+
+    <script src="../script.js?v=2"></script>
+  </body>
+</html>

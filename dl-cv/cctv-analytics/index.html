@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CCTV analytics on on-prem GPUs | Nashit Saleem</title>
+    <meta name="description" content="A detection and tracking pipeline that reads live camera streams and runs as a Python service on on-prem GPU hardware." />
+    <!-- Hidden extension site: not linked from the main portfolio and kept out of search results while it holds sample content. Remove this tag when it goes public. -->
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="theme-color" content="#081822" />
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="icon" href="/favicon-48.png" type="image/png" sizes="48x48" />
+    <link rel="icon" href="/favicon-192.png" type="image/png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap"
+    />
+    <link rel="stylesheet" href="../style.css?v=19" />
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+  </head>
+  <body>
+    <!-- HOW TO UPDATE: every "To add" box below is a placeholder. Replace the whole box (the div with class "todo") with your real text, number or image. -->
+    <nav class="nav" id="nav" aria-label="Primary">
+      <a href="../">Home</a>
+      <a href="../#works">Works</a>
+      <a href="../#about">About</a>
+      <a href="../#faq">FAQ</a>
+      <a class="nav-cta" href="mailto:nashitsaleem9@gmail.com">Let's talk</a>
+    </nav>
+
+    <main>
+      <header class="cs-hero">
+        <a class="back" href="../#works"><span aria-hidden="true">←</span> All case studies</a>
+        <span class="label">Independent clients · 2025 – Present</span>
+        <h1>CCTV analytics on on-prem GPUs</h1>
+        <p class="lead">A detection and tracking pipeline that reads live camera streams and runs as a Python service on on-prem GPU hardware.</p>
+        <dl class="meta">
+          <div><dt>Role</dt><dd>Computer vision engineer</dd></div>
+          <div><dt>Timeline</dt><dd>2025 – Present</dd></div>
+          <div><dt>Context</dt><dd>Independent client work</dd></div>
+          <div><dt>Tools</dt><dd>YOLO11, ByteTrack, OpenCV, FastAPI</dd></div>
+        </dl>
+        <div class="cs-visual">
+          <div class="win">
+                  <div class="win-bar"><i></i><i></i><i></i><span>yolo11 + bytetrack · rtsp</span></div>
+                  <svg viewBox="0 0 520 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Vehicles and a person tracked across a camera frame">
+                    <defs>
+                      <linearGradient id="c-bg" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0" stop-color="#173342" />
+                        <stop offset="1" stop-color="#0b1a24" />
+                      </linearGradient>
+                    </defs>
+                    <rect width="520" height="300" fill="url(#c-bg)" />
+                    <g fill="rgba(255,255,255,0.05)">
+                      <rect x="30" y="50" width="70" height="90" />
+                      <rect x="110" y="80" width="50" height="60" />
+                      <rect x="400" y="40" width="80" height="100" />
+                      <rect x="340" y="86" width="50" height="54" />
+                    </g>
+                    <polygon points="120,300 400,300 310,120 210,120" fill="#101c24" />
+                    <path d="M260 300V120" stroke="#fff" stroke-opacity="0.25" stroke-dasharray="10 12" stroke-width="3" />
+                    <g>
+                      <rect x="178" y="190" width="72" height="42" rx="7" fill="#2b6f8e" />
+                      <rect x="288" y="150" width="48" height="30" rx="5" fill="#c9a23a" />
+                      <rect x="362" y="172" width="16" height="40" rx="6" fill="#8a5bd8" />
+                    </g>
+                    <g fill="none" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="2 7" opacity="0.8">
+                      <path d="M214 300V234" stroke="#cffd7a" />
+                      <path d="M312 232V180" stroke="#ffc857" />
+                      <path d="M370 266V214" stroke="#4df2b0" />
+                    </g>
+                    <g fill="none" stroke-width="2">
+                      <rect x="172" y="184" width="84" height="54" rx="3" stroke="#cffd7a" />
+                      <rect x="282" y="144" width="60" height="42" rx="3" stroke="#ffc857" />
+                      <rect x="354" y="164" width="32" height="54" rx="3" stroke="#4df2b0" />
+                    </g>
+                    <g font-family="Manrope, sans-serif" font-size="10" font-weight="700" fill="#04130d">
+                      <rect x="172" y="168" width="74" height="16" rx="3" fill="#cffd7a" /><text x="177" y="179">car · id 3</text>
+                      <rect x="282" y="128" width="74" height="16" rx="3" fill="#ffc857" /><text x="287" y="139">car · id 12</text>
+                      <rect x="340" y="148" width="74" height="16" rx="3" fill="#4df2b0" /><text x="345" y="159">person · id 7</text>
+                    </g>
+                  </svg>
+                </div>
+        </div>
+      </header>
+
+      <div class="cs-wrap">
+        <section class="cs-block reveal" id="overview">
+          <span class="eyebrow">Overview</span>
+          <h2>What this project is</h2>
+          <p>I build computer vision services for independent clients. One of them is a CCTV analytics pipeline that reads camera streams over RTSP, detects and tracks what appears in them, and runs as a Python service on the client's own GPU hardware.</p>
+          <p>A second part of the work generates drone orthomosaics using epipolar geometry, with the results stored in S3-backed storage.</p>
+          <div class="glance">
+            <div class="card"><small>Type</small><strong>Client work</strong></div>
+            <div class="card"><small>Status</small><strong>Ongoing</strong></div>
+            <div class="card"><small>Deployment</small><strong>On-prem GPU hardware</strong></div>
+            <div class="card"><small>Input</small><strong>RTSP camera streams</strong></div>
+          </div>
+        </section>
+
+        <section class="cs-block reveal" id="problem">
+          <span class="eyebrow">The problem</span>
+          <h2>What needed solving</h2>
+          <p>Turn raw camera footage into structured detections and tracks, on hardware the client controls.</p>
+          <div class="todo"><span class="pill">To add</span><p>Why this mattered: who needed it, how it was done before, and how big the problem was.</p></div>
+        </section>
+
+        <section class="cs-block reveal" id="role">
+          <span class="eyebrow">My role</span>
+          <h2>What I did</h2>
+          <ul class="ticks">
+            <li>Built the detection and tracking pipeline for CCTV streams.</li>
+            <li>Packaged it as a Python service for on-prem GPU hardware.</li>
+            <li>Built drone orthomosaic generation using epipolar geometry, with S3-backed result storage.</li>
+          </ul>
+          <div class="todo"><span class="pill">To add</span><p>Team size, who you worked with, and anything you owned beyond the points above.</p></div>
+        </section>
+
+        <section class="cs-block reveal" id="approach">
+          <span class="eyebrow">Approach</span>
+          <h2>How it works</h2>
+          <ol class="steps">
+            <li><div><h3>Ingest</h3><p>Read live camera feeds over RTSP.</p></div></li>
+            <li><div><h3>Detect</h3><p>YOLO11 detects objects in each frame.</p></div></li>
+            <li><div><h3>Track</h3><p>ByteTrack links detections across frames into tracks.</p></div></li>
+            <li><div><h3>Serve</h3><p>The pipeline is packaged as a Python service (FastAPI) for on-prem GPU hardware.</p></div></li>
+            <li><div><h3>Orthomosaics</h3><p>A separate workflow builds drone orthomosaics using epipolar geometry, with results in S3-compatible storage.</p></div></li>
+          </ol>
+          <div class="todo"><span class="pill">To add</span><p>An architecture or pipeline diagram, plus why you chose these methods over the alternatives.</p></div>
+        </section>
+
+        <section class="cs-block reveal" id="stack">
+          <span class="eyebrow">Tech stack</span>
+          <h2>Tools and methods</h2>
+          <div class="tags">
+            <span class="chip">YOLO11</span>
+            <span class="chip">ByteTrack</span>
+            <span class="chip">OpenCV</span>
+            <span class="chip">FastAPI</span>
+            <span class="chip">Python</span>
+            <span class="chip">Epipolar geometry</span>
+            <span class="chip">S3-compatible storage</span>
+          </div>
+        </section>
+
+        <section class="cs-block reveal" id="results">
+          <span class="eyebrow">Results</span>
+          <h2>What came out of it</h2>
+          <div class="stats">
+            <div class="card"><strong>—</strong><small>Camera streams</small></div>
+            <div class="card"><strong>—</strong><small>Throughput (FPS)</small></div>
+            <div class="card"><strong>—</strong><small>Detection quality</small></div>
+          </div>
+          <div class="table-wrap"><table><thead><tr><th>Metric</th><th>Result</th></tr></thead><tbody><tr><td>Detection accuracy</td><td>—</td></tr><tr><td>Tracking quality</td><td>—</td></tr><tr><td>Throughput per GPU</td><td>—</td></tr><tr><td>Streams supported</td><td>—</td></tr></tbody></table></div>
+          <p class="note">Client details are confidential. Add only what you are allowed to share publicly.</p>
+          <div class="todo"><span class="pill">To add</span><p>Real numbers for the "—" cells above: accuracy, error, speed or time saved. Only add figures you are happy to make public.</p></div>
+        </section>
+
+        <section class="cs-block reveal" id="gallery">
+          <span class="eyebrow">Gallery</span>
+          <h2>Screenshots and visuals</h2>
+          <div class="gallery">
+            <figure class="todo shot-todo"><span class="pill">To add</span><figcaption>Annotated frame (hide any sensitive details)</figcaption></figure>
+            <figure class="todo shot-todo"><span class="pill">To add</span><figcaption>Pipeline architecture diagram</figcaption></figure>
+            <figure class="todo shot-todo"><span class="pill">To add</span><figcaption>Drone orthomosaic example</figcaption></figure>
+          </div>
+        </section>
+
+        <section class="cs-block reveal" id="links">
+          <span class="eyebrow">Publications and links</span>
+          <h2>Learn more</h2>
+
+          <div class="todo"><span class="pill">To add</span><p>A link to a paper, demo or public write-up, if there is one you want to show.</p></div>
+        </section>
+
+        <nav class="cs-nav reveal" aria-label="Case study navigation">
+          <a class="prev" href="../crop-health-ai/"><small>Previous</small><span>Crop-health AI for smart greenhouses</span></a>
+          <a class="next" href="../speech-video-sync/"><small>Next</small><span>Speech recognition and synchronised video generation</span></a>
+        </nav>
+
+        <section class="cs-cta reveal">
+          <h2>Interested in similar work?</h2>
+          <p>Tell me about your computer vision or deep learning problem and we can see if it's a good fit.</p>
+          <a class="btn btn-light" href="mailto:nashitsaleem9@gmail.com">👋 Let's talk</a>
+        </section>
+      </div>
+    </main>
+
+    <footer class="foot">
+      <div class="foot-bar">
+        <span>Created by <strong>Nashit Saleem</strong></span>
+        <nav aria-label="Social links">
+          <a href="https://www.linkedin.com/in/nashitsaleem1/" target="_blank" rel="noopener">LinkedIn <span aria-hidden="true">↗</span></a>
+          <a href="https://github.com/Nashitsaleem1?tab=repositories" target="_blank" rel="noopener">GitHub <span aria-hidden="true">↗</span></a>
+          <a href="https://twitter.com/Nashitsaleem1" target="_blank" rel="noopener">X <span aria-hidden="true">↗</span></a>
+          <a href="https://nashitsaleem1.github.io/" rel="noopener">Main site <span aria-hidden="true">↗</span></a>
+        </nav>
+      </div>
+    </footer>
+
+    <script src="../script.js?v=2"></script>
+  </body>
+</html>

@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Non-destructive tomato sizing with stereo vision | Nashit Saleem</title>
+    <meta name="description" content="A stereo-vision pipeline that measures tomato size without touching the fruit, built for a live greenhouse as part of my MS thesis." />
+    <!-- Hidden extension site: not linked from the main portfolio and kept out of search results while it holds sample content. Remove this tag when it goes public. -->
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="theme-color" content="#081822" />
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="icon" href="/favicon-48.png" type="image/png" sizes="48x48" />
+    <link rel="icon" href="/favicon-192.png" type="image/png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap"
+    />
+    <link rel="stylesheet" href="../style.css?v=19" />
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+  </head>
+  <body>
+    <!-- HOW TO UPDATE: every "To add" box below is a placeholder. Replace the whole box (the div with class "todo") with your real text, number or image. -->
+    <nav class="nav" id="nav" aria-label="Primary">
+      <a href="../">Home</a>
+      <a href="../#works">Works</a>
+      <a href="../#about">About</a>
+      <a href="../#faq">FAQ</a>
+      <a class="nav-cta" href="mailto:nashitsaleem9@gmail.com">Let's talk</a>
+    </nav>
+
+    <main>
+      <header class="cs-hero">
+        <a class="back" href="../#works"><span aria-hidden="true">←</span> All case studies</a>
+        <span class="label">Research · 2025 – Present</span>
+        <h1>Non-destructive tomato sizing with stereo vision</h1>
+        <p class="lead">A stereo-vision pipeline that measures tomato size without touching the fruit, built for a live greenhouse as part of my MS thesis.</p>
+        <dl class="meta">
+          <div><dt>Role</dt><dd>Owner of the machine learning workstream</dd></div>
+          <div><dt>Timeline</dt><dd>2025 – Present</dd></div>
+          <div><dt>Context</dt><dd>MS thesis at Gebze Technical University, within the TÜBİTAK 1071 bilateral R&amp;D project</dd></div>
+          <div><dt>Tools</dt><dd>OpenCV, StereoSGBM, RAFT-Stereo, ChArUco</dd></div>
+        </dl>
+        <div class="cs-visual">
+          <div class="win">
+                  <div class="win-bar"><i></i><i></i><i></i><span>stereo_sizing · raft-stereo</span></div>
+                  <svg viewBox="0 0 520 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="RGB image next to its depth map with a diameter measurement">
+                    <defs>
+                      <radialGradient id="t-red" cx="0.35" cy="0.3" r="0.8">
+                        <stop offset="0" stop-color="#ff8a70" />
+                        <stop offset="1" stop-color="#c2412d" />
+                      </radialGradient>
+                      <radialGradient id="t-depth" cx="0.5" cy="0.5" r="0.55">
+                        <stop offset="0" stop-color="#ffd84d" />
+                        <stop offset="0.6" stop-color="#4df2b0" />
+                        <stop offset="1" stop-color="#2b7fb0" />
+                      </radialGradient>
+                      <linearGradient id="t-scale" x1="0" y1="0" x2="1" y2="0">
+                        <stop offset="0" stop-color="#ffd84d" />
+                        <stop offset="0.5" stop-color="#4df2b0" />
+                        <stop offset="1" stop-color="#2b4fb0" />
+                      </linearGradient>
+                    </defs>
+                    <rect width="520" height="300" fill="#0a141b" />
+                    <rect x="20" y="24" width="228" height="200" rx="12" fill="#12303a" />
+                    <path d="M20 224C60 120 120 90 150 110C190 70 230 90 248 140V212C248 218 242 224 236 224Z" fill="#1f5a3a" opacity="0.65" />
+                    <g>
+                      <circle cx="90" cy="150" r="28" fill="url(#t-red)" />
+                      <circle cx="150" cy="170" r="24" fill="url(#t-red)" />
+                      <circle cx="200" cy="140" r="20" fill="url(#t-red)" />
+                      <path d="M82 124l8 8 8-8" stroke="#2f9a55" stroke-width="3" fill="none" stroke-linecap="round" />
+                      <path d="M143 148l7 7 7-7" stroke="#2f9a55" stroke-width="3" fill="none" stroke-linecap="round" />
+                    </g>
+                    <rect x="58" y="118" width="64" height="64" rx="3" fill="none" stroke="#cffd7a" stroke-width="2" />
+                    <rect x="58" y="102" width="46" height="16" rx="3" fill="#cffd7a" />
+                    <text x="63" y="114" font-family="Manrope, sans-serif" font-size="10" font-weight="700" fill="#04130d">tomato</text>
+
+                    <rect x="272" y="24" width="228" height="200" rx="12" fill="#0d2a44" />
+                    <g>
+                      <circle cx="342" cy="150" r="28" fill="url(#t-depth)" />
+                      <circle cx="402" cy="170" r="24" fill="url(#t-depth)" opacity="0.85" />
+                      <circle cx="452" cy="140" r="20" fill="url(#t-depth)" opacity="0.7" />
+                    </g>
+                    <path d="M314 150H370M314 140V160M370 140V160" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" />
+                    <rect x="290" y="94" width="104" height="18" rx="4" fill="#fff" />
+                    <text x="297" y="107" font-family="Manrope, sans-serif" font-size="11" font-weight="800" fill="#0b1a24">Ø from 3D points</text>
+
+                    <g font-family="Manrope, sans-serif" font-size="12" font-weight="600" fill="#fff" fill-opacity="0.6">
+                      <text x="20" y="246">Left image (RGB)</text>
+                      <text x="272" y="246">Disparity → depth</text>
+                      <text x="272" y="288">near</text>
+                      <text x="500" y="288" text-anchor="end">far</text>
+                    </g>
+                    <rect x="272" y="258" width="228" height="8" rx="4" fill="url(#t-scale)" />
+                  </svg>
+                </div>
+        </div>
+      </header>
+
+      <div class="cs-wrap">
+        <section class="cs-block reveal" id="overview">
+          <span class="eyebrow">Overview</span>
+          <h2>What this project is</h2>
+          <p>This project is part of my MS thesis at Gebze Technical University, within the TÜBİTAK 1071 / ARDEB 124N905 bilateral R&amp;D project between Türkiye and Pakistan. I own the machine learning workstream, and fruit sizing is one of its core computer vision tasks.</p>
+          <p>The goal is to estimate the size of tomatoes in a live greenhouse without touching or damaging them, using a stereo camera rig and depth estimation.</p>
+          <div class="glance">
+            <div class="card"><small>Type</small><strong>Research, MS thesis</strong></div>
+            <div class="card"><small>Status</small><strong>Ongoing</strong></div>
+            <div class="card"><small>Setting</small><strong>Live greenhouse</strong></div>
+            <div class="card"><small>Output</small><strong>Conference paper in preparation (2026)</strong></div>
+          </div>
+        </section>
+
+        <section class="cs-block reveal" id="problem">
+          <span class="eyebrow">The problem</span>
+          <h2>What needed solving</h2>
+          <p>Fruit size is a key signal for growth monitoring and yield estimation. This project measures it automatically and without contact, inside a working greenhouse.</p>
+          <div class="todo"><span class="pill">To add</span><p>Why this mattered: who needed it, how it was done before, and how big the problem was.</p></div>
+        </section>
+
+        <section class="cs-block reveal" id="role">
+          <span class="eyebrow">My role</span>
+          <h2>What I did</h2>
+          <ul class="ticks">
+            <li>Own the machine learning workstream within the 24-month bilateral project (GTU, NUST, CX Technology and FFC-FACE).</li>
+            <li>Built the end-to-end stereo measurement pipeline for non-destructive fruit sizing.</li>
+            <li>Designed the three-model comparison framework that will form the basis of a conference paper.</li>
+            <li>Presented project work at a GTU bilateral workshop on greenhouse dashboards and digital twins.</li>
+          </ul>
+          <div class="todo"><span class="pill">To add</span><p>Team size, who you worked with, and anything you owned beyond the points above.</p></div>
+        </section>
+
+        <section class="cs-block reveal" id="approach">
+          <span class="eyebrow">Approach</span>
+          <h2>How it works</h2>
+          <ol class="steps">
+            <li><div><h3>Capture rig</h3><p>A stereo capture rig with auto-exposure stabilisation, used in a live greenhouse.</p></div></li>
+            <li><div><h3>Stereo calibration</h3><p>ChArUco-board calibration of the stereo camera pair.</p></div></li>
+            <li><div><h3>Depth estimation</h3><p>Disparity computed with cv2.StereoSGBM and with the deep model RAFT-Stereo.</p></div></li>
+            <li><div><h3>3D sizing</h3><p>Disparity reprojected to 3D with cv2.reprojectImageTo3D to measure the fruit.</p></div></li>
+            <li><div><h3>Three-model comparison</h3><p>A framework comparing a rule-based method, an RGB-only CNN and an RGB+Depth fusion model.</p></div></li>
+          </ol>
+          <div class="todo"><span class="pill">To add</span><p>An architecture or pipeline diagram, plus why you chose these methods over the alternatives.</p></div>
+        </section>
+
+        <section class="cs-block reveal" id="stack">
+          <span class="eyebrow">Tech stack</span>
+          <h2>Tools and methods</h2>
+          <div class="tags">
+            <span class="chip">OpenCV</span>
+            <span class="chip">cv2.StereoSGBM</span>
+            <span class="chip">RAFT-Stereo</span>
+            <span class="chip">ChArUco calibration</span>
+            <span class="chip">3D reprojection</span>
+            <span class="chip">RGB-only CNN</span>
+            <span class="chip">RGB+Depth fusion</span>
+          </div>
+        </section>
+
+        <section class="cs-block reveal" id="results">
+          <span class="eyebrow">Results</span>
+          <h2>What came out of it</h2>
+          <div class="stats">
+            <div class="card"><strong>—</strong><small>Sizing error</small></div>
+            <div class="card"><strong>3</strong><small>Methods compared</small></div>
+            <div class="card"><strong>—</strong><small>Throughput</small></div>
+          </div>
+          <div class="table-wrap"><table><thead><tr><th>Method</th><th>Input</th><th>Size error</th><th>Notes</th></tr></thead><tbody><tr><td>Rule-based</td><td>—</td><td>—</td><td>—</td></tr><tr><td>RGB-only CNN</td><td>RGB</td><td>—</td><td>—</td></tr><tr><td>RGB+Depth fusion</td><td>RGB + depth</td><td>—</td><td>—</td></tr></tbody></table></div>
+          <p class="note">Full results will appear in a conference paper on non-destructive tomato sizing (in preparation, 2026).</p>
+          <div class="todo"><span class="pill">To add</span><p>Real numbers for the "—" cells above: accuracy, error, speed or time saved. Only add figures you are happy to make public.</p></div>
+        </section>
+
+        <section class="cs-block reveal" id="gallery">
+          <span class="eyebrow">Gallery</span>
+          <h2>Screenshots and visuals</h2>
+          <div class="gallery">
+            <figure class="todo shot-todo"><span class="pill">To add</span><figcaption>Photo of the stereo capture rig</figcaption></figure>
+            <figure class="todo shot-todo"><span class="pill">To add</span><figcaption>ChArUco calibration board</figcaption></figure>
+            <figure class="todo shot-todo"><span class="pill">To add</span><figcaption>Disparity and depth map from a greenhouse image</figcaption></figure>
+          </div>
+        </section>
+
+        <section class="cs-block reveal" id="links">
+          <span class="eyebrow">Publications and links</span>
+          <h2>Learn more</h2>
+          <div class="card linkcard"><small>In preparation · 2026</small><strong>Non-destructive Tomato Sizing: A Three-Model Comparison</strong></div>
+          <div class="todo"><span class="pill">To add</span><p>A link to a paper, demo or public write-up, if there is one you want to show.</p></div>
+        </section>
+
+        <nav class="cs-nav reveal" aria-label="Case study navigation">
+          <a class="prev" href="../speech-video-sync/"><small>Previous</small><span>Speech recognition and synchronised video generation</span></a>
+          <a class="next" href="../crop-health-ai/"><small>Next</small><span>Crop-health AI for smart greenhouses</span></a>
+        </nav>
+
+        <section class="cs-cta reveal">
+          <h2>Interested in similar work?</h2>
+          <p>Tell me about your computer vision or deep learning problem and we can see if it's a good fit.</p>
+          <a class="btn btn-light" href="mailto:nashitsaleem9@gmail.com">👋 Let's talk</a>
+        </section>
+      </div>
+    </main>
+
+    <footer class="foot">
+      <div class="foot-bar">
+        <span>Created by <strong>Nashit Saleem</strong></span>
+        <nav aria-label="Social links">
+          <a href="https://www.linkedin.com/in/nashitsaleem1/" target="_blank" rel="noopener">LinkedIn <span aria-hidden="true">↗</span></a>
+          <a href="https://github.com/Nashitsaleem1?tab=repositories" target="_blank" rel="noopener">GitHub <span aria-hidden="true">↗</span></a>
+          <a href="https://twitter.com/Nashitsaleem1" target="_blank" rel="noopener">X <span aria-hidden="true">↗</span></a>
+          <a href="https://nashitsaleem1.github.io/" rel="noopener">Main site <span aria-hidden="true">↗</span></a>
+        </nav>
+      </div>
+    </footer>
+
+    <script src="../script.js?v=2"></script>
+  </body>
+</html>

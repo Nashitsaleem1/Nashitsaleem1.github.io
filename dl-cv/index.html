@@ -6,7 +6,7 @@
     <title>Nashit Saleem | Deep Learning &amp; Computer Vision</title>
     <meta
       name="description"
-      content="Deep learning and computer vision work by Nashit Saleem: object detection, segmentation, OCR and edge deployment."
+      content="Deep learning and computer vision work by Nashit Saleem: stereo vision, detection and tracking, segmentation and smart-greenhouse AI research at Gebze Technical University."
     />
     <!-- Hidden extension site: not linked from the main portfolio and kept out of search results while it holds sample content. Remove this tag when it goes public. -->
     <meta name="robots" content="noindex, nofollow" />
@@ -21,7 +21,7 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap"
     />
-    <link rel="stylesheet" href="./style.css?v=15" />
+    <link rel="stylesheet" href="./style.css?v=19" />
     <script>
       document.documentElement.classList.add("js");
     </script>
@@ -56,12 +56,12 @@
         <span class="sparkle" style="right: 28%; top: 16%; width: 12px; height: 12px; animation-delay: -5s" aria-hidden="true"><svg><use href="#star" /></svg></span>
 
         <div class="hero-inner">
-          <img class="avatar" src="../favicon-192.png" alt="Nashit Saleem" width="54" height="54" />
+          <img class="avatar" src="../favicon-192.png" alt="Nashit Saleem" width="84" height="84" />
           <div class="badge"><i></i> Available for opportunities</div>
           <h1>Teaching machines<br class="br-wide" /> to <em>see</em>, learn and understand</h1>
           <p>
-            I'm Nashit, a deep learning and computer vision engineer.<br class="br-wide" />
-            I build models that detect, segment and understand the visual world.
+            I'm Nashit, an AI engineer and researcher based in Türkiye.<br class="br-wide" />
+            I build vision and deep learning systems, from research to production.
           </p>
           <div class="hero-actions">
             <a class="btn btn-light" href="mailto:nashitsaleem9@gmail.com">👋 Let's talk</a>
@@ -74,11 +74,12 @@
             <span>PyTorch</span>
             <span>TensorFlow</span>
             <span>OpenCV</span>
-            <span>YOLO</span>
-            <span>ONNX</span>
-            <span>TensorRT</span>
-            <span>CUDA</span>
-            <span>Hugging Face</span>
+            <span>YOLO11</span>
+            <span>ByteTrack</span>
+            <span>UNet</span>
+            <span>RAFT-Stereo</span>
+            <span>FastAPI</span>
+            <span>Docker</span>
           </div>
         </div>
       </header>
@@ -89,89 +90,92 @@
           <div class="head reveal">
             <span class="eyebrow">Curated work</span>
             <h2>Featured Case Studies</h2>
-            <p>A few vision and deep learning projects I'm proud of</p>
+            <p>Computer vision and deep learning, from research to production</p>
           </div>
 
           <div class="cases">
-            <!-- Case 1: detection -->
-            <article class="card case reveal" style="--glow: rgba(77, 242, 176, 0.2)">
+            <!-- Case 1: stereo tomato sizing -->
+            <article class="card case reveal" style="--glow: rgba(255, 138, 112, 0.2)">
               <div class="txt">
-                <span class="label">Retail · 2025</span>
-                <h3>Real-time shelf monitoring with object detection</h3>
+                <span class="label">Research · 2025 – Present</span>
+                <h3>Non-destructive tomato sizing with stereo vision</h3>
                 <ul>
-                  <li>mAP@50 improved to 91.4%</li>
-                  <li>Inference down to 18 ms on edge GPU</li>
+                  <li>StereoSGBM and RAFT-Stereo depth, 3D sizing</li>
+                  <li>Rule-based vs RGB CNN vs RGB+Depth fusion</li>
                 </ul>
-                <a class="btn" href="#">View case study <span aria-hidden="true">↗</span></a>
+                <a class="btn" href="./tomato-sizing/">View case study <span aria-hidden="true">↗</span></a>
               </div>
               <div class="shot">
                 <div class="win">
-                  <div class="win-bar"><i></i><i></i><i></i><span>detect.py · 18 ms</span></div>
-                  <svg viewBox="0 0 520 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Product detection boxes on a shelf">
+                  <div class="win-bar"><i></i><i></i><i></i><span>stereo_sizing · raft-stereo</span></div>
+                  <svg viewBox="0 0 520 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="RGB image next to its depth map with a diameter measurement">
                     <defs>
-                      <linearGradient id="d-bg" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="0" stop-color="#173342" />
-                        <stop offset="1" stop-color="#0b1a24" />
+                      <radialGradient id="t-red" cx="0.35" cy="0.3" r="0.8">
+                        <stop offset="0" stop-color="#ff8a70" />
+                        <stop offset="1" stop-color="#c2412d" />
+                      </radialGradient>
+                      <radialGradient id="t-depth" cx="0.5" cy="0.5" r="0.55">
+                        <stop offset="0" stop-color="#ffd84d" />
+                        <stop offset="0.6" stop-color="#4df2b0" />
+                        <stop offset="1" stop-color="#2b7fb0" />
+                      </radialGradient>
+                      <linearGradient id="t-scale" x1="0" y1="0" x2="1" y2="0">
+                        <stop offset="0" stop-color="#ffd84d" />
+                        <stop offset="0.5" stop-color="#4df2b0" />
+                        <stop offset="1" stop-color="#2b4fb0" />
                       </linearGradient>
                     </defs>
-                    <rect width="520" height="300" fill="url(#d-bg)" />
-                    <g fill="rgba(255,255,255,0.06)">
-                      <rect x="0" y="108" width="520" height="6" />
-                      <rect x="0" y="206" width="520" height="6" />
-                    </g>
+                    <rect width="520" height="300" fill="#0a141b" />
+                    <rect x="20" y="24" width="228" height="200" rx="12" fill="#12303a" />
+                    <path d="M20 224C60 120 120 90 150 110C190 70 230 90 248 140V212C248 218 242 224 236 224Z" fill="#1f5a3a" opacity="0.65" />
                     <g>
-                      <rect x="34" y="58" width="44" height="50" rx="5" fill="#2b6f8e" />
-                      <rect x="86" y="46" width="40" height="62" rx="5" fill="#8a5bd8" />
-                      <rect x="134" y="62" width="52" height="46" rx="5" fill="#3aa88a" />
-                      <rect x="212" y="52" width="46" height="56" rx="5" fill="#d9664a" />
-                      <rect x="266" y="64" width="42" height="44" rx="5" fill="#2b6f8e" />
-                      <rect x="332" y="48" width="50" height="60" rx="5" fill="#c9a23a" />
-                      <rect x="40" y="148" width="54" height="58" rx="5" fill="#3aa88a" />
-                      <rect x="104" y="160" width="44" height="46" rx="5" fill="#d9664a" />
-                      <rect x="188" y="142" width="48" height="64" rx="5" fill="#8a5bd8" />
-                      <rect x="252" y="156" width="56" height="50" rx="5" fill="#2b6f8e" />
-                      <rect x="346" y="146" width="44" height="60" rx="5" fill="#c9a23a" />
-                      <rect x="410" y="154" width="50" height="52" rx="5" fill="#3aa88a" />
-                      <rect x="60" y="246" width="60" height="50" rx="5" fill="#d9664a" />
-                      <rect x="160" y="238" width="48" height="58" rx="5" fill="#2b6f8e" />
-                      <rect x="270" y="244" width="52" height="52" rx="5" fill="#8a5bd8" />
+                      <circle cx="90" cy="150" r="28" fill="url(#t-red)" />
+                      <circle cx="150" cy="170" r="24" fill="url(#t-red)" />
+                      <circle cx="200" cy="140" r="20" fill="url(#t-red)" />
+                      <path d="M82 124l8 8 8-8" stroke="#2f9a55" stroke-width="3" fill="none" stroke-linecap="round" />
+                      <path d="M143 148l7 7 7-7" stroke="#2f9a55" stroke-width="3" fill="none" stroke-linecap="round" />
                     </g>
-                    <g fill="none" stroke-width="2">
-                      <rect x="30" y="54" width="52" height="58" rx="3" stroke="#cffd7a" />
-                      <rect x="82" y="42" width="48" height="70" rx="3" stroke="#4df2b0" />
-                      <rect x="208" y="48" width="54" height="64" rx="3" stroke="#cffd7a" />
-                      <rect x="328" y="44" width="58" height="68" rx="3" stroke="#ffc857" />
-                      <rect x="184" y="138" width="56" height="72" rx="3" stroke="#4df2b0" />
-                      <rect x="342" y="142" width="52" height="68" rx="3" stroke="#cffd7a" />
+                    <rect x="58" y="118" width="64" height="64" rx="3" fill="none" stroke="#cffd7a" stroke-width="2" />
+                    <rect x="58" y="102" width="46" height="16" rx="3" fill="#cffd7a" />
+                    <text x="63" y="114" font-family="Manrope, sans-serif" font-size="10" font-weight="700" fill="#04130d">tomato</text>
+
+                    <rect x="272" y="24" width="228" height="200" rx="12" fill="#0d2a44" />
+                    <g>
+                      <circle cx="342" cy="150" r="28" fill="url(#t-depth)" />
+                      <circle cx="402" cy="170" r="24" fill="url(#t-depth)" opacity="0.85" />
+                      <circle cx="452" cy="140" r="20" fill="url(#t-depth)" opacity="0.7" />
                     </g>
-                    <g font-family="Manrope, sans-serif" font-size="10" font-weight="700" fill="#04130d">
-                      <rect x="30" y="38" width="62" height="16" rx="3" fill="#cffd7a" /><text x="35" y="49">bottle 0.97</text>
-                      <rect x="82" y="26" width="52" height="16" rx="3" fill="#4df2b0" /><text x="87" y="37">box 0.94</text>
-                      <rect x="208" y="32" width="62" height="16" rx="3" fill="#cffd7a" /><text x="213" y="43">can 0.92</text>
-                      <rect x="328" y="28" width="52" height="16" rx="3" fill="#ffc857" /><text x="333" y="39">jar 0.88</text>
-                      <rect x="184" y="122" width="62" height="16" rx="3" fill="#4df2b0" /><text x="189" y="133">bottle 0.95</text>
-                      <rect x="342" y="126" width="52" height="16" rx="3" fill="#cffd7a" /><text x="347" y="137">can 0.91</text>
+                    <path d="M314 150H370M314 140V160M370 140V160" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" />
+                    <rect x="290" y="94" width="104" height="18" rx="4" fill="#fff" />
+                    <text x="297" y="107" font-family="Manrope, sans-serif" font-size="11" font-weight="800" fill="#0b1a24">Ø from 3D points</text>
+
+                    <g font-family="Manrope, sans-serif" font-size="12" font-weight="600" fill="#fff" fill-opacity="0.6">
+                      <text x="20" y="246">Left image (RGB)</text>
+                      <text x="272" y="246">Disparity → depth</text>
+                      <text x="272" y="288">near</text>
+                      <text x="500" y="288" text-anchor="end">far</text>
                     </g>
+                    <rect x="272" y="258" width="228" height="8" rx="4" fill="url(#t-scale)" />
                   </svg>
                 </div>
               </div>
             </article>
 
-            <!-- Case 2: segmentation -->
+            <!-- Case 2: crop health / wilt segmentation -->
             <article class="card case reveal" style="--glow: rgba(207, 253, 122, 0.18)">
               <div class="txt">
-                <span class="label">Agriculture · 2025</span>
-                <h3>Crop disease segmentation from drone imagery</h3>
+                <span class="label">Research · 2025 – Present</span>
+                <h3>Crop-health AI for smart greenhouses</h3>
                 <ul>
-                  <li>Mean IoU of 0.82 across 6 disease classes</li>
-                  <li>Field survey time cut by 70%</li>
+                  <li>Fusarium wilt detection from NIR and RGB imagery</li>
+                  <li>LSTM and TSMixer climate prediction into an IoT warehouse</li>
                 </ul>
-                <a class="btn" href="#">View case study <span aria-hidden="true">↗</span></a>
+                <a class="btn" href="./crop-health-ai/">View case study <span aria-hidden="true">↗</span></a>
               </div>
               <div class="shot">
                 <div class="win">
-                  <div class="win-bar"><i></i><i></i><i></i><span>segment · unet-r34</span></div>
-                  <svg viewBox="0 0 520 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Leaf with disease regions highlighted">
+                  <div class="win-bar"><i></i><i></i><i></i><span>unet · fusarium_wilt</span></div>
+                  <svg viewBox="0 0 520 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Leaf with wilt regions highlighted">
                     <defs>
                       <radialGradient id="s-bg" cx="0.5" cy="0.45" r="0.8">
                         <stop offset="0" stop-color="#1a3b2f" />
@@ -196,8 +200,8 @@
                       <path d="M360 80C350 66 372 54 386 64C398 74 388 92 374 92C368 92 364 86 360 80Z" fill="#ff5f57" fill-opacity="0.55" stroke="#ff5f57" stroke-width="2" />
                     </g>
                     <g font-family="Manrope, sans-serif" font-size="11" font-weight="700" fill="#fff">
-                      <rect x="24" y="24" width="12" height="12" rx="3" fill="#ff5f57" /><text x="42" y="34">Blight</text>
-                      <rect x="24" y="46" width="12" height="12" rx="3" fill="#ffc857" /><text x="42" y="56">Rust</text>
+                      <rect x="24" y="24" width="12" height="12" rx="3" fill="#ff5f57" /><text x="42" y="34">Wilt</text>
+                      <rect x="24" y="46" width="12" height="12" rx="3" fill="#ffc857" /><text x="42" y="56">Stressed</text>
                       <rect x="24" y="68" width="12" height="12" rx="3" fill="#3f9b53" /><text x="42" y="78">Healthy</text>
                     </g>
                   </svg>
@@ -205,110 +209,98 @@
               </div>
             </article>
 
-            <!-- Case 3: medical classification -->
-            <article class="card case reveal" style="--glow: rgba(255, 200, 87, 0.15)">
+            <!-- Case 3: CCTV analytics -->
+            <article class="card case reveal" style="--glow: rgba(77, 242, 176, 0.2)">
               <div class="txt">
-                <span class="label">Healthcare · 2024</span>
-                <h3>Explainable chest X-ray classification</h3>
+                <span class="label">Independent clients · 2025 – Present</span>
+                <h3>CCTV analytics on on-prem GPUs</h3>
                 <ul>
-                  <li>94% AUC on a held-out test set</li>
-                  <li>Grad-CAM heatmaps for clinician review</li>
+                  <li>YOLO11 and ByteTrack over RTSP streams</li>
+                  <li>Drone orthomosaics with epipolar geometry</li>
                 </ul>
-                <a class="btn" href="#">View case study <span aria-hidden="true">↗</span></a>
+                <a class="btn" href="./cctv-analytics/">View case study <span aria-hidden="true">↗</span></a>
               </div>
               <div class="shot">
                 <div class="win">
-                  <div class="win-bar"><i></i><i></i><i></i><span>classify · vit-b16</span></div>
-                  <svg viewBox="0 0 520 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="X-ray with heatmap and class probabilities">
+                  <div class="win-bar"><i></i><i></i><i></i><span>yolo11 + bytetrack · rtsp</span></div>
+                  <svg viewBox="0 0 520 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Vehicles and a person tracked across a camera frame">
                     <defs>
-                      <radialGradient id="x-lung" cx="0.5" cy="0.5" r="0.6">
-                        <stop offset="0" stop-color="#9fb4c0" stop-opacity="0.8" />
-                        <stop offset="1" stop-color="#3c5260" stop-opacity="0.2" />
-                      </radialGradient>
-                      <radialGradient id="x-heat" cx="0.5" cy="0.5" r="0.5">
-                        <stop offset="0" stop-color="#ff5f57" stop-opacity="0.85" />
-                        <stop offset="0.55" stop-color="#ffc857" stop-opacity="0.5" />
-                        <stop offset="1" stop-color="#ffc857" stop-opacity="0" />
-                      </radialGradient>
+                      <linearGradient id="c-bg" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0" stop-color="#173342" />
+                        <stop offset="1" stop-color="#0b1a24" />
+                      </linearGradient>
                     </defs>
-                    <rect width="520" height="300" fill="#0a141b" />
-                    <rect x="40" y="26" width="220" height="250" rx="10" fill="#0e1d27" />
-                    <ellipse cx="108" cy="150" rx="46" ry="86" fill="url(#x-lung)" />
-                    <ellipse cx="192" cy="150" rx="46" ry="86" fill="url(#x-lung)" />
-                    <rect x="146" y="56" width="8" height="200" rx="4" fill="#6c8696" fill-opacity="0.6" />
-                    <g stroke="#6c8696" stroke-opacity="0.35" stroke-width="3" fill="none">
-                      <path d="M70 110C110 100 130 104 150 120" />
-                      <path d="M70 140C110 130 130 134 150 150" />
-                      <path d="M230 110C190 100 170 104 150 120" />
-                      <path d="M230 140C190 130 170 134 150 150" />
+                    <rect width="520" height="300" fill="url(#c-bg)" />
+                    <g fill="rgba(255,255,255,0.05)">
+                      <rect x="30" y="50" width="70" height="90" />
+                      <rect x="110" y="80" width="50" height="60" />
+                      <rect x="400" y="40" width="80" height="100" />
+                      <rect x="340" y="86" width="50" height="54" />
                     </g>
-                    <circle cx="190" cy="172" r="40" fill="url(#x-heat)" />
-                    <g font-family="Manrope, sans-serif" font-size="12" font-weight="700" fill="#fff">
-                      <text x="300" y="70">Prediction</text>
-                      <text x="300" y="112" fill-opacity="0.7">Pneumonia</text>
-                      <rect x="300" y="120" width="190" height="10" rx="5" fill="#ffffff" fill-opacity="0.1" />
-                      <rect x="300" y="120" width="177" height="10" rx="5" fill="#cffd7a" />
-                      <text x="470" y="112" text-anchor="end" fill="#cffd7a">93%</text>
-                      <text x="300" y="160" fill-opacity="0.7">Normal</text>
-                      <rect x="300" y="168" width="190" height="10" rx="5" fill="#ffffff" fill-opacity="0.1" />
-                      <rect x="300" y="168" width="14" height="10" rx="5" fill="#4df2b0" />
-                      <text x="470" y="160" text-anchor="end" fill-opacity="0.7">4%</text>
-                      <text x="300" y="208" fill-opacity="0.7">Other</text>
-                      <rect x="300" y="216" width="190" height="10" rx="5" fill="#ffffff" fill-opacity="0.1" />
-                      <rect x="300" y="216" width="8" height="10" rx="4" fill="#ffc857" />
-                      <text x="470" y="208" text-anchor="end" fill-opacity="0.7">3%</text>
+                    <polygon points="120,300 400,300 310,120 210,120" fill="#101c24" />
+                    <path d="M260 300V120" stroke="#fff" stroke-opacity="0.25" stroke-dasharray="10 12" stroke-width="3" />
+                    <g>
+                      <rect x="178" y="190" width="72" height="42" rx="7" fill="#2b6f8e" />
+                      <rect x="288" y="150" width="48" height="30" rx="5" fill="#c9a23a" />
+                      <rect x="362" y="172" width="16" height="40" rx="6" fill="#8a5bd8" />
+                    </g>
+                    <g fill="none" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="2 7" opacity="0.8">
+                      <path d="M214 300V234" stroke="#cffd7a" />
+                      <path d="M312 232V180" stroke="#ffc857" />
+                      <path d="M370 266V214" stroke="#4df2b0" />
+                    </g>
+                    <g fill="none" stroke-width="2">
+                      <rect x="172" y="184" width="84" height="54" rx="3" stroke="#cffd7a" />
+                      <rect x="282" y="144" width="60" height="42" rx="3" stroke="#ffc857" />
+                      <rect x="354" y="164" width="32" height="54" rx="3" stroke="#4df2b0" />
+                    </g>
+                    <g font-family="Manrope, sans-serif" font-size="10" font-weight="700" fill="#04130d">
+                      <rect x="172" y="168" width="74" height="16" rx="3" fill="#cffd7a" /><text x="177" y="179">car · id 3</text>
+                      <rect x="282" y="128" width="74" height="16" rx="3" fill="#ffc857" /><text x="287" y="139">car · id 12</text>
+                      <rect x="340" y="148" width="74" height="16" rx="3" fill="#4df2b0" /><text x="345" y="159">person · id 7</text>
                     </g>
                   </svg>
                 </div>
               </div>
             </article>
 
-            <!-- Case 4: OCR -->
+            <!-- Case 4: speech alignment -->
             <article class="card case reveal" style="--glow: rgba(77, 242, 176, 0.16)">
               <div class="txt">
-                <span class="label">Fintech · 2024</span>
-                <h3>Invoice OCR and layout understanding pipeline</h3>
+                <span class="label">UET Taxila · 2022 – 2023</span>
+                <h3>Speech recognition and synchronised video generation</h3>
                 <ul>
-                  <li>98% field-level extraction accuracy</li>
-                  <li>Processes 5,000 documents per hour</li>
+                  <li>Editing cut from ~5 hours to 5 minutes</li>
+                  <li>Basis of a peer-reviewed ICoDT2 paper (2024)</li>
                 </ul>
-                <a class="btn" href="#">View case study <span aria-hidden="true">↗</span></a>
+                <a class="btn" href="./speech-video-sync/">View case study <span aria-hidden="true">↗</span></a>
               </div>
               <div class="shot">
                 <div class="win">
-                  <div class="win-bar"><i></i><i></i><i></i><span>ocr · layout-parser</span></div>
-                  <svg viewBox="0 0 520 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Document with detected fields and extracted data">
+                  <div class="win-bar"><i></i><i></i><i></i><span>forced_alignment · video_gen</span></div>
+                  <svg viewBox="0 0 520 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Audio waveform aligned with timed text segments">
                     <rect width="520" height="300" fill="#0a141b" />
-                    <rect x="36" y="22" width="224" height="256" rx="6" fill="#e9eef0" />
-                    <g fill="#9aa8b0">
-                      <rect x="54" y="42" width="90" height="10" rx="2" />
-                      <rect x="54" y="78" width="150" height="6" rx="2" />
-                      <rect x="54" y="94" width="120" height="6" rx="2" />
-                      <rect x="54" y="132" width="180" height="6" rx="2" />
-                      <rect x="54" y="148" width="160" height="6" rx="2" />
-                      <rect x="54" y="164" width="170" height="6" rx="2" />
-                      <rect x="54" y="180" width="110" height="6" rx="2" />
+                    <g stroke-width="3.5" stroke-linecap="round" fill="none">
+                      <path d="M30 92V108M38 65V135M46 51V149M54 56V144M62 70V130M70 80V120M78 79V121M86 71V129M94 68V132M102 81V119M110 77V123M118 52V148M126 41V159M134 51V149M142 72V128M150 89V111M158 89V111M166 90V110M174 87V113M182 88V112M190 68V132M198 47V153M206 41V159M214 55V145M222 81V119M230 79V121M238 70V130M246 74V126" stroke="#cffd7a" />
+                      <path d="M254 81V119M262 79V121M270 67V133M278 53V147M286 51V149M294 68V132M302 88V112M310 62V138M318 53V147M326 60V140M334 73V127M342 80V120M350 76V124M358 67V133M366 67V133M374 84V116M382 73V127M390 49V151M398 42V158M406 54V146M414 75V125M422 90V110M430 92V108M438 87V113M446 86V114M454 86V114M462 63V137M470 44V156M478 42V158M486 59V141M494 85V115M502 78V122" stroke="#ffffff" stroke-opacity="0.32" />
                     </g>
-                    <g fill="none" stroke-width="2">
-                      <rect x="50" y="36" width="100" height="22" rx="3" stroke="#4df2b0" />
-                      <rect x="50" y="72" width="160" height="34" rx="3" stroke="#cffd7a" />
-                      <rect x="150" y="214" width="90" height="26" rx="3" stroke="#ffc857" />
+                    <path d="M254 28V172" stroke="#cffd7a" stroke-width="2" />
+                    <circle cx="254" cy="28" r="5" fill="#cffd7a" />
+                    <g stroke-width="1.5">
+                      <rect x="30" y="196" width="70" height="30" rx="8" fill="#cffd7a" fill-opacity="0.9" stroke="none" />
+                      <rect x="106" y="196" width="54" height="30" rx="8" fill="#cffd7a" fill-opacity="0.9" stroke="none" />
+                      <rect x="166" y="196" width="84" height="30" rx="8" fill="#cffd7a" fill-opacity="0.9" stroke="none" />
+                      <rect x="258" y="196" width="62" height="30" rx="8" fill="#cffd7a" fill-opacity="0.12" stroke="#cffd7a" />
+                      <rect x="326" y="196" width="78" height="30" rx="8" fill="#cffd7a" fill-opacity="0.12" stroke="#cffd7a" />
+                      <rect x="410" y="196" width="80" height="30" rx="8" fill="#cffd7a" fill-opacity="0.12" stroke="#cffd7a" />
                     </g>
-                    <text x="160" y="232" font-family="Manrope, sans-serif" font-size="13" font-weight="800" fill="#0b1a24">$1,240.00</text>
-                    <g font-family="Manrope, sans-serif" font-size="9" font-weight="800" fill="#04130d">
-                      <rect x="50" y="26" width="44" height="12" rx="2" fill="#4df2b0" /><text x="54" y="35">VENDOR</text>
-                      <rect x="50" y="62" width="62" height="12" rx="2" fill="#cffd7a" /><text x="54" y="71">BILL TO</text>
-                      <rect x="150" y="204" width="40" height="12" rx="2" fill="#ffc857" /><text x="154" y="213">TOTAL</text>
+                    <g font-family="ui-monospace, Menlo, Consolas, monospace" font-size="10" font-weight="700" fill="#04130d">
+                      <text x="40" y="215">00:00</text><text x="114" y="215">00:03</text><text x="178" y="215">00:05</text>
                     </g>
-                    <g font-family="ui-monospace, Menlo, Consolas, monospace" font-size="12">
-                      <text x="290" y="64" fill="#ffffff" fill-opacity="0.5">{</text>
-                      <text x="304" y="90" fill="#4df2b0">"vendor"<tspan fill="#fff" fill-opacity="0.6">: </tspan><tspan fill="#cffd7a">"Acme Co."</tspan></text>
-                      <text x="304" y="116" fill="#4df2b0">"bill_to"<tspan fill="#fff" fill-opacity="0.6">: </tspan><tspan fill="#cffd7a">"Demo Ltd."</tspan></text>
-                      <text x="304" y="142" fill="#4df2b0">"date"<tspan fill="#fff" fill-opacity="0.6">: </tspan><tspan fill="#cffd7a">"2025-03-14"</tspan></text>
-                      <text x="304" y="168" fill="#4df2b0">"total"<tspan fill="#fff" fill-opacity="0.6">: </tspan><tspan fill="#ffc857">1240.00</tspan></text>
-                      <text x="304" y="194" fill="#4df2b0">"conf"<tspan fill="#fff" fill-opacity="0.6">: </tspan><tspan fill="#ffc857">0.98</tspan></text>
-                      <text x="290" y="220" fill="#ffffff" fill-opacity="0.5">}</text>
+                    <g font-family="ui-monospace, Menlo, Consolas, monospace" font-size="10" font-weight="700" fill="#cffd7a">
+                      <text x="268" y="215">00:08</text><text x="336" y="215">00:11</text><text x="420" y="215">00:14</text>
                     </g>
+                    <text x="30" y="262" font-family="Manrope, sans-serif" font-size="12" font-weight="600" fill="#ffffff" fill-opacity="0.6">Audio → forced alignment → timed segments → rendered video</text>
                   </svg>
                 </div>
               </div>
@@ -319,46 +311,46 @@
         <div class="band" aria-hidden="true">
           <div class="track" data-loop>
             <span>Object Detection</span>
+            <span>Stereo Vision</span>
             <span>Image Segmentation</span>
-            <span>Classification</span>
-            <span>Pose Estimation</span>
-            <span>OCR</span>
-            <span>Edge AI</span>
-            <span>Model Optimization</span>
+            <span>Multi-Object Tracking</span>
+            <span>Time-Series Forecasting</span>
+            <span>Speech Recognition</span>
+            <span>Model Deployment</span>
           </div>
         </div>
       </section>
 
-      <!-- ================= BLOG ================= -->
-      <section class="section" id="blog">
+      <!-- ================= RESEARCH ================= -->
+      <section class="section" id="research">
         <div class="wrap">
           <div class="head reveal">
-            <span class="eyebrow">Thoughts and notes</span>
-            <h2>Read My Narrative</h2>
-            <p>Lessons from training, breaking and shipping vision models</p>
+            <span class="eyebrow">Research and publications</span>
+            <h2>Papers and Ongoing Research</h2>
+            <p>Peer-reviewed work and papers currently in preparation</p>
           </div>
           <div class="posts">
-            <a class="card post reveal" href="#">
+            <article class="card post reveal">
               <div>
-                <small>Training</small>
-                <h3>Training YOLO on a tiny dataset without overfitting</h3>
+                <span class="pill done">Published · 2024</span>
+                <h3>Automation of Quranic Content Creation by Leveraging Speech Recognition</h3>
               </div>
-              <span class="round-arrow" aria-hidden="true">→</span>
-            </a>
-            <a class="card post reveal" href="#">
+              <p class="post-meta">4th International Conference on Digital Futures and Transformative Technologies (ICoDT2)</p>
+            </article>
+            <article class="card post reveal">
               <div>
-                <small>Deployment</small>
-                <h3>From PyTorch to TensorRT: shipping models to the edge</h3>
+                <span class="pill">In preparation · 2026</span>
+                <h3>Yield Estimation and Prediction Models for Smart Greenhouses</h3>
               </div>
-              <span class="round-arrow" aria-hidden="true">→</span>
-            </a>
-            <a class="card post reveal" href="#">
+              <p class="post-meta">Part of the TÜBİTAK 1071 bilateral research project (Türkiye – Pakistan)</p>
+            </article>
+            <article class="card post reveal">
               <div>
-                <small>Evaluation</small>
-                <h3>Why a perfect-looking mask still fails in production</h3>
+                <span class="pill">In preparation · 2026</span>
+                <h3>Non-destructive Tomato Sizing: A Three-Model Comparison</h3>
               </div>
-              <span class="round-arrow" aria-hidden="true">→</span>
-            </a>
+              <p class="post-meta">Rule-based, RGB-only CNN and RGB+Depth fusion approaches</p>
+            </article>
           </div>
         </div>
       </section>
@@ -386,7 +378,7 @@
                 </svg>
               </div>
               <h3>Computer Vision Systems</h3>
-              <p>Detection, tracking and recognition pipelines built around your camera data.</p>
+              <p>Detection, tracking and stereo-vision pipelines with YOLO11, ByteTrack and OpenCV.</p>
             </article>
 
             <article class="card service wide reveal">
@@ -394,40 +386,81 @@
                 <div class="chips">
                   <span class="chip" style="--r: -4deg">Detection</span>
                   <span class="chip" style="--r: 3deg">Segmentation</span>
-                  <span class="chip" style="--r: -2deg">Classification</span>
+                  <span class="chip" style="--r: -2deg">Stereo Depth</span>
                   <span class="chip" style="--r: 4deg">Tracking</span>
-                  <span class="chip" style="--r: -3deg">Pose</span>
-                  <span class="chip" style="--r: 2deg">OCR</span>
-                  <span class="chip" style="--r: -4deg">Depth</span>
-                  <span class="chip" style="--r: 3deg">Anomaly Detection</span>
+                  <span class="chip" style="--r: -3deg">Time-Series</span>
+                  <span class="chip" style="--r: 2deg">Speech</span>
+                  <span class="chip" style="--r: -4deg">NLP</span>
+                  <span class="chip" style="--r: 3deg">Forecasting</span>
                 </div>
               </div>
               <h3>Deep Learning Model Development</h3>
-              <p>Custom architectures, fine-tuning and honest evaluation on your own data.</p>
+              <p>CNNs, UNet, LSTM and TSMixer models built, evaluated and compared on your own data.</p>
             </article>
 
             <article class="card service wide reveal">
               <div class="art">
-                <div class="bars" aria-label="Latency before and after optimization">
-                  <div><b style="--h: 1"></b>FP32</div>
-                  <div><b style="--h: 0.58"></b>FP16</div>
-                  <div><b style="--h: 0.34"></b>INT8</div>
-                  <div><b style="--h: 0.22"></b>TRT</div>
+                <div class="flow">
+                  <span>Model</span><i>→</i><span>FastAPI</span><i>→</i><span>Docker</span><i>→</i><span>Kubernetes</span><i>→</i><span>CI/CD</span>
                 </div>
               </div>
-              <h3>Optimization and Edge Deployment</h3>
-              <p>Quantization, ONNX and TensorRT to hit real-time latency on small hardware.</p>
+              <h3>Deployment and Serving</h3>
+              <p>Python services containerised for on-prem GPU hardware or the cloud, with GitHub Actions CI/CD.</p>
             </article>
 
             <article class="card service reveal">
               <div class="art">
                 <div class="flow">
-                  <span>Label</span><i>→</i><span>Train</span><i>→</i><span>Ship</span>
+                  <span>Data</span><i>→</i><span>Model</span><i>→</i><span>Paper</span>
                 </div>
               </div>
-              <h3>Data and MLOps</h3>
-              <p>Annotation workflows, versioning and monitoring that keep models healthy.</p>
+              <h3>Applied Research</h3>
+              <p>Experiment design, evaluation and write-ups, from grant-funded projects to journal papers.</p>
             </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= JOURNEY ================= -->
+      <section class="section" id="journey">
+        <div class="wrap">
+          <div class="head reveal">
+            <span class="eyebrow">Journey</span>
+            <h2>Where I've Studied and Worked</h2>
+            <p>A short timeline of research and engineering</p>
+          </div>
+          <div class="journey">
+            <div class="col reveal">
+              <h3>Experience</h3>
+              <article class="card item">
+                <header><strong>SoftDev</strong><span>Jan 2024 – Jun 2026</span></header>
+                <em>Lead AI &amp; Backend Engineer · Remote</em>
+                <p>Led engineering at an AI automation studio serving clients in the US, UK and Pakistan, delivering voice AI, RAG systems, computer vision pipelines and workflow automation.</p>
+              </article>
+              <article class="card item">
+                <header><strong>Elunic</strong><span>2024 – Aug 2026</span></header>
+                <em>AI &amp; Automation Engineer · Remote</em>
+                <p>Quality assurance and technical report review on the eluna industrial software platform.</p>
+              </article>
+              <article class="card item">
+                <header><strong>Huawei Technologies</strong><span>Oct – Nov 2023</span></header>
+                <em>FBB-IP Engineer (internship) · Islamabad</em>
+                <p>Configured and maintained FBB-IP network equipment and troubleshot connectivity issues in a live telecom environment.</p>
+              </article>
+            </div>
+            <div class="col reveal">
+              <h3>Education</h3>
+              <article class="card item">
+                <header><strong>Gebze Technical University</strong><span>Oct 2025 – Jul 2027</span></header>
+                <em>MS, Artificial Intelligence · GPA 3.9/4</em>
+                <p>Thesis on hybrid AI architectures for smart greenhouses, within the TÜBİTAK 1071 bilateral R&amp;D project. Advisor: Prof. Dr. Yusuf Sinan Akgül.</p>
+              </article>
+              <article class="card item">
+                <header><strong>University of Engineering &amp; Technology, Taxila</strong><span>2019 – 2023</span></header>
+                <em>BS, Electrical (Communication) Engineering · GPA 3.2/4</em>
+                <p>Final-year project on AI-based recognition and synchronisation of Quranic text with audio. Applied ML projects in medical imaging, including knee osteoarthritis grading and melanoma detection.</p>
+              </article>
+            </div>
           </div>
         </div>
       </section>
@@ -440,12 +473,12 @@
             <h2>Know who am I</h2>
             <h3>My journey in few words</h3>
             <p>
-              I'm a Python engineer focused on deep learning and computer
-              vision. I've trained and shipped models for detection,
-              segmentation and document understanding, from agriculture to
-              retail, and I enjoy the full path from raw data to a model running
-              on real hardware. I'm the founder of SoftDev, where I also build
-              automation systems for businesses.
+              I'm an AI engineer and researcher working on computer vision and
+              deep learning for smart greenhouses, as part of an MS in Artificial
+              Intelligence at Gebze Technical University. I studied Electrical
+              Engineering at UET Taxila, and I've led AI and backend engineering
+              at SoftDev, an automation studio serving clients in the US, UK and
+              Pakistan.
             </p>
             <a class="btn btn-ghost" href="mailto:nashitsaleem9@gmail.com">Get in touch <span aria-hidden="true">→</span></a>
           </div>
@@ -506,34 +539,35 @@
               <details open>
                 <summary>Are you available for new projects?</summary>
                 <p>
-                  Yes. I take on a limited number of projects at a time. If you
-                  have a vision or deep learning problem in mind, send me a
-                  short description and we can find out if it's a good fit.
+                  Yes. I take on a limited number of computer vision and deep
+                  learning projects alongside my MS research. Send me a short
+                  description and we can find out if it's a good fit.
                 </p>
               </details>
               <details>
                 <summary>Which frameworks and tools do you work with?</summary>
                 <p>
-                  Mostly PyTorch and TensorFlow for training, OpenCV for
-                  classical vision, and ONNX or TensorRT for deployment. I'm
-                  comfortable with Hugging Face models and tools like CVAT for
-                  labeling.
+                  PyTorch and TensorFlow for training, OpenCV for classical
+                  vision and stereo geometry, YOLO11 with ByteTrack for detection
+                  and tracking, UNet for segmentation, and FastAPI with Docker
+                  for serving.
                 </p>
               </details>
               <details>
-                <summary>Can you deploy models to edge devices?</summary>
+                <summary>Do you work on agriculture and research problems?</summary>
                 <p>
-                  Yes. I optimize models with quantization and export them for
-                  GPUs, Jetson boards and mobile, aiming for real-time speed
-                  without giving up accuracy.
+                  Yes. My main research is computer vision for greenhouse crops:
+                  fruit sizing from stereo imagery, Fusarium wilt detection and
+                  yield estimation, supported by a TÜBİTAK-funded project.
                 </p>
               </details>
               <details>
-                <summary>How do you handle small or messy datasets?</summary>
+                <summary>Can you deploy models to on-prem hardware?</summary>
                 <p>
-                  I start by auditing the data, then use augmentation, transfer
-                  learning and active labeling to get the most out of what
-                  exists, and I'm upfront about what accuracy is realistic.
+                  Yes. I've packaged vision pipelines as Python services for
+                  on-prem GPU hardware, reading RTSP camera streams and storing
+                  results in S3-compatible storage, shipped with Docker,
+                  Kubernetes and CI/CD.
                 </p>
               </details>
             </div>
@@ -554,6 +588,6 @@
       </div>
     </footer>
 
-    <script src="./script.js?v=1"></script>
+    <script src="./script.js?v=2"></script>
   </body>
 </html>
