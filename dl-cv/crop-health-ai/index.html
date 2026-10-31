@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Crop-health AI for smart greenhouses | Nashit Saleem</title>
-    <meta name="description" content="Deep learning models for climate prediction, disease detection and yield estimation, feeding an IoT data warehouse and dashboard." />
+    <title>Water-stress sensing from an ordinary RGB camera | Nashit Saleem</title>
+    <meta name="description" content="Can a cheap colour camera do the work of a thermal one? A small network trained with a thermal camera as teacher tells from an RGB photo which leaf region is running warmer." />
     <!-- Hidden extension site: not linked from the main portfolio and kept out of search results while it holds sample content. Remove this tag when it goes public. -->
     <meta name="robots" content="noindex, nofollow" />
     <meta name="theme-color" content="#081822" />
@@ -37,18 +37,18 @@
       <header class="cs-hero">
         <a class="back" href="../#works"><span aria-hidden="true">←</span> All case studies</a>
         <span class="label">Research · 2025 – Present</span>
-        <h1>Crop-health AI for smart greenhouses</h1>
-        <p class="lead">Deep learning models for climate prediction, disease detection and yield estimation, feeding an IoT data warehouse and dashboard.</p>
+        <h1>Water-stress sensing from an ordinary RGB camera</h1>
+        <p class="lead">Can a cheap colour camera do the work of a thermal one? I use a thermal camera only as a teacher, so a small network can tell from an ordinary photo which leaf region is running warmer.</p>
         <dl class="meta">
-          <div><dt>Role</dt><dd>Owner of the machine learning workstream</dd></div>
-          <div><dt>Timeline</dt><dd>2025 – Present</dd></div>
-          <div><dt>Context</dt><dd>MS thesis at Gebze Technical University, within the TÜBİTAK 1071 bilateral R&amp;D project</dd></div>
-          <div><dt>Tools</dt><dd>YOLO, UNet, LSTM, TSMixer</dd></div>
+          <div><dt>Role</dt><dd>Research design and implementation</dd></div>
+          <div><dt>Timeline</dt><dd>2026 – Present</dd></div>
+          <div><dt>Context</dt><dd>MS thesis at Gebze Technical University, second workstream of the TÜBİTAK 1071 / 124N905 project</dd></div>
+          <div><dt>Tools</dt><dd>Small CNN, FLIR thermal imaging, RGB-thermal registration</dd></div>
         </dl>
         <div class="cs-visual">
           <div class="win">
-                  <div class="win-bar"><i></i><i></i><i></i><span>unet · fusarium_wilt</span></div>
-                  <svg viewBox="0 0 520 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Leaf with wilt regions highlighted">
+                  <div class="win-bar"><i></i><i></i><i></i><span>pairwise_stress · rgb_only</span></div>
+                  <svg viewBox="0 0 520 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Leaf with warmer and cooler regions highlighted">
                     <defs>
                       <radialGradient id="s-bg" cx="0.5" cy="0.45" r="0.8">
                         <stop offset="0" stop-color="#1a3b2f" />
@@ -73,9 +73,9 @@
                       <path d="M360 80C350 66 372 54 386 64C398 74 388 92 374 92C368 92 364 86 360 80Z" fill="#ff5f57" fill-opacity="0.55" stroke="#ff5f57" stroke-width="2" />
                     </g>
                     <g font-family="Manrope, sans-serif" font-size="11" font-weight="700" fill="#fff">
-                      <rect x="24" y="24" width="12" height="12" rx="3" fill="#ff5f57" /><text x="42" y="34">Wilt</text>
-                      <rect x="24" y="46" width="12" height="12" rx="3" fill="#ffc857" /><text x="42" y="56">Stressed</text>
-                      <rect x="24" y="68" width="12" height="12" rx="3" fill="#3f9b53" /><text x="42" y="78">Healthy</text>
+                      <rect x="24" y="24" width="12" height="12" rx="3" fill="#ff5f57" /><text x="42" y="34">Warmer</text>
+                      <rect x="24" y="46" width="12" height="12" rx="3" fill="#ffc857" /><text x="42" y="56">Mixed</text>
+                      <rect x="24" y="68" width="12" height="12" rx="3" fill="#3f9b53" /><text x="42" y="78">Cooler</text>
                     </g>
                   </svg>
                 </div>
@@ -86,91 +86,81 @@
         <section class="cs-block reveal" id="overview">
           <span class="eyebrow">Overview</span>
           <h2>What this project is</h2>
-          <p>The same TÜBİTAK 1071 project needs models that watch both the crop and the climate. I build the machine learning side: predicting micro-climate parameters, monitoring fruit size from NIR and RGB imagery, detecting Fusarium wilt and estimating yield.</p>
-          <p>These models feed an IoT data warehouse and a dashboard for the greenhouse. I later extended the thesis into a hybrid framework that couples biophysical crop models with deep learning.</p>
+          <p>The second workstream of my thesis asks whether plant water stress can be read from an ordinary colour camera. A thermal camera is an excellent stress sensor, but it costs hundreds to thousands of euros, has low resolution and is installed almost nowhere. RGB cameras are already everywhere.</p>
+          <p>The idea is to pay for thermal once, during data collection, and deploy RGB forever. The thermal image is the answer key during training, and only the RGB photo is used afterwards. I tested it first on a public banana RGB-thermal dataset. The next step is my own collection in the GTU greenhouse.</p>
           <div class="glance">
             <div class="card"><small>Type</small><strong>Research, MS thesis</strong></div>
-            <div class="card"><small>Status</small><strong>Ongoing</strong></div>
-            <div class="card"><small>Data</small><strong>NIR and RGB imagery, IoT climate data</strong></div>
-            <div class="card"><small>Output</small><strong>Paper in preparation (2026)</strong></div>
+            <div class="card"><small>Status</small><strong>Pilot finished, own data collection next</strong></div>
+            <div class="card"><small>Data</small><strong>Levanon banana RGB-thermal set: 120 plants, 17 sessions</strong></div>
+            <div class="card"><small>Shared at</small><strong>GTU graduate seminar and the SAgrIoT (DAAD) workshop, Oct 2026</strong></div>
           </div>
         </section>
-
         <section class="cs-block reveal" id="problem">
           <span class="eyebrow">The problem</span>
           <h2>What needed solving</h2>
-          <p>Growers need forecasts and early warnings: what the climate will do, which plants are stressed or wilting, and what the harvest will look like. This work turns images and sensor data into those predictions.</p>
-          <div class="todo"><span class="pill">To add</span><p>Why this mattered: who needed it, how it was done before, and how big the problem was.</p></div>
+          <p>Irrigation is usually decided without measuring the plant. Growers measure the schedule, substrate moisture at a few points and the air, but not whether the plant needed water now or two hours ago. Over-irrigation wastes water and energy, leaches nutrients and invites root disease. Under-irrigation silently costs yield.</p>
+          <p>Leaf temperature carries that missing signal. A leaf with enough water evaporates it and cools. When water runs short the stomata close, transpiration drops and the leaf warms, minutes after the stomata respond and before any visible wilting. In the banana data, on one afternoon with 36 °C air, a fully irrigated plant sat 9.45 °C below air while a plant on 40% water sat 2.92 °C below: a 6.53 °C gap caused only by water supply. A thermal camera sees it clearly. In an RGB photo the plants look much alike.</p>
         </section>
-
         <section class="cs-block reveal" id="role">
           <span class="eyebrow">My role</span>
           <h2>What I did</h2>
           <ul class="ticks">
-            <li>Own the machine learning workstream within the 24-month bilateral project.</li>
-            <li>Build the prediction models for micro-climate and yield, and the vision models for Fusarium wilt detection and fruit size monitoring.</li>
-            <li>Extended the thesis into a hybrid framework coupling biophysical crop models with deep learning, including RGB-to-thermal translation for plant stress signals and zero-shot generalisation across greenhouse sites.</li>
-            <li>Contributed methodology, work packages and budget planning to a TÜBİTAK 1001 grant proposal on fungicide effects on root-associated fungi in tomatoes.</li>
+            <li>Framed the question and chose the harder target, leaf temperature in degrees, after reviewing 75 studies on RGB water-stress detection (2007 – 2026).</li>
+            <li>Built the full pipeline: registration, leaf masking, windowing, pairing and plant-disjoint splits.</li>
+            <li>Trained and evaluated the model across 67 logged runs, each stored with its seed, git SHA and config hash.</li>
+            <li>Designed the leakage and shortcut controls, and audited the public dataset, where I found 16 issues.</li>
+            <li>Wrote six rules for the team's own data collection.</li>
+            <li>Presented the results at the GTU graduate seminar (Spring 2026) and at the SAgrIoT (DAAD) workshop at GTU on 6 October 2026.</li>
           </ul>
-          <div class="todo"><span class="pill">To add</span><p>Team size, who you worked with, and anything you owned beyond the points above.</p></div>
+          <p>I work under Prof. Dr. Yusuf Sinan Akgül, in the same project that has plant scientists from GTU Molecular Biology and Genetics hosting the greenhouse and the NUST team building the HarvesTrack dashboard.</p>
         </section>
-
         <section class="cs-block reveal" id="approach">
           <span class="eyebrow">Approach</span>
           <h2>How it works</h2>
           <ol class="steps">
-            <li><div><h3>Data collection</h3><p>NIR and RGB imagery plus climate data, gathered in an IoT data warehouse.</p></div></li>
-            <li><div><h3>Vision models</h3><p>YOLO and UNet models for Fusarium wilt detection and fruit size monitoring.</p></div></li>
-            <li><div><h3>Time-series forecasting</h3><p>LSTM and TSMixer models for micro-climate prediction and yield estimation.</p></div></li>
-            <li><div><h3>Hybrid modelling</h3><p>Biophysical crop models coupled with deep learning, including RGB-to-thermal translation for plant stress signals.</p></div></li>
-            <li><div><h3>Generalisation</h3><p>Zero-shot generalisation across different greenhouse sites.</p></div></li>
-            <li><div><h3>Dashboard</h3><p>Predictions delivered through the IoT data warehouse and a greenhouse dashboard.</p></div></li>
+            <li><div><h3>Thermal as teacher</h3><p>Collect RGB and thermal images of the same scene once. The thermal image gives the label in °C. After that a model of about 140,000 parameters runs on RGB alone, small enough for an edge node over every bench.</p></div></li>
+            <li><div><h3>Ask a relative question</h3><p>92% of the variation in leaf temperature is between images, which is the weather of the day. A model asked for absolute degrees mostly learns the weather (1.406 °C error against a 1.829 °C floor). So the model only compares two patches inside one frame, where light and air temperature cancel out.</p></div></li>
+            <li><div><h3>Prepare the data</h3><p>RGB and thermal images are registered per plant (median IoU 0.864). The leaf interior is masked and cut into 16 × 16 windows with stride 4, giving 1.4 million windows and about 1.08 million training pairs.</p></div></li>
+            <li><div><h3>Pairwise model</h3><p>One small CNN scores every patch, and the predicted temperature difference is score(b) − score(a). Swapping the two patches flips the sign exactly, and one pass per window paints a whole heat map.</p></div></li>
+            <li><div><h3>Split by plant</h3><p>88 plants for training, 16 for validation and 16 held out until the end. Plants, never images, are split, and disjointness is checked in code before every run.</p></div></li>
+            <li><div><h3>Controls</h3><p>Baselines were built before training, and eight leakage and shortcut controls test whether the model really uses the leaf pixels.</p></div></li>
           </ol>
-          <div class="todo"><span class="pill">To add</span><p>An architecture or pipeline diagram, plus why you chose these methods over the alternatives.</p></div>
         </section>
-
         <section class="cs-block reveal" id="stack">
           <span class="eyebrow">Tech stack</span>
           <h2>Tools and methods</h2>
           <div class="tags">
-            <span class="chip">YOLO</span>
-            <span class="chip">UNet</span>
-            <span class="chip">LSTM</span>
-            <span class="chip">TSMixer</span>
-            <span class="chip">RGB-to-thermal translation</span>
-            <span class="chip">Biophysical crop models</span>
-            <span class="chip">IoT data warehouse</span>
+            <span class="chip">Small CNN (139,873 parameters)</span>
+            <span class="chip">Pairwise ranking</span>
+            <span class="chip">FLIR ONE Pro thermal camera</span>
+            <span class="chip">RGB-thermal registration</span>
+            <span class="chip">Levanon banana RGB-T dataset</span>
+            <span class="chip">Leakage and shortcut audits</span>
+            <span class="chip">Reproducible runs</span>
           </div>
         </section>
-
         <section class="cs-block reveal" id="results">
           <span class="eyebrow">Results</span>
           <h2>What came out of it</h2>
           <div class="stats">
-            <div class="card"><strong>—</strong><small>Wilt detection accuracy</small></div>
-            <div class="card"><strong>—</strong><small>Climate forecast error</small></div>
-            <div class="card"><strong>—</strong><small>Yield estimate error</small></div>
+            <div class="card"><strong>0.764 °C</strong><small>Error on unseen plants (floor 1.143 °C)</small></div>
+            <div class="card"><strong>75.5%</strong><small>Sign accuracy (chance 50%)</small></div>
+            <div class="card"><strong>33.2%</strong><small>Better than the floor</small></div>
           </div>
-          <div class="table-wrap"><table><thead><tr><th>Task</th><th>Model</th><th>Metric</th><th>Result</th></tr></thead><tbody><tr><td>Fusarium wilt detection</td><td>—</td><td>—</td><td>—</td></tr><tr><td>Micro-climate prediction</td><td>—</td><td>—</td><td>—</td></tr><tr><td>Yield estimation</td><td>—</td><td>—</td><td>—</td></tr></tbody></table></div>
-          <p class="note">Yield estimation and prediction results will appear in a paper currently in preparation (2026).</p>
-          <div class="todo"><span class="pill">To add</span><p>Real numbers for the "—" cells above: accuracy, error, speed or time saved. Only add figures you are happy to make public.</p></div>
-        </section>
-
-        <section class="cs-block reveal" id="gallery">
-          <span class="eyebrow">Gallery</span>
-          <h2>Screenshots and visuals</h2>
-          <div class="gallery">
-            <figure class="todo shot-todo"><span class="pill">To add</span><figcaption>Sample NIR and RGB images</figcaption></figure>
-            <figure class="todo shot-todo"><span class="pill">To add</span><figcaption>Wilt detection or segmentation result</figcaption></figure>
-            <figure class="todo shot-todo"><span class="pill">To add</span><figcaption>Greenhouse dashboard screenshot</figcaption></figure>
-          </div>
-        </section>
-
-        <section class="cs-block reveal" id="links">
-          <span class="eyebrow">Publications and links</span>
-          <h2>Learn more</h2>
-          <div class="card linkcard"><small>In preparation · 2026</small><strong>Yield Estimation and Prediction Models for Smart Greenhouses</strong></div>
-          <div class="todo"><span class="pill">To add</span><p>A link to a paper, demo or public write-up, if there is one you want to show.</p></div>
+          <p>On 195,376 held-out pairs from 16 plants the model never saw. Simple baselines were built first:</p>
+          <div class="table-wrap"><table><thead><tr><th>Predictor</th><th>Error (°C)</th><th>Sign accuracy</th></tr></thead><tbody><tr><td>Always predict zero (the floor)</td><td>1.143</td><td>—</td></tr><tr><td>Patch brightness only</td><td>1.016</td><td>66.3%</td></tr><tr><td>Position in the leaf only</td><td>1.005</td><td>66.9%</td></tr><tr><td>Shuffled labels (leak check)</td><td>1.143</td><td>49.9%</td></tr><tr><td>Pairwise CNN</td><td>0.764</td><td>75.5%</td></tr></tbody></table></div>
+          <p>Accuracy depends on how big the real temperature gap is:</p>
+          <div class="table-wrap"><table><thead><tr><th>True gap between patches</th><th>Sign accuracy</th></tr></thead><tbody><tr><td>0 – 0.25 °C</td><td>55.3%</td></tr><tr><td>0.5 – 1 °C</td><td>73.7%</td></tr><tr><td>2 – 3 °C</td><td>92.7%</td></tr><tr><td>Above 3 °C</td><td>91.9%</td></tr></tbody></table></div>
+          <p class="note">It is close to chance where the difference is too small to matter, and above 90% where it is large enough to act on.</p>
+          <p>Plant to plant, scored so that a rule knowing only the irrigation group gets exactly 50, the pilot reaches 64.8 against a floor of 50.4 across 7,236 pairs. Accuracy rises steadily with the true temperature gap (r = +0.97), which a group recogniser cannot produce.</p>
+          <p>What it cannot do, stated plainly:</p>
+          <ul class="ticks">
+            <li>It is a relative sensor. It tells you which part of a canopy is running warmer, not how warm.</li>
+            <li>The offset between images is lighting, so a grey reference card is needed in every frame.</li>
+            <li>Thermal texture inside a small patch cannot be recovered from RGB. Auxiliary input, distillation and modality dropout all gave the same answer.</li>
+            <li>In the public dataset the irrigation label can be recovered 100% from capture order alone, so published accuracies on it may measure the protocol, not the plant.</li>
+          </ul>
+          <p class="note">Next, my own collection follows six rules: randomise capture order, put a grey card in every frame, include a pre-treatment placebo period, use more plants and days, capture across the whole day, and record physiological ground truth on a subsample.</p>
         </section>
 
         <nav class="cs-nav reveal" aria-label="Case study navigation">

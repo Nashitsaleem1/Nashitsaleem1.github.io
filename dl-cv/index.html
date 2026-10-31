@@ -100,8 +100,8 @@
                 <span class="label">Research · 2025 – Present</span>
                 <h3>Non-destructive tomato sizing with stereo vision</h3>
                 <ul>
-                  <li>StereoSGBM and RAFT-Stereo depth, 3D sizing</li>
-                  <li>Rule-based vs RGB CNN vs RGB+Depth fusion</li>
+                  <li>YOLOv10 ripeness detection, 85.2% mAP@0.5</li>
+                  <li>ChArUco stereo depth, per-fruit growth tracking</li>
                 </ul>
                 <a class="btn" href="./tomato-sizing/">View case study <span aria-hidden="true">↗</span></a>
               </div>
@@ -161,21 +161,21 @@
               </div>
             </article>
 
-            <!-- Case 2: crop health / wilt segmentation -->
+            <!-- Case 2: water-stress sensing from RGB -->
             <article class="card case reveal" style="--glow: rgba(207, 253, 122, 0.18)">
               <div class="txt">
                 <span class="label">Research · 2025 – Present</span>
-                <h3>Crop-health AI for smart greenhouses</h3>
+                <h3>Water-stress sensing from an ordinary RGB camera</h3>
                 <ul>
-                  <li>Fusarium wilt detection from NIR and RGB imagery</li>
-                  <li>LSTM and TSMixer climate prediction into an IoT warehouse</li>
+                  <li>Leaf temperature ordering from RGB, thermal as teacher only</li>
+                  <li>0.764 °C error vs 1.143 °C floor on unseen plants</li>
                 </ul>
                 <a class="btn" href="./crop-health-ai/">View case study <span aria-hidden="true">↗</span></a>
               </div>
               <div class="shot">
                 <div class="win">
-                  <div class="win-bar"><i></i><i></i><i></i><span>unet · fusarium_wilt</span></div>
-                  <svg viewBox="0 0 520 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Leaf with wilt regions highlighted">
+                  <div class="win-bar"><i></i><i></i><i></i><span>pairwise_stress · rgb_only</span></div>
+                  <svg viewBox="0 0 520 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Leaf with warmer and cooler regions highlighted">
                     <defs>
                       <radialGradient id="s-bg" cx="0.5" cy="0.45" r="0.8">
                         <stop offset="0" stop-color="#1a3b2f" />
@@ -200,9 +200,9 @@
                       <path d="M360 80C350 66 372 54 386 64C398 74 388 92 374 92C368 92 364 86 360 80Z" fill="#ff5f57" fill-opacity="0.55" stroke="#ff5f57" stroke-width="2" />
                     </g>
                     <g font-family="Manrope, sans-serif" font-size="11" font-weight="700" fill="#fff">
-                      <rect x="24" y="24" width="12" height="12" rx="3" fill="#ff5f57" /><text x="42" y="34">Wilt</text>
-                      <rect x="24" y="46" width="12" height="12" rx="3" fill="#ffc857" /><text x="42" y="56">Stressed</text>
-                      <rect x="24" y="68" width="12" height="12" rx="3" fill="#3f9b53" /><text x="42" y="78">Healthy</text>
+                      <rect x="24" y="24" width="12" height="12" rx="3" fill="#ff5f57" /><text x="42" y="34">Warmer</text>
+                      <rect x="24" y="46" width="12" height="12" rx="3" fill="#ffc857" /><text x="42" y="56">Mixed</text>
+                      <rect x="24" y="68" width="12" height="12" rx="3" fill="#3f9b53" /><text x="42" y="78">Cooler</text>
                     </g>
                   </svg>
                 </div>
@@ -557,7 +557,7 @@
                 <summary>Do you work on agriculture and research problems?</summary>
                 <p>
                   Yes. My main research is computer vision for greenhouse crops:
-                  fruit sizing from stereo imagery, Fusarium wilt detection and
+                  fruit sizing from stereo imagery, water-stress sensing from RGB cameras and
                   yield estimation, supported by a TÜBİTAK-funded project.
                 </p>
               </details>
