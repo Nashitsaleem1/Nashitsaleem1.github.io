@@ -18,13 +18,13 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap"
     />
-    <link rel="stylesheet" href="../style.css?v=19" />
+    <link rel="stylesheet" href="../style.css?v=22" />
     <script>
       document.documentElement.classList.add("js");
     </script>
   </head>
   <body>
-    <!-- HOW TO UPDATE: every "To add" box below is a placeholder. Replace the whole box (the div with class "todo") with your real text, number or image. -->
+    <!-- HOW TO UPDATE: add a Results table here when you have figures you are happy to make public. -->
     <nav class="nav" id="nav" aria-label="Primary">
       <a href="../">Home</a>
       <a href="../#works">Works</a>
@@ -93,8 +93,7 @@
         <section class="cs-block reveal" id="problem">
           <span class="eyebrow">The problem</span>
           <h2>What needed solving</h2>
-          <p>Producing a video with text synchronised to audio was done by hand and took about five hours of manual editing.</p>
-          <div class="todo"><span class="pill">To add</span><p>Why this mattered: who needed it, how it was done before, and how big the problem was.</p></div>
+          <p>Producing a video with text synchronised to a recitation was done by hand. An editor had to listen to the audio and place each piece of text at the right moment, which took about five hours of manual editing per video and does not scale to many recitations.</p>
         </section>
 
         <section class="cs-block reveal" id="role">
@@ -105,19 +104,18 @@
             <li>Automated the video generation step so the finished video is produced from the audio.</li>
             <li>Published the work at ICoDT2 in 2024.</li>
           </ul>
-          <div class="todo"><span class="pill">To add</span><p>Team size, who you worked with, and anything you owned beyond the points above.</p></div>
         </section>
 
         <section class="cs-block reveal" id="approach">
           <span class="eyebrow">Approach</span>
           <h2>How it works</h2>
+          <div class="pipe"><span>Recitation audio</span><i aria-hidden="true">→</i><span>Speech recognition</span><i aria-hidden="true">→</i><span>Forced alignment</span><i aria-hidden="true">→</i><span>Video generation</span><i aria-hidden="true">→</i><span>Finished video</span></div>
           <ol class="steps">
             <li><div><h3>Recognise</h3><p>Speech recognition turns the recitation audio into text.</p></div></li>
             <li><div><h3>Align</h3><p>Forced alignment matches the text to timestamps in the audio.</p></div></li>
             <li><div><h3>Generate</h3><p>Automated video generation builds the synchronised video from the aligned text.</p></div></li>
             <li><div><h3>Deliver</h3><p>A finished video in about five minutes instead of about five hours.</p></div></li>
           </ol>
-          <div class="todo"><span class="pill">To add</span><p>An architecture or pipeline diagram, plus why you chose these methods over the alternatives.</p></div>
         </section>
 
         <section class="cs-block reveal" id="stack">
@@ -136,15 +134,14 @@
           <div class="stats">
             <div class="card"><strong>5 h → 5 min</strong><small>Production time</small></div>
             <div class="card"><strong>ICoDT2</strong><small>Peer-reviewed paper, 2024</small></div>
-            <div class="card"><strong>—</strong><small>Recognition accuracy</small></div>
+            <div class="card"><strong>2022 – 2023</strong><small>Final-year project, UET Taxila</small></div>
           </div>
-          <div class="table-wrap"><table><thead><tr><th>Metric</th><th>Result</th></tr></thead><tbody><tr><td>Production time</td><td>About 5 hours → about 5 minutes</td></tr><tr><td>Word error rate</td><td>—</td></tr><tr><td>Alignment accuracy</td><td>—</td></tr></tbody></table></div>
+          <div class="table-wrap"><table><thead><tr><th>Measure</th><th>Result</th></tr></thead><tbody><tr><td>Production time per video</td><td>About 5 hours → about 5 minutes</td></tr><tr><td>Publication</td><td>ICoDT2, 2024 (published)</td></tr></tbody></table></div>
           <p class="note">The production-time improvement is reported in the published paper.</p>
-          <div class="todo"><span class="pill">To add</span><p>Real numbers for the "—" cells above: accuracy, error, speed or time saved. Only add figures you are happy to make public.</p></div>
         </section>
 
         <nav class="cs-nav reveal" aria-label="Case study navigation">
-          <a class="prev" href="../cctv-analytics/"><small>Previous</small><span>CCTV analytics on on-prem GPUs</span></a>
+          <a class="prev" href="../portrait-qr-code/"><small>Previous</small><span>Portrait background removal for custom QR codes</span></a>
           <a class="next" href="../tomato-sizing/"><small>Next</small><span>Non-destructive tomato sizing with stereo vision</span></a>
         </nav>
 

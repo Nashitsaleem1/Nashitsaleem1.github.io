@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Real-time computer vision for game automation | Nashit Saleem</title>
+    <meta name="description" content="A bot that reads a live game screen with computer vision, finds the cursor, enemies and loot, plans a path and carries out combat and looting on its own." />
+    <!-- Hidden extension site: not linked from the main portfolio and kept out of search results while it holds sample content. Remove this tag when it goes public. -->
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="theme-color" content="#081822" />
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="icon" href="/favicon-48.png" type="image/png" sizes="48x48" />
+    <link rel="icon" href="/favicon-192.png" type="image/png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap"
+    />
+    <link rel="stylesheet" href="../style.css?v=22" />
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+  </head>
+  <body>
+    <!-- HOW TO UPDATE: add a Results table here when you have figures you are happy to make public. -->
+    <nav class="nav" id="nav" aria-label="Primary">
+      <a href="../">Home</a>
+      <a href="../#works">Works</a>
+      <a href="../#about">About</a>
+      <a href="../#faq">FAQ</a>
+      <a class="nav-cta" href="mailto:nashitsaleem9@gmail.com">Let's talk</a>
+    </nav>
+
+    <main>
+      <header class="cs-hero">
+        <a class="back" href="../#works"><span aria-hidden="true">←</span> All case studies</a>
+        <span class="label">Upwork client project</span>
+        <h1>Real-time computer vision for game automation</h1>
+        <p class="lead">A bot that reads a live game screen with computer vision, finds the cursor, enemies and loot, plans a path, and carries out combat and looting without manual control.</p>
+        <dl class="meta">
+          <div><dt>Role</dt><dd>AI engineer</dd></div>
+          <div><dt>Focus</dt><dd>Real-time computer vision</dd></div>
+          <div><dt>Context</dt><dd>Client project, Upwork and SoftDev</dd></div>
+          <div><dt>Tools</dt><dd>Python, OpenCV, NumPy, scikit-image, PyAutoGUI</dd></div>
+        </dl>
+        <div class="cs-visual">
+          <div class="win">
+                  <div class="win-bar"><i></i><i></i><i></i><span>opencv · screen_capture</span></div>
+                  <svg viewBox="0 0 520 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="A game screen with the cursor, an enemy and loot detected and a path planned between them">
+                    <defs>
+                      <linearGradient id="g-sky" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0" stop-color="#1b3b4f" />
+                        <stop offset="1" stop-color="#0e2230" />
+                      </linearGradient>
+                      <linearGradient id="g-land" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0" stop-color="#1f5a3a" />
+                        <stop offset="1" stop-color="#0f2f22" />
+                      </linearGradient>
+                    </defs>
+                    <rect width="520" height="300" fill="url(#g-sky)" />
+                    <path d="M0 120C80 90 140 110 220 96C300 82 380 110 520 88V300H0Z" fill="#163a33" />
+                    <path d="M0 160C100 130 200 150 300 138C390 128 450 146 520 134V300H0Z" fill="url(#g-land)" />
+                    <path d="M40 276C130 244 210 226 270 196C320 172 340 164 352 160" stroke="#cffd7a" stroke-width="3" stroke-dasharray="3 9" stroke-linecap="round" fill="none" />
+                    <g>
+                      <ellipse cx="352" cy="170" rx="20" ry="6" fill="#000" opacity="0.25" />
+                      <rect x="338" y="128" width="28" height="38" rx="9" fill="#a8452f" />
+                      <circle cx="352" cy="120" r="12" fill="#c2593f" />
+                      <ellipse cx="190" cy="214" rx="18" ry="5" fill="#000" opacity="0.25" />
+                      <rect x="176" y="196" width="28" height="18" rx="4" fill="#c9a23a" />
+                      <rect x="176" y="196" width="28" height="7" rx="3" fill="#e6c25a" />
+                    </g>
+                    <g fill="none" stroke-width="2">
+                      <rect x="326" y="104" width="52" height="68" rx="3" stroke="#ff8a70" />
+                      <rect x="168" y="188" width="44" height="32" rx="3" stroke="#ffc857" />
+                    </g>
+                    <g font-family="Manrope, sans-serif" font-size="10" font-weight="700" fill="#04130d">
+                      <rect x="326" y="88" width="46" height="16" rx="3" fill="#ff8a70" /><text x="332" y="99">enemy</text>
+                      <rect x="168" y="172" width="34" height="16" rx="3" fill="#ffc857" /><text x="174" y="183">loot</text>
+                    </g>
+                    <path d="M258 96L258 128L266 121L272 134L277 132L271 119L282 119Z" fill="#fff" stroke="#0b1a24" stroke-width="1.5" stroke-linejoin="round" />
+                    <rect x="288" y="104" width="46" height="16" rx="3" fill="#cffd7a" /><text x="294" y="115" font-family="Manrope, sans-serif" font-size="10" font-weight="700" fill="#04130d">cursor</text>
+                    <rect x="20" y="256" width="480" height="30" rx="8" fill="#0a141b" fill-opacity="0.85" />
+                    <text x="36" y="275" font-family="Manrope, sans-serif" font-size="12" font-weight="700" fill="#fff" fill-opacity="0.75">capture → detect → plan path → act</text>
+                  </svg>
+                </div>
+        </div>
+      </header>
+
+      <div class="cs-wrap">
+        <section class="cs-block reveal" id="overview">
+          <span class="eyebrow">Overview</span>
+          <h2>What this project is</h2>
+          <p>A client wanted a bot for the game The Lord of the Rings Online (LOTRO) that could play the repetitive parts on its own. I built it with OpenCV so that it reads the live game screen, finds the cursor, enemies and lootable objects, and decides what to do next.</p>
+          <p>It handles path navigation, combat and looting from start to finish, so a character can keep progressing through routine tasks with nobody at the keyboard.</p>
+          <div class="glance">
+            <div class="card"><small>Type</small><strong>Client project</strong></div>
+            <div class="card"><small>Input</small><strong>Live game screen</strong></div>
+            <div class="card"><small>Output</small><strong>Movement, combat and looting inputs</strong></div>
+            <div class="card"><small>Result</small><strong>95% detection accuracy</strong></div>
+          </div>
+        </section>
+        <section class="cs-block reveal" id="problem">
+          <span class="eyebrow">The problem</span>
+          <h2>What needed solving</h2>
+          <p>Repetitive combat and looting can take hours that players would rather spend on the interesting parts of the game. Watching a fast-moving screen for the right cursor state or the next target is also tiring to keep up for long.</p>
+          <p>Reading the screen with computer vision and driving navigation and combat automatically removes that burden. The same real-time vision and input-automation approach applies to other repetitive, screen-based tasks that would otherwise need constant attention.</p>
+        </section>
+        <section class="cs-block reveal" id="role">
+          <span class="eyebrow">My role</span>
+          <h2>What I did</h2>
+          <ul class="ticks">
+            <li>Built the bot end to end in Python.</li>
+            <li>Wrote the vision step that reads each captured frame and detects the cursor, enemies and lootable objects.</li>
+            <li>Added path and target planning so the next move is chosen automatically.</li>
+            <li>Connected the decisions to automated input so sequences run without manual control.</li>
+          </ul>
+        </section>
+        <section class="cs-block reveal" id="approach">
+          <span class="eyebrow">Approach</span>
+          <h2>How it works</h2>
+          <div class="pipe"><span>Screen capture</span><i aria-hidden="true">→</i><span>Detect cursor, enemies, loot</span><i aria-hidden="true">→</i><span>Plan path and target</span><i aria-hidden="true">→</i><span>Automated input</span></div>
+          <ol class="steps">
+            <li><div><h3>Real-time screen capture</h3><p>The bot continuously captures the game screen and applies vision algorithms to detect the cursor, enemies and lootable objects.</p></div></li>
+            <li><div><h3>Path and target analysis</h3><p>NumPy and scikit-image process each frame to work out the best path and pick the next combat or loot target.</p></div></li>
+            <li><div><h3>Automated input</h3><p>PyAutoGUI turns the decision into movement, combat and looting inputs, and the sequence runs without manual control.</p></div></li>
+          </ol>
+        </section>
+        <section class="cs-block reveal" id="stack">
+          <span class="eyebrow">Tech stack</span>
+          <h2>Tools and methods</h2>
+          <div class="tags">
+            <span class="chip">Python</span>
+            <span class="chip">OpenCV</span>
+            <span class="chip">NumPy</span>
+            <span class="chip">scikit-image</span>
+            <span class="chip">PyAutoGUI</span>
+            <span class="chip">Real-time screen capture</span>
+            <span class="chip">Object detection</span>
+            <span class="chip">Path planning</span>
+          </div>
+        </section>
+        <section class="cs-block reveal" id="results">
+          <span class="eyebrow">Results</span>
+          <h2>What came out of it</h2>
+          <div class="stats">
+            <div class="card"><strong>95%</strong><small>Cursor and object detection accuracy</small></div>
+            <div class="card"><strong>500+</strong><small>Combat and looting sequences per week</small></div>
+            <div class="card"><strong>80%</strong><small>Less path-navigation effort</small></div>
+          </div>
+          <div class="table-wrap"><table><thead><tr><th>Measure</th><th>Result</th></tr></thead><tbody><tr><td>Cursor and object detection accuracy</td><td>95%</td></tr><tr><td>Combat and looting sequences automated</td><td>500+ per week</td></tr><tr><td>Repetitive path navigation effort</td><td>Reduced by 80%</td></tr><tr><td>Gameplay without human input</td><td>Extended sessions, fully autonomous</td></tr></tbody></table></div>
+        </section>
+
+        <nav class="cs-nav reveal" aria-label="Case study navigation">
+          <a class="prev" href="../drone-orthomosaic/"><small>Previous</small><span>Drone orthomosaic pipeline</span></a>
+          <a class="next" href="../portrait-qr-code/"><small>Next</small><span>Portrait background removal for custom QR codes</span></a>
+        </nav>
+
+        <section class="cs-cta reveal">
+          <h2>Interested in similar work?</h2>
+          <p>Have repetitive, screen-based work that a computer could do for you? Send me a message and let's talk.</p>
+          <a class="btn btn-light" href="mailto:nashitsaleem9@gmail.com">👋 Let's talk</a>
+        </section>
+      </div>
+    </main>
+
+    <footer class="foot">
+      <div class="foot-bar">
+        <span>Created by <strong>Nashit Saleem</strong></span>
+        <nav aria-label="Social links">
+          <a href="https://www.linkedin.com/in/nashitsaleem1/" target="_blank" rel="noopener">LinkedIn <span aria-hidden="true">↗</span></a>
+          <a href="https://github.com/Nashitsaleem1?tab=repositories" target="_blank" rel="noopener">GitHub <span aria-hidden="true">↗</span></a>
+          <a href="https://twitter.com/Nashitsaleem1" target="_blank" rel="noopener">X <span aria-hidden="true">↗</span></a>
+          <a href="https://nashitsaleem1.github.io/" rel="noopener">Main site <span aria-hidden="true">↗</span></a>
+        </nav>
+      </div>
+    </footer>
+
+    <script src="../script.js?v=2"></script>
+  </body>
+</html>

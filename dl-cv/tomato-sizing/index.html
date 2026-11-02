@@ -18,13 +18,13 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap"
     />
-    <link rel="stylesheet" href="../style.css?v=19" />
+    <link rel="stylesheet" href="../style.css?v=22" />
     <script>
       document.documentElement.classList.add("js");
     </script>
   </head>
   <body>
-    <!-- HOW TO UPDATE: every "To add" box below is a placeholder. Replace the whole box (the div with class "todo") with your real text, number or image. -->
+    <!-- HOW TO UPDATE: add a Results table here when you have figures you are happy to make public. -->
     <nav class="nav" id="nav" aria-label="Primary">
       <a href="../">Home</a>
       <a href="../#works">Works</a>
@@ -117,7 +117,7 @@
         <section class="cs-block reveal" id="problem">
           <span class="eyebrow">The problem</span>
           <h2>What needed solving</h2>
-          <p>Fruit size, count and ripeness over time show how a crop is growing and when it will be ready to pick. Measuring by hand means someone entering the greenhouse and handling the fruit, which is slow, patchy and disturbs the plants.</p>
+          <p>Picking a tomato just to measure it wastes the fruit, so the system measures it right on the plant. Fruit size, count and ripeness over time show how a crop is growing and when it will be ready to pick. Measuring by hand means someone entering the greenhouse and handling the fruit, which is slow, patchy and disturbs the plants.</p>
           <p>This project replaces that with a fixed stereo rig that measures every visible fruit every 30 minutes, with no contact. The per-fruit size, count and ripeness feed the project dashboard, which supports harvest and growth decisions and the project target of at least 10% more yield than conventional greenhouses.</p>
         </section>
         <section class="cs-block reveal" id="role">
@@ -136,6 +136,7 @@
         <section class="cs-block reveal" id="approach">
           <span class="eyebrow">Approach</span>
           <h2>How it works</h2>
+          <div class="pipe"><span>Stereo pair</span><i aria-hidden="true">→</i><span>Rectify</span><i aria-hidden="true">→</i><span>Depth map</span><i aria-hidden="true">→</i><span>YOLOv10 detection</span><i aria-hidden="true">→</i><span>Pinhole sizing</span><i aria-hidden="true">→</i><span>Tracking</span><i aria-hidden="true">→</i><span>Growth CSV</span></div>
           <ol class="steps">
             <li><div><h3>Capture</h3><p>Two cameras at 5 MP (2592 × 1944) take a stereo pair every 30 minutes, with auto-exposure stabilisation. Pairs are matched by timestamp across about three months.</p></div></li>
             <li><div><h3>Stereo calibration</h3><p>A ChArUco board (6 × 9, 28 mm squares) calibrates the pair in OpenCV. Reprojection error is about 0.5 px per camera and 1.05 px for the pair.</p></div></li>
@@ -178,9 +179,13 @@
           <p>Fruit detection, trained on tomatOD alone and on tomatOD merged with a Kaggle ripeness dataset:</p>
           <div class="table-wrap"><table><thead><tr><th>Training data</th><th>Variant</th><th>mAP@0.5</th><th>Best F1</th></tr></thead><tbody><tr><td>tomatOD</td><td>Baseline</td><td>0.825</td><td>0.76</td></tr><tr><td>tomatOD</td><td>Tuned</td><td>0.800</td><td>0.72</td></tr><tr><td>Merged</td><td>Baseline</td><td>0.852</td><td>0.79</td></tr><tr><td>Merged</td><td>Tuned</td><td>0.849</td><td>0.78</td></tr></tbody></table></div>
           <p class="note">Merging more varied data helped more than tuning hyperparameters. Models trained on tomatOD alone lose most of their accuracy on the differently styled Kaggle images, so cross-domain robustness is the main open problem for detection.</p>
-          <p>Sizing comparison, to be filled in from the paper:</p>
-          <div class="table-wrap"><table><thead><tr><th>Method</th><th>Input</th><th>Size error</th><th>Notes</th></tr></thead><tbody><tr><td>Rule-based</td><td>—</td><td>—</td><td>—</td></tr><tr><td>RGB-only CNN</td><td>RGB</td><td>—</td><td>—</td></tr><tr><td>RGB+Depth fusion</td><td>RGB + depth</td><td>—</td><td>—</td></tr></tbody></table></div>
-          <div class="todo"><span class="pill">To add</span><p>Sizing error against hand-measured fruit, and the "—" cells above. Only add figures you are happy to make public.</p></div>
+          <p>The sizing comparison puts three approaches side by side on the same task:</p>
+          <ul class="ticks">
+            <li>Simple rules: a rule-based method with no learning.</li>
+            <li>RGB-only CNN: a network that learns fruit size from the colour image alone.</li>
+            <li>Colour plus depth: a deep learning model that uses both RGB and depth.</li>
+          </ul>
+          <p class="note">Full results will appear in the conference paper on non-destructive tomato sizing (in preparation, 2026).</p>
           <p>Still open:</p>
           <ul class="ticks">
             <li>Run the full three-month dataset (about 3,000 stereo pairs). So far the pipeline has been run on 200 – 500 frame batches.</li>
@@ -197,7 +202,7 @@
 
         <section class="cs-cta reveal">
           <h2>Interested in similar work?</h2>
-          <p>Tell me about your computer vision or deep learning problem and we can see if it's a good fit.</p>
+          <p>Need to measure things from a camera, whether it's fruit, boxes or parts? Happy to chat about it.</p>
           <a class="btn btn-light" href="mailto:nashitsaleem9@gmail.com">👋 Let's talk</a>
         </section>
       </div>

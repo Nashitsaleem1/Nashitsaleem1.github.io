@@ -413,7 +413,10 @@ h3 {
 .case:nth-child(1) { --tint: #2e4746; top: 100px; }
 .case:nth-child(2) { --tint: #1b2c2c; top: 130px; }
 .case:nth-child(3) { --tint: #172426; top: 170px; }
-.case:nth-child(4) { --tint: #111c1d; top: 210px; margin-bottom: 0; }
+.case:nth-child(4) { --tint: #111c1d; top: 210px; }
+.case:nth-child(5) { --tint: #0e1819; top: 250px; }
+.case:nth-child(6) { --tint: #0c1516; top: 285px; }
+.case:nth-child(7) { --tint: #0a1213; top: 320px; margin-bottom: 0; }
 
 .case::after {
   content: "";
@@ -1678,6 +1681,31 @@ h3 {
   max-width: 460px;
   margin: 12px auto 24px;
   color: var(--muted);
+}
+
+.pipe {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 22px;
+}
+
+.pipe span {
+  padding: 10px 16px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: linear-gradient(160deg, #10222d, #0a1b25);
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+}
+
+.pipe i {
+  color: var(--lime);
+  font-style: normal;
+  font-weight: 700;
 }
 
 @media (max-width: 900px) {

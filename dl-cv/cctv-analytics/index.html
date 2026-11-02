@@ -18,13 +18,13 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap"
     />
-    <link rel="stylesheet" href="../style.css?v=19" />
+    <link rel="stylesheet" href="../style.css?v=22" />
     <script>
       document.documentElement.classList.add("js");
     </script>
   </head>
   <body>
-    <!-- HOW TO UPDATE: every "To add" box below is a placeholder. Replace the whole box (the div with class "todo") with your real text, number or image. -->
+    <!-- HOW TO UPDATE: add a Results table here when you have figures you are happy to make public. -->
     <nav class="nav" id="nav" aria-label="Primary">
       <a href="../">Home</a>
       <a href="../#works">Works</a>
@@ -94,7 +94,6 @@
           <span class="eyebrow">Overview</span>
           <h2>What this project is</h2>
           <p>I build computer vision services for independent clients. One of them is a CCTV analytics pipeline that reads camera streams over RTSP, detects and tracks what appears in them, and runs as a Python service on the client's own GPU hardware.</p>
-          <p>A second part of the work generates drone orthomosaics using epipolar geometry, with the results stored in S3-backed storage.</p>
           <div class="glance">
             <div class="card"><small>Type</small><strong>Client work</strong></div>
             <div class="card"><small>Status</small><strong>Ongoing</strong></div>
@@ -106,8 +105,7 @@
         <section class="cs-block reveal" id="problem">
           <span class="eyebrow">The problem</span>
           <h2>What needed solving</h2>
-          <p>Turn raw camera footage into structured detections and tracks, on hardware the client controls.</p>
-          <div class="todo"><span class="pill">To add</span><p>Why this mattered: who needed it, how it was done before, and how big the problem was.</p></div>
+          <p>Nobody can watch every camera all the time, so raw footage is hard to search or act on. Detecting and tracking what appears turns it into structured data that other systems can use. Running it on hardware the client controls keeps the video on their own premises.</p>
         </section>
 
         <section class="cs-block reveal" id="role">
@@ -116,22 +114,20 @@
           <ul class="ticks">
             <li>Built the detection and tracking pipeline for CCTV streams.</li>
             <li>Packaged it as a Python service for on-prem GPU hardware.</li>
-            <li>Built drone orthomosaic generation using epipolar geometry, with S3-backed result storage.</li>
           </ul>
-          <div class="todo"><span class="pill">To add</span><p>Team size, who you worked with, and anything you owned beyond the points above.</p></div>
         </section>
 
         <section class="cs-block reveal" id="approach">
           <span class="eyebrow">Approach</span>
           <h2>How it works</h2>
+          <div class="pipe"><span>RTSP camera streams</span><i aria-hidden="true">→</i><span>YOLO11 detection</span><i aria-hidden="true">→</i><span>ByteTrack tracking</span><i aria-hidden="true">→</i><span>FastAPI service</span><i aria-hidden="true">→</i><span>Detections and tracks</span></div>
           <ol class="steps">
             <li><div><h3>Ingest</h3><p>Read live camera feeds over RTSP.</p></div></li>
             <li><div><h3>Detect</h3><p>YOLO11 detects objects in each frame.</p></div></li>
             <li><div><h3>Track</h3><p>ByteTrack links detections across frames into tracks.</p></div></li>
             <li><div><h3>Serve</h3><p>The pipeline is packaged as a Python service (FastAPI) for on-prem GPU hardware.</p></div></li>
-            <li><div><h3>Orthomosaics</h3><p>A separate workflow builds drone orthomosaics using epipolar geometry, with results in S3-compatible storage.</p></div></li>
           </ol>
-          <div class="todo"><span class="pill">To add</span><p>An architecture or pipeline diagram, plus why you chose these methods over the alternatives.</p></div>
+          <p class="note">YOLO11 is a fast one-stage detector, and ByteTrack links its detections from frame to frame so every object keeps one ID. Together they run on hardware the client controls.</p>
         </section>
 
         <section class="cs-block reveal" id="stack">
@@ -143,27 +139,23 @@
             <span class="chip">OpenCV</span>
             <span class="chip">FastAPI</span>
             <span class="chip">Python</span>
-            <span class="chip">Epipolar geometry</span>
-            <span class="chip">S3-compatible storage</span>
           </div>
         </section>
 
         <section class="cs-block reveal" id="results">
           <span class="eyebrow">Results</span>
           <h2>What came out of it</h2>
-          <div class="stats">
-            <div class="card"><strong>—</strong><small>Camera streams</small></div>
-            <div class="card"><strong>—</strong><small>Throughput (FPS)</small></div>
-            <div class="card"><strong>—</strong><small>Detection quality</small></div>
-          </div>
-          <div class="table-wrap"><table><thead><tr><th>Metric</th><th>Result</th></tr></thead><tbody><tr><td>Detection accuracy</td><td>—</td></tr><tr><td>Tracking quality</td><td>—</td></tr><tr><td>Throughput per GPU</td><td>—</td></tr><tr><td>Streams supported</td><td>—</td></tr></tbody></table></div>
-          <p class="note">Client details are confidential. Add only what you are allowed to share publicly.</p>
-          <div class="todo"><span class="pill">To add</span><p>Real numbers for the "—" cells above: accuracy, error, speed or time saved. Only add figures you are happy to make public.</p></div>
+          <p>What the pipeline delivers:</p>
+          <ul class="ticks">
+            <li>Structured detections and tracks from live RTSP camera streams.</li>
+            <li>Runs on the client's own on-prem GPU hardware.</li>
+            <li>Packaged as a Python (FastAPI) service that other systems can call.</li>
+          </ul>
         </section>
 
         <nav class="cs-nav reveal" aria-label="Case study navigation">
           <a class="prev" href="../crop-health-ai/"><small>Previous</small><span>Water-stress sensing from an ordinary RGB camera</span></a>
-          <a class="next" href="../speech-video-sync/"><small>Next</small><span>Speech recognition and synchronised video generation</span></a>
+          <a class="next" href="../drone-orthomosaic/"><small>Next</small><span>Drone orthomosaic pipeline</span></a>
         </nav>
 
         <section class="cs-cta reveal">

@@ -18,13 +18,13 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap"
     />
-    <link rel="stylesheet" href="../style.css?v=19" />
+    <link rel="stylesheet" href="../style.css?v=22" />
     <script>
       document.documentElement.classList.add("js");
     </script>
   </head>
   <body>
-    <!-- HOW TO UPDATE: every "To add" box below is a placeholder. Replace the whole box (the div with class "todo") with your real text, number or image. -->
+    <!-- HOW TO UPDATE: add a Results table here when you have figures you are happy to make public. -->
     <nav class="nav" id="nav" aria-label="Primary">
       <a href="../">Home</a>
       <a href="../#works">Works</a>
@@ -148,7 +148,7 @@
             <div class="card"><strong>33.2%</strong><small>Better than the floor</small></div>
           </div>
           <p>On 195,376 held-out pairs from 16 plants the model never saw. Simple baselines were built first:</p>
-          <div class="table-wrap"><table><thead><tr><th>Predictor</th><th>Error (°C)</th><th>Sign accuracy</th></tr></thead><tbody><tr><td>Always predict zero (the floor)</td><td>1.143</td><td>—</td></tr><tr><td>Patch brightness only</td><td>1.016</td><td>66.3%</td></tr><tr><td>Position in the leaf only</td><td>1.005</td><td>66.9%</td></tr><tr><td>Shuffled labels (leak check)</td><td>1.143</td><td>49.9%</td></tr><tr><td>Pairwise CNN</td><td>0.764</td><td>75.5%</td></tr></tbody></table></div>
+          <div class="table-wrap"><table><thead><tr><th>Predictor</th><th>Error (°C)</th><th>Sign accuracy</th></tr></thead><tbody><tr><td>Always predict zero (the floor)</td><td>1.143</td><td>n/a</td></tr><tr><td>Patch brightness only</td><td>1.016</td><td>66.3%</td></tr><tr><td>Position in the leaf only</td><td>1.005</td><td>66.9%</td></tr><tr><td>Shuffled labels (leak check)</td><td>1.143</td><td>49.9%</td></tr><tr><td>Pairwise CNN</td><td>0.764</td><td>75.5%</td></tr></tbody></table></div>
           <p>Accuracy depends on how big the real temperature gap is:</p>
           <div class="table-wrap"><table><thead><tr><th>True gap between patches</th><th>Sign accuracy</th></tr></thead><tbody><tr><td>0 – 0.25 °C</td><td>55.3%</td></tr><tr><td>0.5 – 1 °C</td><td>73.7%</td></tr><tr><td>2 – 3 °C</td><td>92.7%</td></tr><tr><td>Above 3 °C</td><td>91.9%</td></tr></tbody></table></div>
           <p class="note">It is close to chance where the difference is too small to matter, and above 90% where it is large enough to act on.</p>

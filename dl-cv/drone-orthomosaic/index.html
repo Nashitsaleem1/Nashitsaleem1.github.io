@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Drone orthomosaic pipeline | Nashit Saleem</title>
+    <meta name="description" content="A pipeline that turns overlapping drone photos into one clean top-down map using epipolar geometry, saved to S3 so the client can open it anytime." />
+    <!-- Hidden extension site: not linked from the main portfolio and kept out of search results while it holds sample content. Remove this tag when it goes public. -->
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="theme-color" content="#081822" />
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="icon" href="/favicon-48.png" type="image/png" sizes="48x48" />
+    <link rel="icon" href="/favicon-192.png" type="image/png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap"
+    />
+    <link rel="stylesheet" href="../style.css?v=22" />
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+  </head>
+  <body>
+    <!-- HOW TO UPDATE: add a Results table here when you have figures you are happy to make public. -->
+    <nav class="nav" id="nav" aria-label="Primary">
+      <a href="../">Home</a>
+      <a href="../#works">Works</a>
+      <a href="../#about">About</a>
+      <a href="../#faq">FAQ</a>
+      <a class="nav-cta" href="mailto:nashitsaleem9@gmail.com">Let's talk</a>
+    </nav>
+
+    <main>
+      <header class="cs-hero">
+        <a class="back" href="../#works"><span aria-hidden="true">←</span> All case studies</a>
+        <span class="label">Independent clients · 2025 – Present</span>
+        <h1>Drone orthomosaic pipeline</h1>
+        <p class="lead">A drone flight leaves you with a pile of overlapping photos that are hard to use on their own. This pipeline matches them with epipolar geometry and stitches them into one clean top-down map, saved to S3 so the client can open it anytime.</p>
+        <dl class="meta">
+          <div><dt>Role</dt><dd>AI engineer</dd></div>
+          <div><dt>Timeline</dt><dd>2025 – Present</dd></div>
+          <div><dt>Context</dt><dd>Independent client work</dd></div>
+          <div><dt>Tools</dt><dd>OpenCV, epipolar geometry, S3-compatible storage</dd></div>
+        </dl>
+        <div class="cs-visual">
+          <div class="win">
+                  <div class="win-bar"><i></i><i></i><i></i><span>orthomosaic · epipolar matching</span></div>
+                  <svg viewBox="0 0 520 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Overlapping drone photos matched together and stitched into one top-down map">
+                    <defs>
+                      <linearGradient id="d-field" x1="0" y1="0" x2="1" y2="1">
+                        <stop offset="0" stop-color="#3f9b53" />
+                        <stop offset="1" stop-color="#1f6a3b" />
+                      </linearGradient>
+                    </defs>
+                    <rect width="520" height="300" fill="#0a141b" />
+                    <rect x="20" y="24" width="228" height="200" rx="12" fill="#0d2230" />
+                    <g stroke-width="1.5">
+                      <rect x="36" y="44" width="92" height="70" rx="4" fill="#3f9b53" fill-opacity="0.45" stroke="#a6e3a1" />
+                      <rect x="100" y="52" width="92" height="70" rx="4" fill="#c9a23a" fill-opacity="0.4" stroke="#ffd84d" />
+                      <rect x="150" y="40" width="82" height="70" rx="4" fill="#2b7fb0" fill-opacity="0.4" stroke="#7cc4ee" />
+                      <rect x="44" y="102" width="92" height="70" rx="4" fill="#8a5bd8" fill-opacity="0.35" stroke="#c9a6ff" />
+                      <rect x="108" y="116" width="92" height="70" rx="4" fill="#3f9b53" fill-opacity="0.4" stroke="#a6e3a1" />
+                      <rect x="162" y="104" width="72" height="70" rx="4" fill="#c2412d" fill-opacity="0.35" stroke="#ff8a70" />
+                    </g>
+                    <g stroke="#cffd7a" stroke-width="1.6" stroke-dasharray="3 4" stroke-linecap="round">
+                      <path d="M112 74L118 80" />
+                      <path d="M170 82L176 70" />
+                      <path d="M90 108L98 124" />
+                      <path d="M150 128L158 112" />
+                      <path d="M186 114L192 122" />
+                    </g>
+                    <g fill="#cffd7a">
+                      <circle cx="112" cy="74" r="3" /><circle cx="118" cy="80" r="3" />
+                      <circle cx="170" cy="82" r="3" /><circle cx="176" cy="70" r="3" />
+                      <circle cx="90" cy="108" r="3" /><circle cx="98" cy="124" r="3" />
+                      <circle cx="150" cy="128" r="3" /><circle cx="158" cy="112" r="3" />
+                      <circle cx="186" cy="114" r="3" /><circle cx="192" cy="122" r="3" />
+                    </g>
+
+                    <path d="M252 124H268M262 116L270 124L262 132" stroke="#cffd7a" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+
+                    <rect x="272" y="24" width="228" height="200" rx="12" fill="#0d2230" />
+                    <rect x="284" y="36" width="204" height="176" rx="6" fill="url(#d-field)" />
+                    <g fill="#c9a23a" fill-opacity="0.55">
+                      <rect x="284" y="36" width="204" height="30" />
+                      <rect x="284" y="96" width="204" height="30" />
+                      <rect x="284" y="156" width="204" height="30" />
+                    </g>
+                    <path d="M352 36V212M420 36V212" stroke="#fff" stroke-opacity="0.35" stroke-width="2" />
+                    <rect x="300" y="104" width="52" height="40" rx="3" fill="#8f8f8f" />
+                    <rect x="304" y="108" width="44" height="32" rx="2" fill="#b8b8b8" />
+                    <rect x="284" y="36" width="204" height="176" rx="6" fill="none" stroke="#cffd7a" stroke-width="2" />
+                    <rect x="404" y="190" width="80" height="18" rx="4" fill="#fff" />
+                    <text x="412" y="203" font-family="Manrope, sans-serif" font-size="11" font-weight="800" fill="#0b1a24">saved to S3</text>
+
+                    <g font-family="Manrope, sans-serif" font-size="12" font-weight="600" fill="#fff" fill-opacity="0.6">
+                      <text x="20" y="246">Overlapping photos, matched</text>
+                      <text x="272" y="246">Orthomosaic (top-down map)</text>
+                    </g>
+                  </svg>
+                </div>
+        </div>
+      </header>
+
+      <div class="cs-wrap">
+        <section class="cs-block reveal" id="overview">
+          <span class="eyebrow">Overview</span>
+          <h2>What this project is</h2>
+          <p>A drone flight leaves you with a pile of overlapping photos, and on their own they are hard to use. I built a pipeline that takes those photos, matches them to each other using epipolar geometry, and stitches them into one clean top-down map, called an orthomosaic.</p>
+          <p>The finished maps are saved to S3, so the client can open them whenever they need. It works well for farms, building sites and land surveys.</p>
+          <div class="glance">
+            <div class="card"><small>Type</small><strong>Client work</strong></div>
+            <div class="card"><small>Status</small><strong>Ongoing</strong></div>
+            <div class="card"><small>Input</small><strong>Overlapping drone photos</strong></div>
+            <div class="card"><small>Output</small><strong>Orthomosaic maps stored in S3</strong></div>
+          </div>
+        </section>
+        <section class="cs-block reveal" id="problem">
+          <span class="eyebrow">The problem</span>
+          <h2>What needed solving</h2>
+          <p>Drone photos overlap and are taken from slightly different positions and angles, so they cannot simply be laid side by side. Farmers, site managers and surveyors want one accurate top-down view of the whole area, not hundreds of separate pictures.</p>
+        </section>
+        <section class="cs-block reveal" id="role">
+          <span class="eyebrow">My role</span>
+          <h2>What I did</h2>
+          <ul class="ticks">
+            <li>Built the pipeline end to end, from raw drone photos to a finished orthomosaic.</li>
+            <li>Used epipolar geometry to match overlapping images to each other.</li>
+            <li>Set up S3-backed storage so the client can open finished maps at any time.</li>
+          </ul>
+        </section>
+        <section class="cs-block reveal" id="approach">
+          <span class="eyebrow">Approach</span>
+          <h2>How it works</h2>
+          <div class="pipe"><span>Drone photos</span><i aria-hidden="true">→</i><span>Match with epipolar geometry</span><i aria-hidden="true">→</i><span>Stitch</span><i aria-hidden="true">→</i><span>Orthomosaic</span><i aria-hidden="true">→</i><span>S3 storage</span></div>
+          <ol class="steps">
+            <li><div><h3>Collect</h3><p>Take the overlapping photos from a drone flight over the area.</p></div></li>
+            <li><div><h3>Match</h3><p>Find the same ground points in neighbouring photos, and relate each pair of views with epipolar geometry.</p></div></li>
+            <li><div><h3>Stitch</h3><p>Combine the matched photos into one clean top-down map, the orthomosaic.</p></div></li>
+            <li><div><h3>Store</h3><p>Save the finished map to S3, where the client can open it anytime.</p></div></li>
+          </ol>
+          <p class="note">Epipolar geometry limits where a point from one photo can appear in another. That makes matching faster and cuts false matches between overlapping images.</p>
+        </section>
+        <section class="cs-block reveal" id="stack">
+          <span class="eyebrow">Tech stack</span>
+          <h2>Tools and methods</h2>
+          <div class="tags">
+            <span class="chip">Python</span>
+            <span class="chip">OpenCV</span>
+            <span class="chip">Epipolar geometry</span>
+            <span class="chip">Image matching</span>
+            <span class="chip">Orthomosaic generation</span>
+            <span class="chip">S3-compatible storage</span>
+          </div>
+        </section>
+        <section class="cs-block reveal" id="results">
+          <span class="eyebrow">Results</span>
+          <h2>What came out of it</h2>
+          <p>What the pipeline delivers:</p>
+          <ul class="ticks">
+            <li>One clean top-down map built from many overlapping drone photos.</li>
+            <li>Finished maps stored in S3, so the client can open them anytime.</li>
+            <li>Works for farms, building sites and land surveys.</li>
+          </ul>
+        </section>
+
+        <nav class="cs-nav reveal" aria-label="Case study navigation">
+          <a class="prev" href="../cctv-analytics/"><small>Previous</small><span>CCTV analytics on on-prem GPUs</span></a>
+          <a class="next" href="../game-vision-bot/"><small>Next</small><span>Real-time computer vision for game automation</span></a>
+        </nav>
+
+        <section class="cs-cta reveal">
+          <h2>Interested in similar work?</h2>
+          <p>Got drone images and not sure what to do with them? Send me a message and let's talk.</p>
+          <a class="btn btn-light" href="mailto:nashitsaleem9@gmail.com">👋 Let's talk</a>
+        </section>
+      </div>
+    </main>
+
+    <footer class="foot">
+      <div class="foot-bar">
+        <span>Created by <strong>Nashit Saleem</strong></span>
+        <nav aria-label="Social links">
+          <a href="https://www.linkedin.com/in/nashitsaleem1/" target="_blank" rel="noopener">LinkedIn <span aria-hidden="true">↗</span></a>
+          <a href="https://github.com/Nashitsaleem1?tab=repositories" target="_blank" rel="noopener">GitHub <span aria-hidden="true">↗</span></a>
+          <a href="https://twitter.com/Nashitsaleem1" target="_blank" rel="noopener">X <span aria-hidden="true">↗</span></a>
+          <a href="https://nashitsaleem1.github.io/" rel="noopener">Main site <span aria-hidden="true">↗</span></a>
+        </nav>
+      </div>
+    </footer>
+
+    <script src="../script.js?v=2"></script>
+  </body>
+</html>
