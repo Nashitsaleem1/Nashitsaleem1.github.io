@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Building an AI Receptionist for a Psychiatry Practice: Intake, Scheduling and Refills - Nashit Saleem</title>
+    <meta
+      name="description"
+      content="How we built an AI receptionist for a medical practice's patient intake and scheduling, with live Tebra integration and safe crisis handling."
+    />
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="icon" href="/favicon-48.png" type="image/png" sizes="48x48" />
+    <link rel="icon" href="/favicon-192.png" type="image/png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,800&display=swap"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,800&display=swap"
+      />
+    </noscript>
+    <script src="../assets/js/theme-switcher.js?v=email-endpoint-1"></script>
+    <link rel="stylesheet" href="./writing.css?v=blog-mobile-nav-6" />
+
+
+    <!-- SEO -->
+    <link rel="canonical" href="https://softdev.me/blog/building-an-ai-receptionist-for-a-psychiatry-practice-intake-scheduling-and-refills" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Nashit Saleem" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content="Building an AI Receptionist for a Psychiatry Practice: Intake, Scheduling and Refills - Nashit Saleem" />
+    <meta property="og:description" content="How we built an AI receptionist for a medical practice's patient intake and scheduling, with live Tebra integration and safe crisis handling." />
+    <meta property="og:url" content="https://softdev.me/blog/building-an-ai-receptionist-for-a-psychiatry-practice-intake-scheduling-and-refills" />
+    <meta property="og:image" content="https://nashitsaleem1.github.io/assets/img/blog/building-an-ai-receptionist-for-a-psychiatry-practice-intake-scheduling-and-refills/coverImage.png" />
+    <meta property="og:image:alt" content="Building an AI Receptionist for a Psychiatry Practice: Intake, Scheduling and Refills" />
+    <meta property="article:published_time" content="2026-10-19" />
+    <meta property="article:author" content="Nashit Saleem" />
+    <meta property="article:section" content="AI Receptionists" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Building an AI Receptionist for a Psychiatry Practice: Intake, Scheduling and Refills - Nashit Saleem" />
+    <meta name="twitter:description" content="How we built an AI receptionist for a medical practice's patient intake and scheduling, with live Tebra integration and safe crisis handling." />
+    <meta name="twitter:image" content="https://nashitsaleem1.github.io/assets/img/blog/building-an-ai-receptionist-for-a-psychiatry-practice-intake-scheduling-and-refills/coverImage.png" />
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Building an AI Receptionist for a Psychiatry Practice: Intake, Scheduling and Refills",
+  "description": "How we built an AI receptionist for a medical practice's patient intake and scheduling, with live Tebra integration and safe crisis handling.",
+  "datePublished": "2026-10-19",
+  "image": "https://nashitsaleem1.github.io/assets/img/blog/building-an-ai-receptionist-for-a-psychiatry-practice-intake-scheduling-and-refills/coverImage.png",
+  "mainEntityOfPage": "https://softdev.me/blog/building-an-ai-receptionist-for-a-psychiatry-practice-intake-scheduling-and-refills",
+  "author": {
+    "@type": "Person",
+    "@id": "https://nashitsaleem1.github.io/#person",
+    "name": "Nashit Saleem",
+    "url": "https://nashitsaleem1.github.io/",
+    "image": "https://nashitsaleem1.github.io/assets/img/Nashit%20Profile/Profile%20pic.jpg",
+    "jobTitle": "Python Developer, AI & Automation Expert",
+    "description": "Top-rated Python developer specializing in AI solutions and business automation. Founder of SoftDev.",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "SoftDev",
+      "url": "https://softdev.me/"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/in/nashitsaleem1/",
+      "https://github.com/Nashitsaleem1/",
+      "https://www.upwork.com/freelancers/nashitsaleem"
+    ]
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "SoftDev",
+    "url": "https://softdev.me/"
+  }
+}
+    </script>
+  </head>
+  <body class="insight-page">
+    <header class="writing-site-nav">
+      <div class="writing-site-nav-inner">
+        <button class="writing-menu-btn" type="button" aria-label="Toggle menu" aria-expanded="false">
+          <img src="../public/menu02.svg" alt="" />
+        </button>
+        <nav class="writing-site-links" aria-label="Primary navigation">
+          <a href="../index.html#about">About Me</a>
+          <a href="../index.html#projects">Projects</a>
+          <a href="../index.html#experience">Experience</a>
+          <a href="../index.html#writing">Writing</a>
+          <a href="../index.html#connect">Connect</a>
+        </nav>
+        <a
+          class="writing-book-btn"
+          href="https://calendly.com/nashitsaleem"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Email Me
+          <img alt="" src="../public/arrowupright031.svg" />
+        </a>
+      </div>
+    </header>
+
+    <main>
+      <article>
+        <header class="insight-hero">
+          <a class="insight-back-link" href="./index.html">All insights</a>
+          <div class="insight-meta">
+            <span>AI Receptionists</span>
+            <span>Healthcare</span>
+          </div>
+          <h1 class="insight-title">
+            Building an AI Receptionist for a Psychiatry Practice: Intake, Scheduling and Refills
+          </h1>
+          <p class="insight-subtitle">
+            How we built an AI receptionist for a medical practice's patient intake and scheduling, with live Tebra integration and safe crisis handling.
+          </p>
+          <div class="insight-meta">
+            <span>October 19, 2026</span>
+            <span>14 min read</span>
+          </div>
+        </header>
+
+        <div class="insight-body">
+          <figure class="insight-figure"><img src="../assets/img/blog/building-an-ai-receptionist-for-a-psychiatry-practice-intake-scheduling-and-refills/coverImage.png" alt="Building an AI Receptionist for a Psychiatry Practice: Intake, Scheduling and Refills" /></figure>
+
+          <section class="insight-tldr" aria-labelledby="tldr-title">
+            <h2 id="tldr-title">TL;DR - 6 takeaways - 15-second read</h2>
+            <ol>
+            <li>Psychiatry front desks spend much of the day on the same three calls: new patients, appointments, and refills.</li>
+            <li>We built an AI voice agent for Beth Psychiatry that handles all three, 24/7.</li>
+            <li>It connects to Tebra through n8n and Python, so it checks real records and real schedules during the call.</li>
+            <li>The AI collects refill requests but never approves medication. A provider always makes that decision.
+
+</li>
+            <li>Any caller in crisis is pointed to 988 or 911 right away and flagged for staff.</li>
+            <li>The agent now handles 200+ patient interactions a week and has cut manual scheduling work by 60%.</li>
+            </ol>
+          </section>
+
+          <h2 id="introduction">Introduction</h2><p>As a mental health practice, you know the calls can pile up at the front desk. Someone is asking about insurance, someone needs to change their appointment, and someone else is requesting a prescription refill.</p><p>While every caller may seem like an individual, there are times when the front desk gets busy juggling messages, appointments, and medical records. In the meantime, calls go unanswered, voicemails get left, and patients struggle to get the help they need in a timely manner.</p><p>Beth Psychiatry wanted a solution that could help answer these calls, schedule appointments, and ensure refill requests reached the right person. That&#39;s when we decided to create an AI receptionist.</p><p>In this article, we&#39;ll explore how we built it, how it integrates with Beth&#39;s tools, and the insights we gained along the way.</p><h2 id="why-phone-calls-can-be-tough-for-psychiatry-practices">Why Phone Calls Can Be Tough for Psychiatry Practices</h2><p>Most medical practices understand the challenge of a busy phone line. However, mental health practices face some unique considerations. For one, it can be difficult for patients to make that first phone call. Opening up over the phone can be emotionally challenging, and if a caller doesn&#39;t get an immediate response, they may be more likely to hang up and try again — or not try at all.</p><p>According to the American Psychological Association, 39% of patients at one mental health clinic didn&#39;t show for their first appointment. Another study from a <a href="https://www.mdedge.com/content/can-what-we-learned-about-reducing-no-shows-our-clinic-work-you" target="_blank" rel="noopener noreferrer">psychiatry practice at UT Houston</a> found 31% of new patients didn&#39;t attend their first visit, with the primary reason being forgetfulness. Even if a patient calls back, they still may be left waiting if the front desk is busy.</p><p>Finally, prescription refills can&#39;t always wait. Patients who take psychiatric medications may call to report that their prescription is empty or will be empty soon. A refill request may need to go immediately to the provider, especially if the patient calls on a Friday afternoon for an upcoming Monday refill.</p><p>On top of everything else, the front desk is responsible for other duties in addition to phone calls. From greeting patients, to filing insurance, to completing patient paperwork, the staff can only handle so much before calls go unanswered.</p><figure class="insight-figure"><img src="../assets/img/blog/building-an-ai-receptionist-for-a-psychiatry-practice-intake-scheduling-and-refills/psychiatry-front-desk-calls.png" alt="Psychiatry front desk calls" /></figure><p>This is all a challenge for an AI receptionist. Let&#39;s look closer at what we built for Beth Psychiatry.</p><h2 id="what-we-built">What We Built</h2><p>Beth Psychiatry needed a simple, effective way to handle routine phone calls that doesn&#39;t require patients to deal with long hold times or a confusing phone tree.</p><p>We built an AI receptionist that could answer the phones and help patients with their requests, from new patient intakes to prescription refills.</p><p>We also made sure it could integrate with the tools Beth already uses. Using n8n and Python, we connected the AI voice agent to Tebra, which handles scheduling and records management. This allowed the AI to pull up patient information in real-time, even while the phone call was in progress.</p><p>Let&#39;s break down exactly what our AI receptionist could do.</p><h3 id="1-new-patient-intake">1. New Patient Intake</h3><p>A call from a new patient can be a tricky balancing act. We wanted our AI receptionist to make the interaction as seamless as possible.</p><p>Our voice agent can answer basic questions about the practice, learn the caller&#39;s name, and gather the information the front desk typically collects for a potential new patient, including:</p><ul><li>Name, date of birth, and contact information</li><li>Insurance</li><li>Brief description of what they&#39;re looking for in care</li><li>Availability for an appointment</li><li>Preference for in-office or telehealth</li></ul><p>The AI agent won&#39;t ask medical questions or attempt to serve as a therapist. It will collect the necessary information and leave the next steps to the receptionist staff.</p><h3 id="2-appointment-scheduling">2. Appointment Scheduling</h3><p>Handling appointment scheduling can be one of the most time-consuming aspects of managing a psychiatric practice. Patients call to schedule, reschedule, and sometimes cancel their visits.</p><p>Instead of asking the patient to leave a message, our AI receptionist can handle appointment requests with the following process:</p><ol><li>The AI agent identifies the caller as a known patient and pulls up their records.</li><li>It accesses Tebra to find available appointment times with the patient&#39;s preferred provider.</li><li>The agent shares those options with the caller.</li><li>The patient selects the time that works best for them, and the AI schedules the appointment.</li><li>The patient receives an SMS confirmation right after the call ends.</li></ol><p>By allowing the AI to handle appointment scheduling, patients receive a more convenient experience, and the front desk can spend more time on the calls that actually require their help.</p><h3 id="3-refill-requests">3. Refill Requests</h3><p>Refill requests need to be taken seriously. Patients have to report any issues with their medication, the refill request has to be approved by the provider, and the next script needs to be sent to the pharmacy.</p><p>Our AI receptionist can gather the necessary information to make the request, but the final approval and decision are always up to the provider. The process works this way:</p><ol><li>The receptionist agent answers the call and asks for the patient&#39;s name.</li><li>The patient provides the name of the medication, dosage, pharmacy, and any other information needed to submit the refill request.</li><li>The agent shares a text message confirming the request and letting the patient know what to expect next.</li><li>The request is sent to the appropriate staff member for approval and fulfillment.</li></ol><p>This prevents patients from getting stuck on hold or sending an email that could be buried among other messages.</p><h2 id="how-a-call-works">How a Call Works</h2><p>From the patient&#39;s perspective, the process is simple. When they call, the AI receptionist answers and asks how it can assist them.</p><p>Behind the scenes, there are a number of different actions the agent takes, depending on the caller&#39;s needs.</p><p>From the moment the patient calls in, here&#39;s what happens:</p><ol><li>The patient calls the practice. The AI receptionist answers and identifies the reason for the call.</li><li>Crisis de-escalation procedures are followed if the caller is discussing a potential suicide, self-harm, or any other life-threatening situation.</li><li>The caller is asked for identifying information if it&#39;s necessary to pull up their records in Tebra.</li><li>The appropriate database is searched using n8n, Python, and the Tebra API. After pulling up the necessary information, the AI receptionist performs the requested action.</li><li>The patient receives an SMS confirmation if needed, and the staff receive a summary of the call for their records.</li></ol><figure class="insight-figure"><img src="../assets/img/blog/building-an-ai-receptionist-for-a-psychiatry-practice-intake-scheduling-and-refills/psychiatry-ai-call-flow.png" alt="Psychiatry ai call flow" /></figure><p>The AI receptionist isn&#39;t expected to be able to handle every situation on its own. If the caller needs something the AI doesn&#39;t have the ability to do, or if the patient requests to speak with a receptionist, the call will be forwarded or held according to standard procedure.</p><h2 id="safety-first-crisis-calls-and-other-considerations">Safety First: Crisis Calls and Other Considerations</h2><p>When building an AI receptionist for a mental health practice, it&#39;s important to think beyond convenience. The AI has to know when to defer to staff, especially in high-stakes situations, and avoid giving out any medical advice.</p><p>We took several precautions to ensure the AI receptionist followed safety guidelines.</p><h3 id="calls-regarding-suicide-self-harm-or-crisis">Calls Regarding Suicide, Self-Harm, or Crisis</h3><p>If a patient calls inquiring about or reporting suicide, self-harm, or any other emergency, the AI receptionist should follow appropriate de-escalation procedures.</p><p>It should inform the caller that the best course of action is to call 911 or the <a href="https://988lifeline.org/" target="_blank" rel="noopener noreferrer">Suicide &amp; Crisis Lifeline at 988</a> and let them know that a member of the staff will also be available to assist them.</p><h3 id="controlled-medications">Controlled Medications</h3><p>Some psychiatric medications are classified as controlled substances. The AI receptionist isn&#39;t qualified to provide any information about them or process a refill request.</p><p>When a patient calls to inquire about a controlled substance, the AI should forward the call to the appropriate staff member or ask to leave a voicemail with the necessary information.</p><h3 id="medical-advice">Medical Advice</h3><p>Patients may call with questions about mental health, such as the side effects of medication or whether a change in their treatment plan is necessary.</p><p>The AI doesn&#39;t have the training or licensure to give medical advice. It should direct the caller to their provider or let them know they can send an email with their questions.</p><h3 id="getting-a-human-operator">Getting a Human Operator</h3><p>Patients should always have the option to speak with a human operator if they prefer.</p><p>The AI receptionist should be programmed to transfer or respond to questions according to a practice&#39;s protocols.</p><p>We worked with Beth Psychiatry to outline these procedures and test them before the final launch. When building a system for a healthcare practice, it&#39;s far better to anticipate limitations and set expectations than to exceed them.</p><h2 id="the-tools-that-power-the-ai-receptionist">The Tools That Power the AI Receptionist</h2><p>We wanted to work with familiar tools whenever possible. We made strategic additions to Beth&#39;s existing tech stack that allowed the AI receptionist to perform the tasks listed above.</p><p>Here are the tools we used and their purposes:</p><div class="insight-table-wrap"><table><thead><tr><th>Tool</th><th>Purpose</th></tr></thead><tbody><tr><td>Voice agent</td><td>Answers the phone and communicates with the caller</td></tr><tr><td>n8n</td><td>Handles the workflows for new patient intakes, scheduling, and refill requests</td></tr><tr><td>Python</td><td>Assists with additional coding as needed for the workflows</td></tr><tr><td>Tebra</td><td>Gives the AI access to patient information and the scheduling system</td></tr><tr><td>Google Apps Script</td><td>Assists with existing forms and Google Workspace tools</td></tr><tr><td>SMS</td><td>Sends patients appointment confirmations and other information</td></tr></tbody></table></div><figure class="insight-figure"><img src="../assets/img/blog/building-an-ai-receptionist-for-a-psychiatry-practice-intake-scheduling-and-refills/psychiatry-ai-tech-stack.png" alt="Psychiatry ai tech stack" /></figure><p>The most crucial piece of software in this list is the connection to Tebra.</p><p>We needed to give the AI access to patient records so it could schedule appointments and process refill requests in real-time. Without that connection, the AI would simply take notes and ask the receptionist to follow up later. By using n8n and Python to access the Tebra API, we gave the AI the ability to do much more.</p><h2 id="information-confidentiality-and-hipaa-compliance">Information Confidentiality and HIPAA Compliance</h2><p>Mental health practices have to be especially mindful of their patients&#39; privacy. We took a number of different steps to ensure the AI receptionist followed HIPAA guidelines and didn&#39;t jeopardize any patient information.</p><p>When designing an AI system for a mental health practice, there are a number of privacy and confidentiality best practices to keep in mind:</p><div class="insight-table-wrap"><table><thead><tr><th>Best practice</th><th>What it means</th></tr></thead><tbody><tr><td>Caller verification</td><td>Always verify the identity of the caller before pulling up or sharing any information.</td></tr><tr><td>Information collection</td><td>Collect only the information you need from the caller.</td></tr><tr><td>Approved applications</td><td>Always use approved applications to access, store, and share patient information. Avoid using spreadsheets or other insecure methods.</td></tr><tr><td>Text message security</td><td>When using SMS to confirm appointments, keep the message brief and avoid giving any patient-specific information beyond what&#39;s necessary.</td></tr><tr><td>Vendor requirements</td><td>Vendors that provide applications or services that handle protected health information may have specific requirements under HIPAA. The practice should determine what those requirements are and work with the vendors to establish appropriate agreements.</td></tr></tbody></table></div><p>Anyone considering an AI receptionist for their mental health practice should also work with their compliance team or a qualified healthcare attorney to determine the best steps for their practice&#39;s needs.</p><h2 id="results-following-the-launch">Results Following the Launch</h2><p>After Beth&#39;s AI receptionist launched, it began handling the routine phone calls that free up the front desk staff to focus on more essential tasks. According to the <a href="https://softdev.me/projects/beth-call-handler" target="_blank" rel="noopener noreferrer">Beth Psychiatry AI Call Handler project</a>, some of the results included:</p><div class="insight-table-wrap"><table><thead><tr><th>Result</th><th>Details</th></tr></thead><tbody><tr><td>200+ weekly patient interactions</td><td>Handled by the AI as opposed to the front desk</td></tr><tr><td>60% reduction in manual scheduling</td><td>Reducing the time spent on scheduling and rescheduling appointments</td></tr><tr><td>300+ monthly refill requests</td><td>Captured and sent to the appropriate staff members</td></tr><tr><td>40% improvement in data accuracy</td><td>Aided by the AI making live requests in Tebra</td></tr><tr><td>1,000+ weekly SMS messages</td><td>Sent to patients</td></tr><tr><td>35% increase in engagement</td><td>With patients</td></tr></tbody></table></div><figure class="insight-figure"><img src="../assets/img/blog/building-an-ai-receptionist-for-a-psychiatry-practice-intake-scheduling-and-refills/beth-psychiatry-ai-results.png" alt="Beth psychiatry ai results" /></figure><p>These stats give us a good look at the types of administrative tasks an AI receptionist can handle for a small mental health practice. Beyond that, it&#39;s also important to understand the qualitative results. Front desk staff have more time to focus on in-person visitors, and patients who call outside of regular business hours have another option for making an appointment, leaving a message, or getting a prescription refill.</p><p>For small practices, this can make a world of a difference.</p><h2 id="what-weve-learned">What We&#39;ve Learned</h2><p>Developing an AI receptionist has taught us a few important lessons about working in the healthcare space. Most importantly, we learned that it&#39;s best to start with the administrative tasks that consume the most time.</p><p>Scheduling and refill requests are excellent places to start because they&#39;re repetitive and have set guidelines. From there, we made sure to set boundaries regarding crisis calls, medical advice, and medications. We also kept the language simple and the tone calm to help anxious patients feel more comfortable.</p><p>Above all, we made sure to leave the clinical decision-making to the providers and allow the front desk staff to handle whatever a patient brings to them. Finally, we continued to refine the process based on real-world interactions. After all, sometimes the best way to learn what an AI receptionist can and can&#39;t do is to try it out with real patients.</p><h2 id="should-your-practice-have-an-ai-receptionist">Should Your Practice Have an AI Receptionist?</h2><p>An AI receptionist may be right for your mental health practice if:</p><ul><li>The front desk spends a large amount of its time on the phone, especially with patients</li><li>A large portion of those calls are about scheduling, rescheduling, or refill requests</li><li>Your front desk staff is spending too much time on voicemail or calling patients back</li><li>Your practice uses an electronic health record or scheduling software that has an open API, such as Tebra</li><li>You want to reduce the administrative workload without adding a full-time receptionist</li></ul><p>That being said, an AI receptionist isn&#39;t right for every practice. If your practice doesn&#39;t get many phone calls, or if those calls are more about clinical care than scheduling or refills, it&#39;s probably best to invest in a better voicemail system and processes for letting patients speak with a human operator.</p><p>Another option may be an online appointment scheduler that integrates with the tools you already use, such as Google Calendar. Every practice is different, so it&#39;s important to consider your specific needs before making a decision.</p><h2 id="conclusion">Conclusion</h2><p>For a mental health practice, a phone call can be the difference between a patient getting the care they need and walking away without one. Making that call easier can be a huge relief for patients and staff alike.</p><p>At Beth Psychiatry, we built an AI receptionist that could handle new patient intakes, scheduling, and prescription refill requests. By integrating it with Tebra through n8n and Python, we made sure it wasn&#39;t just taking messages. Instead, it could make changes to the calendar and pull up patient information in real-time.</p><p>Perhaps more importantly, we made sure the AI knew when to let a human take over. Whether it was a crisis call, a question about medication, or a request for something the AI wasn&#39;t ready to handle, the AI knew when to get help.</p><p>By doing this, we created a tool that supplemented the front desk staff without replacing them. For a busy mental health practice, that can be an excellent way to reduce the administrative workload and spend more time with patients.</p><h2 id="frequently-asked-questions">Frequently asked questions</h2><h3 id="is-an-ai-receptionist-right-for-a-mental-health-practice">Is an AI receptionist right for a mental health practice?</h3><p>It can be, if certain precautions are taken. An AI receptionist can handle the time-consuming, repetitive tasks of a front desk receptionist while leaving complex or sensitive calls to the staff.</p><h3 id="can-an-ai-receptionist-approve-a-prescription-refill">Can an AI receptionist approve a prescription refill?</h3><p>No, but it can gather the information needed to approve the refill and submit it to the physician or pharmacist.</p><h3 id="can-it-integrate-with-tebra">Can it integrate with Tebra?</h3><p>Yes. The Beth Psychiatry AI Call Handler project used n8n and Python to integrate the AI voice agent with Tebra.</p><h3 id="isnt-this-a-hipaa-compliance-issue">Isn&#39;t this a HIPAA compliance issue?</h3><p>It can be, if appropriate precautions aren&#39;t taken. The AI receptionist should be configured to limit access to protected health information, use secure hosting and data storage solutions, and ask for proper authorization before accessing any patient information. Reviewing these precautions with a compliance expert is always a good idea.</p><h3 id="how-long-does-it-take-to-build-an-ai-receptionist">How long does it take to build an AI receptionist?</h3><p>It depends on the scope of the project, but a basic AI receptionist that can handle intake, scheduling, and refill requests may only take a few weeks.</p>
+
+          <nav class="insight-post-nav" aria-label="Post navigation">
+            <a class="insight-post-nav-link insight-post-nav-prev" href="./whatsapp-hubspot-logging.html">
+              <svg class="insight-nav-icon" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg><div><span class="insight-nav-label">Previous</span><span class="insight-nav-title">How to Automatically Log WhatsApp Business Conversations in HubSpot</span></div>
+            </a>
+            <a class="insight-post-nav-link" href="./ai-receptionist-for-contractors.html">
+              <div><span class="insight-nav-label">Next</span><span class="insight-nav-title">AI Receptionist for Contractors: Stop Losing Jobs to Missed Calls</span></div><svg class="insight-nav-icon" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </nav>
+        </div>
+      </article>
+    </main>
+
+    <footer class="writing-page-footer">
+      <span>Copyright © 2025 <em>SoftDev.</em> All Rights Reserved.</span>
+    </footer>
+  </body>
+</html>

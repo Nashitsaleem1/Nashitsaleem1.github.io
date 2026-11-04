@@ -580,3 +580,34 @@ body.insight-page {
     font-size: clamp(2rem, 9vw, 2.65rem);
   }
 }
+
+/* Code blocks and stacked post navigation */
+.insight-body pre {
+  margin: 1.5rem 0 2rem;
+  padding: 1.1rem 1.3rem;
+  overflow-x: auto;
+  border: 0.5px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.04);
+  color: #d6d6d6;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.insight-body code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.9em;
+}
+
+.insight-body p code,
+.insight-body li code {
+  padding: 0.1rem 0.4rem;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+}
+
+.insight-post-nav {
+  display: grid;
+  gap: 1rem;
+}
