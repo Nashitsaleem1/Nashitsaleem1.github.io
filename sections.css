@@ -651,6 +651,12 @@ body,
   backdrop-filter: blur(80px);
 }
 
+.contact .profiles {
+  width: fit-content;
+  max-width: 100%;
+  padding: 1.25rem 1.6rem;
+}
+
 .testimonials {
   margin-top: 0;
   margin-bottom: var(--portfolio-section-gap);
