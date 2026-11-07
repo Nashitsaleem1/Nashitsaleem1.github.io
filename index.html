@@ -583,6 +583,7 @@
             <li><a href="projects/excel.html">Excel Result Card Automation</a></li>
             <li><a href="projects/game.html">Game Automation</a></li>
             <li><a href="projects/gmail.html">Gmail Automation</a></li>
+            <li><a href="projects/livekit-voice-agent.html">Ava Voice AI Morning Brief Agent</a></li>
             <li><a href="projects/n8n.html">N8N AI Agent</a></li>
             <li><a href="projects/qrcode.html">Custom QR Code Generation</a></li>
             <li><a href="projects/shopify.html">Shopify Product Combinations</a></li>
@@ -1769,9 +1770,9 @@
 
         // Render projects
         filtered.forEach((project, index) => {
-          const projectURL = project.Filename
-            ? `projects/${project.Filename.trim()}.html`
-            : "#";
+          const slug = (project.Filename || "").trim() ||
+            (project.URL || "").trim().replace(/\/+$/, "").split("/").pop();
+          const projectURL = slug ? `projects/${slug}.html` : "#";
           const primaryCategory = project.Category
             ? project.Category.split(",")[0].trim()
             : "Project";
