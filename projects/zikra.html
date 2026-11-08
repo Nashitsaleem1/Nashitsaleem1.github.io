@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Zikra Platform - SoftDev</title>
 
-    <meta name="description" content="Empower Your Quran Learning Journey Welcome to Zikra, the Quran learning platform designed to deepen your understanding, improve recitation, and elevate." />
+    <meta name="description" content="Zikra is a bilingual (English / Urdu) Quran learning platform with 558 ruku-by-ruku video lessons, a verse-by-verse reader with Urdu and English translations, a Mus'haf view and a catalogue of children's books." />
     <link rel="icon" href="/favicon.ico" sizes="48x48" />
     <link rel="icon" href="/favicon-48.png" type="image/png" sizes="48x48" />
     <link rel="icon" href="/favicon-192.png" type="image/png" sizes="192x192" />
@@ -24,9 +24,23 @@
     <link href="../assets/css/main.min.css" rel="stylesheet" />
 
     <style>
-      /* Styles extracted from inline attributes */
       .btn-back   { margin-right: 15px; background-color: #404040; }
       .link-plain { text-decoration: none; }
+      .tech-icon3.invert { filter: invert(1); }
+      html[data-theme="light"] .tech-icon3.invert { filter: none; }
+
+      /* Screens gallery */
+      .zk-screens-section { padding: 100px 0; }
+      .zk-screens { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; max-width: 1100px; margin: 0 auto; }
+      .zk-screen { margin: 0; background: #111; border: 1px solid #2a2a2a; border-radius: 12px; overflow: hidden; }
+      .zk-screen img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; object-position: top; }
+      .zk-screen figcaption { padding: 18px 22px 22px; }
+      .zk-screen h3 { font-size: 17px; font-weight: 700; color: #fff; margin: 0 0 6px; }
+      .zk-screen p { font-size: 14.5px; color: #b0b0b0; line-height: 1.6; margin: 0; }
+      html[data-theme="light"] .zk-screen { background: #fff; border-color: #e5e5e5; }
+      html[data-theme="light"] .zk-screen h3 { color: #111; }
+      html[data-theme="light"] .zk-screen p { color: #555; }
+      @media (max-width: 768px) { .zk-screens { grid-template-columns: 1fr; } .zk-screens-section { padding: 70px 0; } }
     </style>
 
     <!-- Google Analytics -->
@@ -73,31 +87,40 @@
             <span>Zikra</span><br />Platform
           </h1>
           <p class="hero-description">
-            Empower Your Quran Learning Journey Welcome to Zikra, the Quran
-            learning platform designed to deepen your understanding, improve
-            recitation, and elevate your connection with the Holy Qur'an. With
-            advanced tools for audio listening, progress tracking, and intuitive
-            study modes, Zikra makes learning the Quran accessible, meaningful,
-            and engaging for learners of all levels.
+            Zikra Dar ul Nashr publishes Urdu tarjuma lessons and children's
+            Islamic books. We rebuilt their website into one bilingual platform
+            where learners can watch the full Quran as short video lessons, read
+            every surah with Urdu and English translations, and browse the
+            Zikra book series. The whole site switches between English and Urdu
+            (right-to-left) and supports light and dark themes.
           </p>
           <a href="../index.html#projects" class="cta-button btn-back">Back To Projects</a>
-          <a href="https://zikrawebsite.netlify.app" class="cta-button" target="_blank">View Live Project</a>
+          <a href="https://zikra.vercel.app/" class="cta-button" target="_blank" rel="noopener">View Live Project</a>
         </div>
 
         <div class="hero-visual">
           <div class="dashboard-mockup">
             <div class="dashboard-main">
-              <img id="mainDisplay" src="../assets/img/softdev/zikra4.webp" alt="Zikra Platform" />
+              <img id="mainDisplay" src="../assets/img/softdev/zikra-hero.webp" alt="Zikra home page with the Surah Al-An'am verse" />
             </div>
             <div class="secondary-mockups">
-              <div class="secondary-mockup" onclick="changeImage('../assets/img/softdev/zikra4.webp', this)">
-                <img src="../assets/img/softdev/zikra4.webp" alt="Thumbnail 1" loading="lazy" />
+              <div class="secondary-mockup active" onclick="changeImage('../assets/img/softdev/zikra-hero.webp', this)">
+                <img src="../assets/img/softdev/zikra-hero.webp" alt="Home page" loading="lazy" />
               </div>
-              <div class="secondary-mockup" onclick="changeImage('../assets/img/softdev/zikra3.webp', this)">
-                <img src="../assets/img/softdev/zikra3.webp" alt="Thumbnail 2" loading="lazy" />
+              <div class="secondary-mockup" onclick="changeImage('../assets/img/softdev/zikra-lessons.webp', this)">
+                <img src="../assets/img/softdev/zikra-lessons.webp" alt="Quran lessons list" loading="lazy" />
               </div>
-              <div class="secondary-mockup" onclick="changeImage('../assets/img/softdev/zikra2.webp', this)">
-                <img src="../assets/img/softdev/zikra2.webp" alt="Thumbnail 3" loading="lazy" />
+              <div class="secondary-mockup" onclick="changeImage('../assets/img/softdev/zikra-reader.webp', this)">
+                <img src="../assets/img/softdev/zikra-reader.webp" alt="Verse-by-verse reader" loading="lazy" />
+              </div>
+              <div class="secondary-mockup" onclick="changeImage('../assets/img/softdev/zikra-mushaf.webp', this)">
+                <img src="../assets/img/softdev/zikra-mushaf.webp" alt="Mus'haf reading view" loading="lazy" />
+              </div>
+              <div class="secondary-mockup" onclick="changeImage('../assets/img/softdev/zikra-book.webp', this)">
+                <img src="../assets/img/softdev/zikra-book.webp" alt="Book detail page" loading="lazy" />
+              </div>
+              <div class="secondary-mockup" onclick="changeImage('../assets/img/softdev/zikra-urdu.webp', this)">
+                <img src="../assets/img/softdev/zikra-urdu.webp" alt="Urdu right-to-left mode" loading="lazy" />
               </div>
             </div>
           </div>
@@ -113,25 +136,76 @@
             <span>Tech Stack</span>
           </div>
           <h2 class="section-title">Technologies Used</h2>
-          <p class="section-description">Built with cutting-edge technologies to ensure scalability, reliability, and performance</p>
+          <p class="section-description">A fast single-page app with code-split routes, so each lesson or surah loads only what it needs</p>
         </div>
-        <div class="technologies-grid2">
-          <div class="tech-badge-item2">
-            <img src="../assets/img/softdev/node.webp" alt="Node JS" class="tech-icon2" loading="lazy" />
-            <span>Node JS</span>
+        <div class="technologies-grid3">
+          <div class="tech-badge-item3">
+            <img src="../assets/img/softdev/react.webp" alt="React" class="tech-icon3" loading="lazy" />
+            <span>React</span>
           </div>
-          <div class="tech-badge-item2">
-            <img src="../assets/img/softdev/youtube.webp" alt="YouTube API" class="tech-icon2" loading="lazy" />
-            <span>YouTube API</span>
+          <div class="tech-badge-item3">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/vitejs/vitejs-original.svg" alt="Vite" class="tech-icon3" loading="lazy" />
+            <span>Vite</span>
           </div>
-          <div class="tech-badge-item2">
-            <img src="../assets/img/softdev/html.webp" alt="HTML" class="tech-icon2" loading="lazy" />
-            <span>HTML</span>
+          <div class="tech-badge-item3">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind CSS" class="tech-icon3" loading="lazy" />
+            <span>Tailwind CSS</span>
           </div>
-          <div class="tech-badge-item2">
-            <img src="../assets/img/softdev/css.webp" alt="CSS" class="tech-icon2" loading="lazy" />
-            <span>CSS</span>
+          <div class="tech-badge-item3">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/reactrouter/reactrouter-original.svg" alt="React Router" class="tech-icon3" loading="lazy" />
+            <span>React Router</span>
           </div>
+          <div class="tech-badge-item3">
+            <img src="../assets/img/softdev/youtube.webp" alt="YouTube" class="tech-icon3" loading="lazy" />
+            <span>YouTube Embeds</span>
+          </div>
+          <div class="tech-badge-item3">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/vercel/vercel-original.svg" alt="Vercel" class="tech-icon3 invert" loading="lazy" />
+            <span>Vercel</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="zk-screens-section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-label">
+            <i class="fas fa-circle"></i>
+            <span>Inside The Platform</span>
+          </div>
+          <h2 class="section-title">What Learners Get</h2>
+          <p class="section-description">Three ways into the Quran: watch, read, and learn with children's books</p>
+        </div>
+        <div class="zk-screens">
+          <figure class="zk-screen">
+            <img src="../assets/img/softdev/zikra-lessons.webp" alt="Quran Lessons page with Surah, Juz and Rub' tabs and search" loading="lazy" />
+            <figcaption>
+              <h3>Video lessons, ruku by ruku</h3>
+              <p>558 tarjuma lessons covering all 114 surahs. Browse by Surah, Juz or Rub', search, and move through rukus with previous and next.</p>
+            </figcaption>
+          </figure>
+          <figure class="zk-screen">
+            <img src="../assets/img/softdev/zikra-reader.webp" alt="Surah Al-Fatihah in the verse reader with Urdu and English translations" loading="lazy" />
+            <figcaption>
+              <h3>Verse-by-verse reader</h3>
+              <p>Arabic text with Urdu (Maulana Fateh Muhammad Jalandhari) and English (Mufti Taqi Usmani) translations, and a button to jump to the matching lesson.</p>
+            </figcaption>
+          </figure>
+          <figure class="zk-screen">
+            <img src="../assets/img/softdev/zikra-mushaf.webp" alt="Surah Ya-Sin in the Mus'haf view" loading="lazy" />
+            <figcaption>
+              <h3>Mus'haf, word and present modes</h3>
+              <p>Switch from verses to a continuous Mus'haf page or word-by-word view, or open Present mode for full-screen teaching.</p>
+            </figcaption>
+          </figure>
+          <figure class="zk-screen">
+            <img src="../assets/img/softdev/zikra-book.webp" alt="Nursery Al-Quran, Al-Hadith and Al-Fiqh book page" loading="lazy" />
+            <figcaption>
+              <h3>Zikra book series</h3>
+              <p>9 children's books from Nursery to 5th Class, each with a page preview gallery, publisher details and a way to order.</p>
+            </figcaption>
+          </figure>
         </div>
       </div>
     </section>
@@ -144,23 +218,23 @@
             <span>Process</span>
           </div>
           <h2 class="section-title">How It Works</h2>
-          <p class="section-description">A closer look at the automated workflow behind the results</p>
+          <p class="section-description">How the content is organised behind the scenes</p>
         </div>
         <div class="how-it-works-steps">
           <div class="how-it-works-step">
             <div class="how-it-works-number">1</div>
-            <h3>Recitation Content Delivery</h3>
-            <p>The YouTube API streams Quran audio and recitation content directly into the learner's study session.</p>
+            <h3>One Quran Index</h3>
+            <p>Every surah, juz, rub' and ruku is mapped once, so lessons and the reader share the same structure and link to each other.</p>
           </div>
           <div class="how-it-works-step">
             <div class="how-it-works-number">2</div>
-            <h3>Structured Study Modes</h3>
-            <p>The Node JS backend organizes lessons into distinct study modes, guiding learners through material at their own pace.</p>
+            <h3>Lessons From YouTube</h3>
+            <p>Zikra's existing YouTube lessons are matched to each ruku and played inside the site, so the client keeps uploading where they already do.</p>
           </div>
           <div class="how-it-works-step">
             <div class="how-it-works-number">3</div>
-            <h3>Progress Tracking</h3>
-            <p>Each learner's activity is recorded automatically, tracking completion and engagement across sessions over time.</p>
+            <h3>Bilingual By Default</h3>
+            <p>Every label has an English and an Urdu version. Choosing Urdu flips the whole layout to right-to-left with Nastaliq type.</p>
           </div>
         </div>
       </div>
@@ -171,24 +245,24 @@
         <div class="section-header">
           <div class="section-label">
             <i class="fas fa-circle"></i>
-            <span>Metrics</span>
+            <span>Scope</span>
           </div>
-          <h2 class="section-title">Results & Impact</h2>
-          <p class="section-description">Measurable outcomes that demonstrate the real-world value delivered to the client</p>
+          <h2 class="section-title">What We Delivered</h2>
+          <p class="section-description">The size of the content now available in one place</p>
         </div>
         <div class="results-container">
           <div class="results-list">
             <div class="result-item">
-              <span class="result-text">Enabled meaningful recitation & listening for 500+ learners weekly</span>
+              <span class="result-text">558 video lessons across all 114 surahs, one per ruku</span>
             </div>
             <div class="result-item">
-              <span class="result-text">Structured learning across 3+ study modes, improving retention by 40%</span>
+              <span class="result-text">All 6,236 ayahs readable with Urdu and English translations</span>
             </div>
             <div class="result-item">
-              <span class="result-text">Accessible on 100% of devices, supporting 24/7 learning anytime, anywhere</span>
+              <span class="result-text">9 children's books, Nursery to 5th Class, each with its own page</span>
             </div>
             <div class="result-item">
-              <span class="result-text">Tracked progress for 500+ users, boosting engagement and completion rates by 35%</span>
+              <span class="result-text">Full English and Urdu (right-to-left) interface with light and dark themes</span>
             </div>
           </div>
         </div>
@@ -205,7 +279,7 @@
           <h2 class="section-title">Business Impact</h2>
         </div>
         <p class="why-it-matters-text">
-          Learning to recite and understand the Quran is a deeply personal journey, and many learners lack a structured, accessible way to track their progress outside of in-person classes. Zikra gives learners of all levels a self-paced way to build recitation skill and stay engaged, with the tools to see their own progress over time. That structure keeps learners coming back consistently, extending reach to anyone with an internet connection rather than only those near a physical class.
+          Zikra's lessons, translations and books used to be spread across YouTube, social media and print. Now a learner can open any surah, read the translation, and watch the lesson for that exact ruku in a couple of clicks, in the language they read best. Teachers get a Present mode for the classroom, and schools can browse the full book series before ordering. Because lessons still come from YouTube, the team keeps their existing workflow and every new upload can be linked into the site.
         </p>
       </div>
     </section>
@@ -249,62 +323,6 @@
         if (typeof AOS !== "undefined") {
           AOS.init({ duration: 1000, easing: "ease-in-out", once: true, mirror: false });
         }
-        const bookingButton = document.getElementById("bookingBtn");
-        if (bookingButton) {
-          bookingButton.addEventListener("click", function () {
-            gtag("event", "click_book_now", { button_id: "bookingBtn", button_text: "Book Now" });
-          });
-        }
-        const dropdown = document.getElementById("bookingDropdown");
-        if (dropdown) {
-          dropdown.addEventListener("click", function (event) {
-            const link = event.target.closest("a");
-            if (!link) return;
-            const linkText = link.innerText.trim();
-            const eventName = linkText.toLowerCase().replace(/\s+/g, "_");
-            gtag("event", eventName, { link_text: linkText, destination_url: link.href });
-          });
-        }
-      });
-
-      const hamburger = document.getElementById("hamburger");
-      const navLinks = document.getElementById("navLinks");
-      const bookingBtn = document.getElementById("bookingBtn");
-      const bookingDropdown = document.getElementById("bookingDropdown");
-      const bookingWrapper = document.getElementById("bookingWrapper");
-
-      hamburger.addEventListener("click", () => {
-        navLinks.classList.toggle("active");
-        hamburger.classList.toggle("active");
-        bookingDropdown.classList.remove("active");
-      });
-      bookingBtn.addEventListener("click", (e) => {
-        if (window.innerWidth <= 768) {
-          e.preventDefault();
-          e.stopPropagation();
-          bookingDropdown.classList.toggle("active");
-        }
-      });
-      document.addEventListener("click", (e) => {
-        if (!bookingWrapper.contains(e.target) && window.innerWidth > 768)
-          bookingDropdown.classList.remove("active");
-      });
-      window.addEventListener("resize", () => {
-        if (window.innerWidth > 768) bookingDropdown.classList.remove("active");
-      });
-      document.querySelectorAll(".nav-links > a").forEach((link) => {
-        link.addEventListener("click", () => {
-          navLinks.classList.remove("active");
-          hamburger.classList.remove("active");
-          bookingDropdown.classList.remove("active");
-        });
-      });
-      document.querySelectorAll(".booking-dropdown a").forEach((link) => {
-        link.addEventListener("click", () => {
-          bookingDropdown.classList.remove("active");
-          navLinks.classList.remove("active");
-          hamburger.classList.remove("active");
-        });
       });
 
       function changeImage(src, element) {
