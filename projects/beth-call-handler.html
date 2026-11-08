@@ -28,6 +28,126 @@
       .btn-back    { margin-right: 15px; background-color: #404040; }
       .link-plain  { text-decoration: none; }
       .video-full  { width: 100%; }
+
+      /* ===== By the Numbers ===== */
+      .numbers-section {
+        --nb-card: #111111;
+        --nb-card-2: #1a1a1a;
+        --nb-border: rgba(255, 255, 255, 0.08);
+        --nb-text: #ffffff;
+        --nb-muted: #aaa4a4;
+        --nb-faint: rgba(255, 255, 255, 0.14);
+        --nb-grid: rgba(255, 255, 255, 0.08);
+        --nb-accent: #dc2626;
+        --nb-band: rgba(220, 38, 38, 0.12);
+        --nb-tip-bg: #f4f1ef;
+        --nb-tip-text: #171514;
+        padding: 80px 0;
+        color: var(--nb-text);
+      }
+      html[data-theme="light"] .numbers-section {
+        --nb-card: rgba(255, 255, 255, 0.78);
+        --nb-card-2: rgba(255, 255, 255, 0.6);
+        --nb-border: rgba(43, 35, 31, 0.14);
+        --nb-text: #171514;
+        --nb-muted: #625b57;
+        --nb-faint: rgba(43, 35, 31, 0.16);
+        --nb-grid: rgba(43, 35, 31, 0.1);
+        --nb-band: rgba(220, 38, 38, 0.08);
+        --nb-tip-bg: #171514;
+        --nb-tip-text: #ffffff;
+      }
+      .numbers-section .section-header { margin-bottom: 40px; }
+      .nb-kpis {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 16px;
+        margin-bottom: 24px;
+      }
+      .nb-kpi {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        padding: 28px 24px;
+        border: 1px solid var(--nb-border);
+        background: var(--nb-card);
+      }
+      html[data-theme="light"] .nb-kpi,
+      html[data-theme="light"] .nb-card { box-shadow: 0 16px 34px rgba(42, 31, 26, 0.1); }
+      .nb-kpi-value {
+        color: var(--nb-accent);
+        font-size: clamp(2rem, 4vw, 2.8rem);
+        font-weight: 700;
+        line-height: 1;
+        font-variant-numeric: tabular-nums;
+      }
+      .nb-kpi-label { color: var(--nb-text); font-size: 1rem; font-weight: 600; }
+      .nb-kpi-note { color: var(--nb-muted); font-size: 0.85rem; }
+      .nb-charts {
+        display: grid;
+        grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+        gap: 16px;
+        align-items: stretch;
+      }
+      .nb-card {
+        position: relative;
+        margin: 0;
+        padding: 28px 24px;
+        border: 1px solid var(--nb-border);
+        background: var(--nb-card);
+      }
+      .nb-card-title { margin: 0 0 6px; color: var(--nb-text); font-size: 1.25rem; font-weight: 700; }
+      .nb-card-sub { margin: 0 0 18px; color: var(--nb-muted); font-size: 0.92rem; line-height: 1.5; }
+      .nb-chart { position: relative; width: 100%; }
+      .nb-chart svg { display: block; width: 100%; height: auto; overflow: visible; }
+      .nb-card--clock .nb-chart { max-width: 420px; margin: 0 auto; }
+      .nb-card--days .nb-chart { margin-top: 12px; }
+      .nb-hit { cursor: pointer; outline: none; }
+      .nb-hit:focus-visible { stroke: var(--nb-text); stroke-width: 2; }
+      .nb-legend {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px 18px;
+        margin-top: 14px;
+        color: var(--nb-muted);
+        font-size: 0.85rem;
+      }
+      .nb-legend span { display: inline-flex; align-items: center; gap: 6px; }
+      .nb-swatch { display: inline-block; width: 10px; height: 10px; border-radius: 2px; background: var(--nb-faint); }
+      .nb-swatch--hot { background: var(--nb-accent); }
+      .nb-footnote { margin: 12px 0 0; color: var(--nb-muted); font-size: 0.75rem; line-height: 1.5; text-align: center; }
+      .nb-tip {
+        position: absolute;
+        z-index: 5;
+        padding: 6px 10px;
+        border-radius: 6px;
+        background: var(--nb-tip-bg);
+        color: var(--nb-tip-text);
+        font-size: 0.8rem;
+        font-weight: 600;
+        line-height: 1.35;
+        white-space: nowrap;
+        pointer-events: none;
+        opacity: 0;
+        transform: translate(-50%, calc(-100% - 10px));
+        transition: opacity 0.12s ease;
+      }
+      .nb-tip.is-on { opacity: 1; }
+      .nb-tip small { display: block; font-weight: 500; opacity: 0.75; }
+      @media (max-width: 900px) {
+        .nb-kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        .nb-charts { grid-template-columns: minmax(0, 1fr); }
+      }
+      @media (max-width: 480px) {
+        .numbers-section { padding: 56px 0; }
+        .nb-kpis { gap: 10px; }
+        .nb-kpi { padding: 18px 14px; }
+        .nb-kpi-value { font-size: 1.75rem; }
+        .nb-kpi-label { font-size: 0.9rem; }
+        .nb-card { padding: 20px 14px; }
+        .nb-card-title { font-size: 1.1rem; }
+      }
     </style>
 
     <!-- Google Analytics -->
@@ -75,14 +195,14 @@
             <span>Beth AI</span><br />Receptionist
           </h1>
           <ol class="hero-description custom-list">
-            <li>Enhance patient care with our AI-powered voice agent.</li>
-            <li>Seamlessly manage patient intake, appointment scheduling, and prescription refills.</li>
-            <li>Integrate seamlessly with the Tebra API using n8n and Python.</li>
-            <li>Perform real-time data lookups with accuracy and efficiency.</li>
-            <li>Send automated SMS notifications for a smooth, hands-free experience.</li>
+            <li>AI voice receptionist for a US medical practice.</li>
+            <li>Handles patient intake, appointment scheduling, and prescription refill requests.</li>
+            <li>Connects to the Tebra API through n8n and Python.</li>
+            <li>Looks up patient records in real time during the call.</li>
+            <li>Logs every call and request for staff follow-up.</li>
           </ol>
           <a href="../index.html#projects" class="cta-button btn-back">Back To Projects</a>
-          <a href="beth-call-handler.html" class="cta-button" target="_blank">View Live Project</a>
+          <a href="https://calendly.com/nashitsaleem" class="cta-button" target="_blank" rel="noopener">Request a demo</a>
         </div>
 
         <div class="hero-visual">
@@ -124,8 +244,8 @@
             <span>Python</span>
           </div>
           <div class="tech-badge-item2">
-            <img src="../assets/img/softdev/appscript.webp" alt="AppScript" class="tech-icon2" loading="lazy" />
-            <span>AppScript</span>
+            <img src="../assets/img/softdev/appscript.webp" alt="Apps Script" class="tech-icon2" loading="lazy" />
+            <span>Apps Script</span>
           </div>
           <div class="tech-badge-item2">
             <img src="../assets/img/softdev/tebra.webp" alt="Tebra API" class="tech-icon2" loading="lazy" />
@@ -158,8 +278,8 @@
           </div>
           <div class="how-it-works-step">
             <div class="how-it-works-number">3</div>
-            <h3>Automated SMS Confirmation</h3>
-            <p>Once the request is completed, an automated SMS notification confirms the outcome directly to the patient.</p>
+            <h3>Request Logging</h3>
+            <p>Each request is logged as a ticket for staff, and Apps Script records the call in a Google Sheet. SMS confirmations to the patient are available as an option.</p>
           </div>
         </div>
       </div>
@@ -174,23 +294,86 @@
             <span>Metrics</span>
           </div>
           <h2 class="section-title">Results & Impact</h2>
-          <p class="section-description">Measurable outcomes that demonstrate the real-world value delivered to the client</p>
+          <p class="section-description">From the practice's call dashboard, Oct 1 &ndash; Nov 8, 2026 (39 days)</p>
         </div>
         <div class="results-container">
           <div class="results-list">
             <div class="result-item">
-              <span class="result-text">Handled 200+ patient interactions weekly, reducing manual scheduling workload by 60%</span>
+              <span class="result-text">Handled about 315 calls a week: 1,746 calls in 39 days</span>
             </div>
             <div class="result-item">
-              <span class="result-text">Automated 300+ prescription refill requests per month, ensuring timely patient care</span>
+              <span class="result-text">Served 863 unique callers, about 2 calls each</span>
             </div>
             <div class="result-item">
-              <span class="result-text">Integrated seamlessly with Tebra API for real-time data retrieval, improving accuracy by 40%</span>
+              <span class="result-text">About 92% of calls came in between 4 PM and 2 AM Eastern, outside the main daytime window</span>
             </div>
             <div class="result-item">
-              <span class="result-text">Sent 1,000+ automated SMS notifications, boosting patient engagement by 35%</span>
+              <span class="result-text">Logged 1,202 requests for staff follow-up, from 69% of calls</span>
+            </div>
+            <div class="result-item">
+              <span class="result-text">Kept calls short: 39 seconds on average, most between 25 and 50 seconds</span>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== BY THE NUMBERS SECTION ===== -->
+    <section class="numbers-section" aria-labelledby="numbers-title">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-label">
+            <i class="fas fa-circle"></i>
+            <span>Call Data</span>
+          </div>
+          <h2 class="section-title" id="numbers-title">By the Numbers</h2>
+          <p class="section-description">Oct 1 &ndash; Nov 8, 2026 &middot; 39 days &middot; from the practice's call dashboard</p>
+        </div>
+
+        <div class="nb-kpis">
+          <div class="nb-kpi">
+            <span class="nb-kpi-value" data-count="1746">1,746</span>
+            <span class="nb-kpi-label">Total calls</span>
+            <span class="nb-kpi-note">&asymp; 45 a day</span>
+          </div>
+          <div class="nb-kpi">
+            <span class="nb-kpi-value" data-count="863">863</span>
+            <span class="nb-kpi-label">Unique callers</span>
+            <span class="nb-kpi-note">&asymp; 2 calls each</span>
+          </div>
+          <div class="nb-kpi">
+            <span class="nb-kpi-value" data-count="39" data-suffix=" s">39 s</span>
+            <span class="nb-kpi-label">Avg call duration</span>
+            <span class="nb-kpi-note">Most calls 25&ndash;50 s</span>
+          </div>
+          <div class="nb-kpi">
+            <span class="nb-kpi-value" data-count="1202">1,202</span>
+            <span class="nb-kpi-label">Requests logged</span>
+            <span class="nb-kpi-note">From 69% of calls</span>
+          </div>
+        </div>
+
+        <div class="nb-charts">
+          <figure class="nb-card nb-card--clock">
+            <figcaption>
+              <h3 class="nb-card-title">Beth is busiest after the workday</h3>
+              <p class="nb-card-sub">Calls by hour, US Eastern time. 86% arrive after 5 PM; the peak is 10 PM.</p>
+            </figcaption>
+            <div class="nb-chart" id="nbClock" role="img" aria-label="Radial chart of calls by hour. About 92% of calls arrive between 4 PM and 2 AM Eastern, peaking at 10 PM with 195 calls. Almost no calls arrive between 3 AM and 3 PM."></div>
+            <div class="nb-legend">
+              <span><i class="nb-swatch nb-swatch--hot"></i>4 PM &ndash; 2 AM: 92% of calls</span>
+              <span><i class="nb-swatch"></i>Rest of the day</span>
+            </div>
+            <p class="nb-footnote">Converted from the dashboard's UTC clock at UTC&minus;4 (Eastern Daylight Time). Calls after Nov 1 fell one hour earlier on the clinic's clock.</p>
+          </figure>
+
+          <figure class="nb-card nb-card--days">
+            <figcaption>
+              <h3 class="nb-card-title">84% of calls on weekdays</h3>
+              <p class="nb-card-sub">Calls by day of week. Friday is the busiest day.</p>
+            </figcaption>
+            <div class="nb-chart" id="nbDays" role="img" aria-label="Bar chart of calls by day: Monday 228, Tuesday 338, Wednesday 265, Thursday 293, Friday 350, Saturday 190, Sunday 88."></div>
+          </figure>
         </div>
       </div>
     </section>
@@ -205,7 +388,7 @@
           <h2 class="section-title">Business Impact</h2>
         </div>
         <p class="why-it-matters-text">
-          For medical practices, front-desk staff are often stretched thin fielding routine scheduling and refill calls that leave less time for patients physically in the office. A voice agent that can handle intake, scheduling, and prescription refills around the clock reduces that call volume without requiring the practice to hire additional reception staff. Beyond convenience, it means patients get consistent, immediate responses outside business hours, which matters for adherence and satisfaction in ways a voicemail queue cannot match.
+          Most of the practice's calls arrive after the workday. Over 39 days, Beth answered 1,746 calls from 863 callers, and 86% of them came in after 5 PM Eastern, with the busiest hour at 10 PM. Those are hours a small practice rarely staffs, so without Beth these callers would reach voicemail and wait until morning. Instead, Beth handled each call in about 39 seconds and logged 1,202 requests for the team to pick up the next day. The practice covers its evening and overnight demand without adding reception shifts.
         </p>
       </div>
     </section>
@@ -244,6 +427,217 @@
     </section>
 
     <div id="footer-placeholder"></div>
+
+    <script>
+      /* By the Numbers: KPI count-up, 24-hour radial chart, day-of-week bars */
+      (function () {
+        const NS = "http://www.w3.org/2000/svg";
+        // Calls by hour in US Eastern time (dashboard UTC shifted by -4 h), index 0 = midnight.
+        const HOURS = [163, 102, 56, 34, 5, 2, 1, 4, 1, 5, 0, 0, 6, 2, 9, 16, 100, 146, 184, 178, 185, 187, 195, 167];
+        const HOT = (h) => h >= 16 || h < 2; // 4 PM to 2 AM
+        const DAYS = [["Mon", 228], ["Tue", 338], ["Wed", 265], ["Thu", 293], ["Fri", 350], ["Sat", 190], ["Sun", 88]];
+        const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        function el(name, attrs, parent) {
+          const node = document.createElementNS(NS, name);
+          for (const key in attrs) node.setAttribute(key, attrs[key]);
+          if (parent) parent.appendChild(node);
+          return node;
+        }
+        function hourLabel(h) {
+          const suffix = h < 12 ? "AM" : "PM";
+          return (h % 12 === 0 ? 12 : h % 12) + " " + suffix;
+        }
+        function pct(value, total) {
+          return Math.round((value / total) * 1000) / 10 + "%";
+        }
+
+        // Tooltip shared by a chart container; positions inside the container.
+        function makeTip(container) {
+          const tip = document.createElement("div");
+          tip.className = "nb-tip";
+          container.appendChild(tip);
+          return {
+            show(html, x, y) {
+              tip.innerHTML = html;
+              tip.classList.add("is-on");
+              const w = tip.offsetWidth;
+              const max = container.clientWidth;
+              const left = Math.min(Math.max(x, w / 2 + 4), max - w / 2 - 4);
+              tip.style.left = left + "px";
+              tip.style.top = y + "px";
+            },
+            hide() { tip.classList.remove("is-on"); },
+          };
+        }
+        function bindTip(target, tip, container, html, anchor) {
+          const showAt = () => {
+            const box = container.getBoundingClientRect();
+            const p = anchor();
+            tip.show(html, p.x - box.left, p.y - box.top);
+          };
+          target.addEventListener("mouseenter", showAt);
+          target.addEventListener("focus", showAt);
+          target.addEventListener("click", showAt);
+          target.addEventListener("mouseleave", () => tip.hide());
+          target.addEventListener("blur", () => tip.hide());
+        }
+
+        // ---- KPI count-up ----
+        function initCounters() {
+          const nodes = document.querySelectorAll(".nb-kpi-value[data-count]");
+          const format = (n, suffix) => n.toLocaleString("en-US") + (suffix || "");
+          if (reduceMotion || !("IntersectionObserver" in window)) return;
+          nodes.forEach((node) => { node.textContent = format(0, node.dataset.suffix); });
+          const io = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+              if (!entry.isIntersecting) return;
+              io.unobserve(entry.target);
+              const node = entry.target;
+              const end = Number(node.dataset.count);
+              const start = performance.now();
+              const duration = 1400;
+              const step = (now) => {
+                const t = Math.min((now - start) / duration, 1);
+                const eased = 1 - Math.pow(1 - t, 3);
+                node.textContent = format(Math.round(end * eased), node.dataset.suffix);
+                if (t < 1) requestAnimationFrame(step);
+              };
+              requestAnimationFrame(step);
+            });
+          }, { threshold: 0.4 });
+          nodes.forEach((node) => io.observe(node));
+        }
+
+        // ---- 24-hour radial chart ----
+        function drawClock() {
+          const container = document.getElementById("nbClock");
+          if (!container) return;
+          const size = 400, c = size / 2, rIn = 68, rMax = 168;
+          const total = HOURS.reduce((a, b) => a + b, 0);
+          const max = Math.max(...HOURS);
+          const hotTotal = HOURS.reduce((a, v, h) => a + (HOT(h) ? v : 0), 0);
+          const svg = el("svg", { viewBox: `0 0 ${size} ${size}`, "aria-hidden": "true" }, container);
+          const point = (r, deg) => {
+            const a = (deg * Math.PI) / 180;
+            return [c + r * Math.sin(a), c - r * Math.cos(a)];
+          };
+          const sector = (r0, r1, d0, d1) => {
+            const [x0, y0] = point(r1, d0), [x1, y1] = point(r1, d1);
+            const [x2, y2] = point(r0, d1), [x3, y3] = point(r0, d0);
+            const large = d1 - d0 > 180 ? 1 : 0;
+            return `M${x0},${y0} A${r1},${r1} 0 ${large} 1 ${x1},${y1} L${x2},${y2} A${r0},${r0} 0 ${large} 0 ${x3},${y3} Z`;
+          };
+
+          // Highlighted 4 PM - 2 AM band
+          el("path", { d: sector(rIn - 4, rMax + 8, 16 * 15, 26 * 15), fill: "var(--nb-band)" }, svg);
+          // Guide rings
+          [0.5, 1].forEach((f) => {
+            el("circle", { cx: c, cy: c, r: rIn + (rMax - rIn) * f, fill: "none", stroke: "var(--nb-grid)", "stroke-dasharray": "2 4" }, svg);
+          });
+          el("circle", { cx: c, cy: c, r: rIn - 4, fill: "none", stroke: "var(--nb-grid)" }, svg);
+
+          const tip = makeTip(container);
+          const bars = [];
+          HOURS.forEach((v, h) => {
+            const len = v === 0 ? 0 : Math.max(3, ((rMax - rIn) * v) / max);
+            const d0 = h * 15 + 1.2, d1 = (h + 1) * 15 - 1.2;
+            const bar = el("path", {
+              d: sector(rIn, rIn + (len || 0.01), d0, d1),
+              fill: HOT(h) ? "var(--nb-accent)" : "var(--nb-faint)",
+            }, svg);
+            bars.push({ bar, len, d0, d1 });
+            // Invisible full-length hit area so short bars are easy to hover or tap
+            const hit = el("path", {
+              d: sector(rIn, rMax + 8, h * 15, (h + 1) * 15),
+              fill: "transparent",
+              class: "nb-hit",
+              tabindex: "0",
+              "aria-label": `${hourLabel(h)} to ${hourLabel((h + 1) % 24)}: ${v} calls`,
+            }, svg);
+            const [ax, ay] = point(rIn + len + 4, h * 15 + 7.5);
+            bindTip(hit, tip, container,
+              `${hourLabel(h)} &ndash; ${hourLabel((h + 1) % 24)} ET<small>${v} calls &middot; ${pct(v, total)}</small>`,
+              () => {
+                const box = svg.getBoundingClientRect();
+                const scale = box.width / size;
+                return { x: box.left + ax * scale, y: box.top + ay * scale };
+              });
+          });
+
+          // Hour labels
+          [[0, "12 AM"], [6, "6 AM"], [12, "12 PM"], [18, "6 PM"]].forEach(([h, text]) => {
+            const [x, y] = point(rMax + 22, h * 15);
+            el("text", { x, y, "text-anchor": "middle", "dominant-baseline": "middle", fill: "var(--nb-muted)", "font-size": "12", "font-weight": "600" }, svg).textContent = text;
+          });
+          [3, 9, 15, 21].forEach((h) => {
+            const [x0, y0] = point(rMax + 12, h * 15), [x1, y1] = point(rMax + 18, h * 15);
+            el("line", { x1: x0, y1: y0, x2: x1, y2: y1, stroke: "var(--nb-muted)", "stroke-width": "1" }, svg);
+          });
+
+          // Center readout
+          const share = Math.round((hotTotal / total) * 100);
+          el("text", { x: c, y: c - 6, "text-anchor": "middle", fill: "var(--nb-text)", "font-size": "34", "font-weight": "700" }, svg).textContent = share + "%";
+          el("text", { x: c, y: c + 16, "text-anchor": "middle", fill: "var(--nb-muted)", "font-size": "11", "font-weight": "600" }, svg).textContent = "4 PM – 2 AM";
+
+          // Grow the bars when the chart scrolls into view
+          if (reduceMotion || !("IntersectionObserver" in window)) return;
+          bars.forEach(({ bar, d0, d1 }) => bar.setAttribute("d", sector(rIn, rIn + 0.01, d0, d1)));
+          const io = new IntersectionObserver((entries) => {
+            if (!entries.some((e) => e.isIntersecting)) return;
+            io.disconnect();
+            const start = performance.now();
+            const step = (now) => {
+              const t = Math.min((now - start) / 1100, 1);
+              const eased = 1 - Math.pow(1 - t, 3);
+              bars.forEach(({ bar, len, d0, d1 }) => bar.setAttribute("d", sector(rIn, rIn + Math.max(len * eased, 0.01), d0, d1)));
+              if (t < 1) requestAnimationFrame(step);
+            };
+            requestAnimationFrame(step);
+          }, { threshold: 0.3 });
+          io.observe(container);
+        }
+
+        // ---- Day-of-week bars ----
+        function drawDays() {
+          const container = document.getElementById("nbDays");
+          if (!container) return;
+          const w = 360, h = 240, top = 24, bottom = 28, left = 8, right = 8;
+          const total = DAYS.reduce((a, d) => a + d[1], 0);
+          const max = Math.max(...DAYS.map((d) => d[1]));
+          const plotH = h - top - bottom;
+          const slot = (w - left - right) / DAYS.length;
+          const barW = Math.min(30, slot * 0.58);
+          const svg = el("svg", { viewBox: `0 0 ${w} ${h}`, "aria-hidden": "true" }, container);
+          el("line", { x1: left, y1: h - bottom, x2: w - right, y2: h - bottom, stroke: "var(--nb-grid)" }, svg);
+          const tip = makeTip(container);
+
+          DAYS.forEach(([day, v], i) => {
+            const weekend = i >= 5;
+            const barH = (plotH * v) / max;
+            const x = left + slot * i + (slot - barW) / 2;
+            const y = h - bottom - barH;
+            el("rect", { x, y, width: barW, height: barH, rx: 3, fill: weekend ? "var(--nb-faint)" : "var(--nb-accent)" }, svg);
+            el("text", { x: x + barW / 2, y: y - 6, "text-anchor": "middle", fill: "var(--nb-text)", "font-size": "11", "font-weight": "700" }, svg).textContent = v;
+            el("text", { x: x + barW / 2, y: h - 9, "text-anchor": "middle", fill: "var(--nb-muted)", "font-size": "11", "font-weight": "600" }, svg).textContent = day;
+            const hit = el("rect", { x: left + slot * i, y: top - 16, width: slot, height: plotH + 16, fill: "transparent", class: "nb-hit", tabindex: "0", "aria-label": `${day}: ${v} calls` }, svg);
+            bindTip(hit, tip, container, `${day}<small>${v} calls &middot; ${pct(v, total)}</small>`, () => {
+              const box = svg.getBoundingClientRect();
+              const scale = box.width / w;
+              return { x: box.left + (x + barW / 2) * scale, y: box.top + (y - 14) * scale };
+            });
+          });
+        }
+
+        function init() {
+          initCounters();
+          drawClock();
+          drawDays();
+        }
+        if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
+        else init();
+      })();
+    </script>
 
     <script>
       document.addEventListener("DOMContentLoaded", function () {
