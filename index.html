@@ -32,7 +32,7 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" href="./global.min.css" />
     <link rel="stylesheet" href="./index.min.css" />
-    <link rel="stylesheet" href="./sections.css?v=layout-polish-5" />
+    <link rel="stylesheet" href="./sections.css?v=research-highlights-1" />
 
     <link
       rel="stylesheet"
@@ -394,8 +394,8 @@
                       I help businesses work smarter by turning manual,
                       repetitive processes into seamless automations. From
                       handling thousands of form submissions to automating
-                      appointment flows, orders processing, and Engineering CAD
-                      workflows We build smart, scalable systems that deliver
+                      appointment flows, orders processing, and engineering CAD
+                      workflows. We build smart, scalable systems that deliver
                       real-world efficiency and measurable results.
                     </p>
                     <p class="we-help-businesses">&nbsp;</p>
@@ -524,10 +524,15 @@
             <strong>3+</strong>
             <span>Years building</span>
           </div>
-          <div class="work-stat">
+          <a
+            class="work-stat work-stat--link"
+            href="https://ieeexplore.ieee.org/document/10740243"
+            target="_blank"
+            rel="noopener"
+          >
             <strong>1</strong>
-            <span>IEEE research</span>
-          </div>
+            <span>IEEE paper</span>
+          </a>
           <div class="work-stat">
             <strong>20k</strong>
             <span>Calls/month handled</span>
@@ -547,6 +552,50 @@
             <i class="nashit-saleem6">Projects</i>
           </div>
         </div>
+
+        <!-- FEATURED RESEARCH -->
+        <article class="research-feature" aria-labelledby="research-feature-title">
+          <div class="research-feature-meta">
+            <span>Featured research</span>
+            <span>IEEE Xplore &middot; ICoDT2 2024</span>
+          </div>
+          <h3 id="research-feature-title" class="research-feature-title">
+            Automation of Quranic Content Creation by Leveraging Speech
+            Recognition
+          </h3>
+          <p class="research-feature-text">
+            Peer-reviewed paper from my final-year project at UET Taxila. The
+            model listens to a Quran recitation, identifies the surah and
+            verses, aligns the text (with diacritics) to precise timestamps,
+            and generates the finished video automatically. Co-authored with
+            Muhammad Armaghan Ur Rehman and Qamas Gul Khan Safi.
+          </p>
+          <ul class="project-highlights">
+            <li>97.3% accuracy</li>
+            <li>5 hours &rarr; 5 minutes of editing</li>
+            <li>Published October 2024</li>
+          </ul>
+          <div class="research-feature-actions">
+            <a
+              class="research-link research-link--primary"
+              href="https://ieeexplore.ieee.org/document/10740243"
+              target="_blank"
+              rel="noopener"
+              >Read the paper</a
+            >
+            <a class="research-link" href="dl-cv/speech-video-sync/"
+              >Case study</a
+            >
+            <a
+              class="research-link"
+              href="https://github.com/Nashitsaleem1/Automation-of-Quranic-Content-Creation-by-Leveraging-Speech-Recognition"
+              target="_blank"
+              rel="noopener"
+              >Code on GitHub</a
+            >
+          </div>
+          <p class="research-feature-note">More papers in progress.</p>
+        </article>
 
         <!-- FILTER BUTTONS -->
         <div class="filter-buttons">
@@ -793,8 +842,15 @@
                 </p>
                 <ul>
                   <li>
-                    Published research in 2024 International Conference on
-                    Digital Futures and Transformative Technologies.
+                    Published
+                    <a
+                      href="https://ieeexplore.ieee.org/document/10740243"
+                      target="_blank"
+                      rel="noopener"
+                      >&ldquo;Automation of Quranic Content Creation by
+                      Leveraging Speech Recognition&rdquo;</a
+                    >
+                    at IEEE ICoDT2 2024, with more papers in progress.
                   </li>
                   <li>
                     Created AI, image-processing, automation, and data projects
@@ -1405,9 +1461,9 @@
       </div>
       <div class="copyright">
         <div class="copyright-2025-container1">
-          <span class="softdev1">Copyright © 2025 </span>
+          <span class="softdev1">Copyright © 2026 </span>
           <span class="softdev">
-            <i class="softdev2">SoftDev.</i>
+            <i class="softdev2">Nashit Saleem.</i>
           </span>
           <span>
             <span class="softdev"> </span>
@@ -1494,6 +1550,37 @@
           if (num > 0 && num <= 1) return Math.round(num * 100) + "%";
         }
         return value;
+      }
+
+      // Card highlights, taken from each project page's Results section.
+      // A "Highlights" column in the projects sheet (one per line) takes
+      // priority over this list, so new projects can be added from the sheet.
+      const PROJECT_HIGHLIGHTS = {
+        "beth-call-handler": ["200+ patient interactions/week", "300+ refills/month automated", "60% less manual scheduling"],
+        "pcm": ["200+ mail campaigns/week", "40% lower operating costs", "99% mailer accuracy"],
+        "n8n-personal-agent": ["500+ tasks/week automated", "60% less admin work", "95% command accuracy"],
+        "full-stack-automation-platform": ["500+ capacitor designs", "60% faster design work", "50% shorter test cycles"],
+        "zikra": ["500+ learners/week", "3+ study modes", "35% higher engagement"],
+        "early-warning-alert-system": ["3 global alert sources", "1,000+ SMS alerts sent", "99% delivery reliability"],
+        "ghl-automation-suite": ["500+ leads/month automated", "200+ appointments/month synced", "65% less admin work"],
+        "clawbot-sellerboard-automation": ["$100K+ monthly sales tracked", "70% less manual reporting", "95% metric accuracy"],
+        "retell-memory-agent-ghl": ["24/7 inbound coverage", "90%+ call handling accuracy", "65% less data entry"],
+        "ebay-order-intelligence": ["300+ order emails/month", "95%+ extraction accuracy", "60% faster order processing"],
+        "job-listing": ["200K+ listings scraped", "100+ career sites", "50,000+ records/week"],
+        "albarakah-enterprises-ecommerce": ["Mobile-ready storefront", "WooCommerce shopping flow", "Admin-editable catalog"],
+        "livekit-voice-agent": ["11 voice function tools", "20s call reconnect window", "10 pre-release test simulations"],
+      };
+
+      function splitList(value) {
+        return String(value || "")
+          .split(/\r?\n/)
+          .map((item) => item.trim())
+          .filter(Boolean);
+      }
+
+      function getHighlights(project, slug) {
+        const fromSheet = splitList(project.Highlights);
+        return (fromSheet.length ? fromSheet : PROJECT_HIGHLIGHTS[slug] || []).slice(0, 3);
       }
 
       function resetViewMoreButton() {
@@ -1776,6 +1863,20 @@
           const primaryCategory = project.Category
             ? project.Category.split(",")[0].trim()
             : "Project";
+          const highlights = getHighlights(project, slug);
+          const techStack = splitList(project.Tech_stack).slice(0, 4);
+          const highlightsHTML = highlights.length
+            ? `<ul class="project-highlights">${highlights.map((item) => `<li>${item}</li>`).join("")}</ul>`
+            : "";
+          const metricHTML = highlights.length
+            ? ""
+            : `<div class="project-stat">
+                  <span class="project-stat-label">${project.Metric_label}</span>
+                  <span class="project-stat-value">${formatMetric(project.Metric)}</span>
+                </div>`;
+          const techHTML = techStack.length
+            ? `<div class="project-tech">${techStack.map((item) => `<span>${item}</span>`).join("")}</div>`
+            : "";
 
           const card = document.createElement("div");
           card.className = "project-card project-card--clickable";
@@ -1796,11 +1897,10 @@
               </div>
               <h3 class="project-title">${project.Title}</h3>
               <p class="project-description">${project.Description}</p>
+              ${highlightsHTML}
               <div class="project-stats">
-                <div class="project-stat">
-                  <span class="project-stat-label">${project.Metric_label}</span>
-                  <span class="project-stat-value">${formatMetric(project.Metric)}</span>
-                </div>
+                ${metricHTML}
+                ${techHTML}
                 <a href="${projectURL}" class="stylish-arrow-wrapper" aria-label="View Project">
                   <svg viewBox="0 0 24 24" fill="none" class="stylish-arrow-icon" width="24">
                     <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
