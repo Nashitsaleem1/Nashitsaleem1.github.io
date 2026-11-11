@@ -1221,3 +1221,20 @@ html[data-theme="light"] .project-tech span {
     padding-right: 3rem;
   }
 }
+
+/* Header link to the Deep Learning & Computer Vision page */
+a.nav-page-link { text-decoration: none; color: inherit; }
+a.nav-page-link:hover { color: #fff; }
+html[data-theme="light"] a.nav-page-link:hover { color: inherit; }
+.navigation1 { gap: clamp(1.5rem, 3vw, 4rem); }
+.navigation1 .about5, .nav-large .view-all-projects6 { white-space: nowrap; }
+@media (max-width: 1400px) {
+  .nav-large { margin-left: 1rem; margin-right: 1rem; padding: 0.75rem; }
+  .nav-large .content4 { font-size: 14px; }
+  .navigation1 { gap: 1rem; padding-left: 0.5rem; }
+}
+/* Six header links do not fit below ~1000px, so use the mobile menu there */
+@media (min-width: 769px) and (max-width: 1000px) {
+  .nav-large { display: none; }
+  .nav-small { position: relative; display: flex; justify-content: space-between; align-items: center; padding: .6rem; margin-left: 1rem; margin-right: 1rem; border-radius: 24px; overflow: hidden; }
+}
