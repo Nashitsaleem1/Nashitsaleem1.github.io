@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Non-destructive tomato sizing with stereo vision | Nashit Saleem</title>
-    <meta name="description" content="A stereo-vision pipeline that finds each tomato in a live greenhouse, measures its diameter and follows it for months without touching the fruit." />
+    <meta name="description" content="A low-cost stereo pipeline that detects tomato ripeness on the plant, measures each fruit to within about 2 mm and estimates yield, validated against caliper and scale." />
     <!-- Hidden extension site: not linked from the main portfolio and kept out of search results while it holds sample content. Remove this tag when it goes public. -->
     <meta name="robots" content="noindex, nofollow" />
     <meta name="theme-color" content="#081822" />
@@ -18,13 +18,12 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap"
     />
-    <link rel="stylesheet" href="../style.css?v=22" />
+    <link rel="stylesheet" href="../style.css?v=24" />
     <script>
       document.documentElement.classList.add("js");
     </script>
   </head>
   <body>
-    <!-- HOW TO UPDATE: add a Results table here when you have figures you are happy to make public. -->
     <nav class="nav" id="nav" aria-label="Primary">
       <a href="../">Home</a>
       <a href="../#works">Works</a>
@@ -38,118 +37,76 @@
         <a class="back" href="../#works"><span aria-hidden="true">←</span> All case studies</a>
         <span class="label">Research · 2025 – Present</span>
         <h1>Non-destructive tomato sizing with stereo vision</h1>
-        <p class="lead">A stereo-vision pipeline that finds each tomato, measures its diameter in centimetres and follows it for months, without touching the fruit. Built for a live greenhouse as part of my MS thesis.</p>
+        <p class="lead">Two low-cost USB cameras find each tomato on the plant, judge its ripeness, measure its diameter to within about 2 mm and turn that into a yield estimate, without touching the fruit. Part of my MS thesis.</p>
         <dl class="meta">
           <div><dt>Role</dt><dd>Owner of the machine learning workstream</dd></div>
           <div><dt>Timeline</dt><dd>2025 – Present</dd></div>
           <div><dt>Context</dt><dd>MS thesis at Gebze Technical University, within the TÜBİTAK 1071 / 124N905 bilateral R&amp;D project</dd></div>
-          <div><dt>Tools</dt><dd>OpenCV, YOLOv10, ChArUco, StereoBM / SGBM, RAFT-Stereo</dd></div>
+          <div><dt>Tools</dt><dd>OpenCV, YOLOv10s, ChArUco, GrabCut, stereo matching</dd></div>
         </dl>
-        <div class="cs-visual">
-          <div class="win">
-                  <div class="win-bar"><i></i><i></i><i></i><span>stereo_sizing · raft-stereo</span></div>
-                  <svg viewBox="0 0 520 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="RGB image next to its depth map with a diameter measurement">
-                    <defs>
-                      <radialGradient id="t-red" cx="0.35" cy="0.3" r="0.8">
-                        <stop offset="0" stop-color="#ff8a70" />
-                        <stop offset="1" stop-color="#c2412d" />
-                      </radialGradient>
-                      <radialGradient id="t-depth" cx="0.5" cy="0.5" r="0.55">
-                        <stop offset="0" stop-color="#ffd84d" />
-                        <stop offset="0.6" stop-color="#4df2b0" />
-                        <stop offset="1" stop-color="#2b7fb0" />
-                      </radialGradient>
-                      <linearGradient id="t-scale" x1="0" y1="0" x2="1" y2="0">
-                        <stop offset="0" stop-color="#ffd84d" />
-                        <stop offset="0.5" stop-color="#4df2b0" />
-                        <stop offset="1" stop-color="#2b4fb0" />
-                      </linearGradient>
-                    </defs>
-                    <rect width="520" height="300" fill="#0a141b" />
-                    <rect x="20" y="24" width="228" height="200" rx="12" fill="#12303a" />
-                    <path d="M20 224C60 120 120 90 150 110C190 70 230 90 248 140V212C248 218 242 224 236 224Z" fill="#1f5a3a" opacity="0.65" />
-                    <g>
-                      <circle cx="90" cy="150" r="28" fill="url(#t-red)" />
-                      <circle cx="150" cy="170" r="24" fill="url(#t-red)" />
-                      <circle cx="200" cy="140" r="20" fill="url(#t-red)" />
-                      <path d="M82 124l8 8 8-8" stroke="#2f9a55" stroke-width="3" fill="none" stroke-linecap="round" />
-                      <path d="M143 148l7 7 7-7" stroke="#2f9a55" stroke-width="3" fill="none" stroke-linecap="round" />
-                    </g>
-                    <rect x="58" y="118" width="64" height="64" rx="3" fill="none" stroke="#cffd7a" stroke-width="2" />
-                    <rect x="58" y="102" width="46" height="16" rx="3" fill="#cffd7a" />
-                    <text x="63" y="114" font-family="Manrope, sans-serif" font-size="10" font-weight="700" fill="#04130d">tomato</text>
-
-                    <rect x="272" y="24" width="228" height="200" rx="12" fill="#0d2a44" />
-                    <g>
-                      <circle cx="342" cy="150" r="28" fill="url(#t-depth)" />
-                      <circle cx="402" cy="170" r="24" fill="url(#t-depth)" opacity="0.85" />
-                      <circle cx="452" cy="140" r="20" fill="url(#t-depth)" opacity="0.7" />
-                    </g>
-                    <path d="M314 150H370M314 140V160M370 140V160" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" />
-                    <rect x="290" y="94" width="104" height="18" rx="4" fill="#fff" />
-                    <text x="297" y="107" font-family="Manrope, sans-serif" font-size="11" font-weight="800" fill="#0b1a24">Ø from 3D points</text>
-
-                    <g font-family="Manrope, sans-serif" font-size="12" font-weight="600" fill="#fff" fill-opacity="0.6">
-                      <text x="20" y="246">Left image (RGB)</text>
-                      <text x="272" y="246">Disparity → depth</text>
-                      <text x="272" y="288">near</text>
-                      <text x="500" y="288" text-anchor="end">far</text>
-                    </g>
-                    <rect x="272" y="258" width="228" height="8" rx="4" fill="url(#t-scale)" />
-                  </svg>
-                </div>
-        </div>
+        <figure class="cs-visual cs-fig photo">
+          <img src="../img/tomato/yield-frame.webp" alt="Greenhouse frame where each tomato is circled and labelled with its ripeness, diameter in millimetres and estimated mass, with a yield table below" width="1600" height="1306" />
+          <figcaption>One frame from the greenhouse. Every detected tomato gets a ripeness class, a stereo diameter and a mass estimate, and the table adds them up into a yield for that view.</figcaption>
+        </figure>
       </header>
 
       <div class="cs-wrap">
         <section class="cs-block reveal" id="overview">
           <span class="eyebrow">Overview</span>
           <h2>What this project is</h2>
-          <p>This project is part of my MS thesis at Gebze Technical University, within the TÜBİTAK 1071 / ARDEB 124N905 bilateral R&amp;D project between Türkiye and Pakistan (GTU, NUST, Cx Technology and FFC-FACE). I own the machine learning workstream, and fruit sizing is one of its core computer vision tasks.</p>
-          <p>Two calibrated cameras photograph the plants every 30 minutes. The pipeline detects each fruit and its ripeness, measures its diameter from stereo depth, follows every fruit across months, and writes growth curves, a timelapse video and a CSV that feeds the project dashboard.</p>
+          <p>This is part of my MS thesis at Gebze Technical University, within the TÜBİTAK 1071 / ARDEB 124N905 bilateral R&amp;D project between Türkiye and Pakistan (GTU, NUST, Cx Technology and FFC-FACE). I own the machine learning workstream, and measuring fruit on the plant is one of its core tasks.</p>
+          <p>Two low-cost USB cameras look at the tomato plants. The pipeline finds each fruit and its ripeness, measures its diameter from stereo, turns diameter into mass, and adds the masses up into a yield estimate. Every stage was checked against physical measurements in the greenhouse: a caliper, a laboratory scale and a calibration board.</p>
           <div class="glance">
             <div class="card"><small>Type</small><strong>Research, MS thesis</strong></div>
-            <div class="card"><small>Status</small><strong>Working pipeline, full 3-month run next</strong></div>
-            <div class="card"><small>Setting</small><strong>Live greenhouse, about 3,000 stereo pairs</strong></div>
-            <div class="card"><small>Output</small><strong>Conference paper in preparation (2026)</strong></div>
+            <div class="card"><small>Hardware</small><strong>Two OV5640 USB cameras, 156.5 mm apart</strong></div>
+            <div class="card"><small>Data</small><strong>About 10,000 time-lapse images over 66 days</strong></div>
+            <div class="card"><small>Output</small><strong>6-page IEEE-format conference paper (2026)</strong></div>
           </div>
         </section>
         <section class="cs-block reveal" id="problem">
           <span class="eyebrow">The problem</span>
           <h2>What needed solving</h2>
-          <p>Picking a tomato just to measure it wastes the fruit, so the system measures it right on the plant. Fruit size, count and ripeness over time show how a crop is growing and when it will be ready to pick. Measuring by hand means someone entering the greenhouse and handling the fruit, which is slow, patchy and disturbs the plants.</p>
-          <p>This project replaces that with a fixed stereo rig that measures every visible fruit every 30 minutes, with no contact. The per-fruit size, count and ripeness feed the project dashboard, which supports harvest and growth decisions and the project target of at least 10% more yield than conventional greenhouses.</p>
+          <p>Growers and harvesting robots need the size and mass of each tomato while it is still on the plant, to estimate yield without picking and to decide which fruit to pick. Most image-based systems only count fruit, and a count alone does not give mass. Measuring on the plant is hard: green fruit sit against green leaves, and fruit and leaves hide each other.</p>
+          <p>Depth sensors and multi-camera rigs can measure size, but they are expensive or struggle in a greenhouse. The question here was whether two ordinary passive cameras could measure size accurately enough to make yield estimates clearly better than counting.</p>
         </section>
         <section class="cs-block reveal" id="role">
           <span class="eyebrow">My role</span>
           <h2>What I did</h2>
           <ul class="ticks">
             <li>Own the machine learning workstream within the 24-month bilateral project.</li>
-            <li>Built the end-to-end pipeline, from stereo capture to per-fruit growth curves, a timelapse and a CSV for the dashboard.</li>
-            <li>Trained and compared YOLOv10 ripeness detectors on tomatOD and a merged dataset, and tuned them with Ray Tune.</li>
-            <li>Calibrated the stereo pair with ChArUco boards and worked around greenhouse glare and leaf occlusion.</li>
-            <li>Designed the three-model comparison framework (rule-based, RGB-only CNN, RGB+Depth fusion) that will form the basis of a conference paper.</li>
-            <li>Presented the work to my supervisor (April 2026), at the GTU graduate seminar (Spring 2026) and at a GTU bilateral workshop on greenhouse dashboards and digital twins.</li>
+            <li>Built the full pipeline, from stereo capture and calibration to ripeness detection, sizing, mass and yield.</li>
+            <li>Trained the YOLOv10s ripeness detector on the tomatOD and Laboro Tomato datasets merged.</li>
+            <li>Ran the ground-truth session in the greenhouse: 24 tagged fruit, caliper and scale measurements, and a board check of the stereo scale.</li>
+            <li>Collected a stereo time-lapse of the plants from January to March 2026, which we plan to publish as a dataset.</li>
+            <li>Wrote the conference paper and presented the work at GTU seminars and project workshops.</li>
           </ul>
-          <p>I work under Prof. Dr. Yusuf Sinan Akgül, with plant scientists from the GTU Molecular Biology and Genetics department who host the greenhouse and grow the plants, and with the NUST team that builds the HarvesTrack dashboard.</p>
+          <p>I work under Prof. Dr. Yusuf Sinan Akgül, with plant scientists from GTU Molecular Biology and Genetics who host the greenhouse and grow the plants, and with the NUST team in Pakistan.</p>
         </section>
         <section class="cs-block reveal" id="approach">
           <span class="eyebrow">Approach</span>
           <h2>How it works</h2>
-          <div class="pipe"><span>Stereo pair</span><i aria-hidden="true">→</i><span>Rectify</span><i aria-hidden="true">→</i><span>Depth map</span><i aria-hidden="true">→</i><span>YOLOv10 detection</span><i aria-hidden="true">→</i><span>Pinhole sizing</span><i aria-hidden="true">→</i><span>Tracking</span><i aria-hidden="true">→</i><span>Growth CSV</span></div>
+          <p>The key idea is that depth is only needed on the fruit. A full depth map of a greenhouse is mostly leaves, stems and background, and every false match there can spoil a fruit's size. So the pipeline finds each fruit first, cuts it out, and measures depth only at points inside it.</p>
+          <div class="pipe"><span>Stereo pair</span><i aria-hidden="true">→</i><span>Rectify</span><i aria-hidden="true">→</i><span>YOLOv10s ripeness</span><i aria-hidden="true">→</i><span>GrabCut + ellipse</span><i aria-hidden="true">→</i><span>Depth on the fruit</span><i aria-hidden="true">→</i><span>Diameter</span><i aria-hidden="true">→</i><span>Mass</span><i aria-hidden="true">→</i><span>Yield</span></div>
+          <figure class="cs-fig photo">
+            <img src="../img/tomato/setup.webp" alt="The greenhouse plants, a top view of the two-camera rig, a frame from the left camera and the calibration board in the scene" width="1600" height="352" loading="lazy" />
+            <figcaption>The plants, the two-camera rig from above, a frame from the left camera, and the ChArUco board used to check the stereo scale.</figcaption>
+          </figure>
           <ol class="steps">
-            <li><div><h3>Capture</h3><p>Two cameras at 5 MP (2592 × 1944) take a stereo pair every 30 minutes, with auto-exposure stabilisation. Pairs are matched by timestamp across about three months.</p></div></li>
-            <li><div><h3>Stereo calibration</h3><p>A ChArUco board (6 × 9, 28 mm squares) calibrates the pair in OpenCV. Reprojection error is about 0.5 px per camera and 1.05 px for the pair.</p></div></li>
-            <li><div><h3>Rectify and depth</h3><p>Images are rectified and a disparity map gives depth for every pixel, using classical block matching and SGBM, with RAFT-Stereo as the deep alternative.</p></div></li>
-            <li><div><h3>Detect</h3><p>A YOLOv10 detector finds every fruit and classifies it as unripe, semi-ripe or fully ripe.</p></div></li>
-            <li><div><h3>Measure</h3><p>Diameter = box width in pixels × median depth ÷ focal length. The box covers the whole fruit, so a leaf in front does not shrink it, and the median depth ignores outlier pixels.</p></div></li>
-            <li><div><h3>Track</h3><p>Centroid matching links detections over time, then KMeans clustering merges fragments into one stable ID per fruit. Frames washed out by strong daylight (07:00 – 15:59) are skipped.</p></div></li>
-            <li><div><h3>Output</h3><p>A CSV with timestamp, fruit ID, ripeness, diameter, depth and confidence, plus annotated frames, a 10 FPS timelapse and growth charts for each fruit.</p></div></li>
-            <li><div><h3>Three-model comparison</h3><p>A framework comparing a rule-based method, an RGB-only CNN and an RGB+Depth fusion model on the same sizing task.</p></div></li>
+            <li><div><h3>Calibrate and rectify</h3><p>A ChArUco board (6 × 9 squares of 28 mm) calibrates the camera pair in OpenCV. After rectification, a point on a fruit lies on the same image row in both cameras, so matching becomes a search along one row.</p></div></li>
+            <li><div><h3>Detect ripeness</h3><p>YOLOv10s finds each fruit and labels it unripe, semi-ripe or fully ripe. It runs at a low confidence threshold, because a fruit that is missed can never be measured.</p></div></li>
+            <li><div><h3>Cut out the fruit</h3><p>Colour thresholds fail on green fruit against leaves, so GrabCut segments each fruit starting from the detection box alone. An ellipse fitted to the outline gives the fruit's radius in pixels.</p></div></li>
+            <li><div><h3>Measure depth on the fruit</h3><p>Points on a 5 × 5 grid inside the fruit are matched along the row in the other image, and the median of their depths is the fruit's distance. The search is limited to 0.5 – 1.5 m, which rules out matches no fruit could have.</p></div></li>
+            <li><div><h3>Diameter, mass and yield</h3><p>Diameter = 2 × radius × depth ÷ focal length. A power law fitted on weighed fruit turns diameter into mass, and the masses of all detected fruit add up to the yield.</p></div></li>
+            <li><div><h3>Flag, never hide</h3><p>Fruit outside the view both cameras share, clipped at the frame edge, or with a failed mask or depth are flagged, so unreliable sizes are never mixed in silently.</p></div></li>
           </ol>
-          <p>The sizing method took three attempts to get right:</p>
-          <div class="table-wrap"><table><thead><tr><th>Attempt</th><th>What I tried</th><th>What happened</th></tr></thead><tbody><tr><td>1</td><td>Track fruit by 2D position, colour-mask the box to pick 3D points, take the largest 3D distance as the diameter</td><td>9 IDs for 4 tomatoes, and diameter jumping between 2.5 and 18 cm. Glare and leaves broke it.</td></tr><tr><td>2</td><td>KMeans to merge fragmented IDs, plus skipping glare-heavy daylight frames</td><td>Exactly 4 stable IDs, but diameters still noisy.</td></tr><tr><td>3</td><td>Pinhole formula from the detector box width and median depth</td><td>Smooth, biologically plausible growth curves from 200+ frames.</td></tr></tbody></table></div>
-          <p class="note">White-balance corrections were also tried for the daytime glare. None beat simply skipping those frames.</p>
+          <figure class="cs-fig photo">
+            <img src="../img/tomato/steps.webp" alt="Four panels on one tomato: detection with ripeness, the fitted ellipse, sample points in the left image and matched points in the right image giving 0.648 m depth and a 60.1 mm diameter" width="1600" height="387" loading="lazy" />
+            <figcaption>The pipeline on one fruit: (a) detection and ripeness, (b) mask and fitted ellipse, (c) sample points in the left image, (d) matched points in the right image, giving a depth of 0.648 m and a diameter of 60.1 mm.</figcaption>
+          </figure>
+          <figure class="cs-fig photo">
+            <img src="../img/tomato/stereo.webp" alt="Rectified left and right images with horizontal lines showing the rows line up, next to a dense disparity map dominated by leaves and stems" width="1600" height="396" loading="lazy" />
+            <figcaption>Why depth is measured only on the fruit: the rectified pair lines up row by row, but a full disparity map of the scene (right) is mostly leaves and stems.</figcaption>
+          </figure>
         </section>
         <section class="cs-block reveal" id="stack">
           <span class="eyebrow">Tech stack</span>
@@ -157,41 +114,50 @@
           <div class="tags">
             <span class="chip">OpenCV</span>
             <span class="chip">ChArUco calibration</span>
-            <span class="chip">StereoBM / StereoSGBM</span>
-            <span class="chip">RAFT-Stereo</span>
-            <span class="chip">cv2.reprojectImageTo3D</span>
-            <span class="chip">YOLOv10</span>
+            <span class="chip">Stereo rectification</span>
+            <span class="chip">YOLOv10s</span>
             <span class="chip">Ultralytics</span>
-            <span class="chip">Ray Tune + ASHA</span>
-            <span class="chip">KMeans tracking</span>
-            <span class="chip">RGB-only CNN</span>
-            <span class="chip">RGB+Depth fusion</span>
+            <span class="chip">GrabCut segmentation</span>
+            <span class="chip">Ellipse fitting</span>
+            <span class="chip">Normalised cross-correlation matching</span>
+            <span class="chip">Power-law mass model</span>
+            <span class="chip">OV5640 USB cameras</span>
           </div>
         </section>
         <section class="cs-block reveal" id="results">
           <span class="eyebrow">Results</span>
           <h2>What came out of it</h2>
           <div class="stats">
-            <div class="card"><strong>85.2%</strong><small>Fruit detection mAP@0.5</small></div>
-            <div class="card"><strong>~0.5 px</strong><small>Calibration error per camera</small></div>
-            <div class="card"><strong>9 → 4</strong><small>Track IDs for 4 real fruit</small></div>
+            <div class="card"><strong>2.3 mm</strong><small>Diameter error vs caliper (5.7%)</small></div>
+            <div class="card"><strong>9.1%</strong><small>Per-fruit mass error, vs 24.5% from counting</small></div>
+            <div class="card"><strong>±2%</strong><small>Stereo distance check, 0.6 – 1.2 m</small></div>
           </div>
-          <p>Fruit detection, trained on tomatOD alone and on tomatOD merged with a Kaggle ripeness dataset:</p>
-          <div class="table-wrap"><table><thead><tr><th>Training data</th><th>Variant</th><th>mAP@0.5</th><th>Best F1</th></tr></thead><tbody><tr><td>tomatOD</td><td>Baseline</td><td>0.825</td><td>0.76</td></tr><tr><td>tomatOD</td><td>Tuned</td><td>0.800</td><td>0.72</td></tr><tr><td>Merged</td><td>Baseline</td><td>0.852</td><td>0.79</td></tr><tr><td>Merged</td><td>Tuned</td><td>0.849</td><td>0.78</td></tr></tbody></table></div>
-          <p class="note">Merging more varied data helped more than tuning hyperparameters. Models trained on tomatOD alone lose most of their accuracy on the differently styled Kaggle images, so cross-domain robustness is the main open problem for detection.</p>
-          <p>The sizing comparison puts three approaches side by side on the same task:</p>
+          <p>All results come from one session in the greenhouse on 21 October 2026, with 24 tagged fruit measured on the plant and then by hand.</p>
+          <div class="table-wrap"><table><thead><tr><th>Stage</th><th>Checked against</th><th>Result</th></tr></thead><tbody>
+            <tr><td>Ripeness</td><td>Held-out tomatOD test images</td><td>mAP@50 0.780 (0.852 on validation)</td></tr>
+            <tr><td>Stereo scale</td><td>Taped distances to a board, 0.6 – 1.2 m</td><td>Mean error 1.2%, all within 2%</td></tr>
+            <tr><td>Diameter</td><td>Caliper width, 15 fruit</td><td>Mean error 2.3 mm (5.7%), 13 of 15 within ±10%</td></tr>
+            <tr><td>Repeatability</td><td>Three pairs of the same fruit</td><td>Median spread 0.49 mm</td></tr>
+            <tr><td>Mass per fruit</td><td>Laboratory scale, leave-one-out</td><td>9.1% error from size, vs 24.5% from counting</td></tr>
+            <tr><td>Total mass</td><td>8 fruit both sized and weighed</td><td>345 g estimated vs 347 g weighed</td></tr>
+          </tbody></table></div>
+          <figure class="cs-fig narrow">
+            <img src="../img/tomato/size-accuracy.webp" alt="Scatter plot of stereo diameter against caliper width for 15 tomatoes, coloured by ripeness, with most points inside a ±10% band around y = x" width="1600" height="846" loading="lazy" />
+            <figcaption>Stereo diameter against caliper width for 15 fruit. The grey band is ±10%.</figcaption>
+          </figure>
+          <p>Measuring size is what makes the mass estimate useful: knowing each fruit's diameter cut the per-fruit mass error by about 63% compared with counting fruit and multiplying by an average mass.</p>
+          <h3>A time-lapse dataset</h3>
+          <p>Before the measurement session, the same two cameras recorded the plants every 15 to 30 minutes from 2 January to 26 March 2026: about 10,000 images, or 5,000 stereo pairs, over 66 days. We plan to publish it in a data journal.</p>
+          <figure class="cs-fig photo">
+            <img src="../img/tomato/timelapse.webp" alt="Fourteen time-lapse frames from January to March 2026 showing a truss of tomatoes turning from green to red" width="1600" height="392" loading="lazy" />
+            <figcaption>Time-lapse frames on 14 days. Between January and February one truss turns from green to red.</figcaption>
+          </figure>
+          <p>Limits, stated plainly:</p>
           <ul class="ticks">
-            <li>Simple rules: a rule-based method with no learning.</li>
-            <li>RGB-only CNN: a network that learns fruit size from the colour image alone.</li>
-            <li>Colour plus depth: a deep learning model that uses both RGB and depth.</li>
-          </ul>
-          <p class="note">Full results will appear in the conference paper on non-destructive tomato sizing (in preparation, 2026).</p>
-          <p>Still open:</p>
-          <ul class="ticks">
-            <li>Run the full three-month dataset (about 3,000 stereo pairs). So far the pipeline has been run on 200 – 500 frame batches.</li>
-            <li>Raise semi-ripe precision, currently the weakest class (46.8%).</li>
-            <li>Domain adaptation for new camera setups, then deployment on a Jetson edge device.</li>
-            <li>Combine size and ripeness with crop growth models for yield estimation.</li>
+            <li>Fruit outside the view both cameras share cannot be measured, so mass and yield cover the measured fruit only.</li>
+            <li>The validation is one session with 15 sized and 8 weighed fruit, which is enough to show the method works but not to prove it everywhere.</li>
+            <li>Semi-ripe fruit are the hardest class and were barely represented in the greenhouse session.</li>
+            <li>Next: run the pipeline over the full time-lapse to track each fruit's growth, and test it on more plants and sessions.</li>
           </ul>
         </section>
 

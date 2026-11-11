@@ -21,7 +21,7 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap"
     />
-    <link rel="stylesheet" href="./style.css?v=22" />
+    <link rel="stylesheet" href="./style.css?v=24" />
     <script>
       document.documentElement.classList.add("js");
     </script>
@@ -100,63 +100,15 @@
                 <span class="label">Research · 2025 – Present</span>
                 <h3>Non-destructive tomato sizing with stereo vision</h3>
                 <ul>
-                  <li>YOLOv10 ripeness detection, 85.2% mAP@0.5</li>
-                  <li>ChArUco stereo depth, per-fruit growth tracking</li>
+                  <li>2.3 mm diameter error vs caliper, from two low-cost USB cameras</li>
+                  <li>Per-fruit mass error 9.1%, vs 24.5% from counting</li>
                 </ul>
                 <a class="btn" href="./tomato-sizing/">View case study <span aria-hidden="true">↗</span></a>
               </div>
               <div class="shot">
                 <div class="win">
-                  <div class="win-bar"><i></i><i></i><i></i><span>stereo_sizing · raft-stereo</span></div>
-                  <svg viewBox="0 0 520 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="RGB image next to its depth map with a diameter measurement">
-                    <defs>
-                      <radialGradient id="t-red" cx="0.35" cy="0.3" r="0.8">
-                        <stop offset="0" stop-color="#ff8a70" />
-                        <stop offset="1" stop-color="#c2412d" />
-                      </radialGradient>
-                      <radialGradient id="t-depth" cx="0.5" cy="0.5" r="0.55">
-                        <stop offset="0" stop-color="#ffd84d" />
-                        <stop offset="0.6" stop-color="#4df2b0" />
-                        <stop offset="1" stop-color="#2b7fb0" />
-                      </radialGradient>
-                      <linearGradient id="t-scale" x1="0" y1="0" x2="1" y2="0">
-                        <stop offset="0" stop-color="#ffd84d" />
-                        <stop offset="0.5" stop-color="#4df2b0" />
-                        <stop offset="1" stop-color="#2b4fb0" />
-                      </linearGradient>
-                    </defs>
-                    <rect width="520" height="300" fill="#0a141b" />
-                    <rect x="20" y="24" width="228" height="200" rx="12" fill="#12303a" />
-                    <path d="M20 224C60 120 120 90 150 110C190 70 230 90 248 140V212C248 218 242 224 236 224Z" fill="#1f5a3a" opacity="0.65" />
-                    <g>
-                      <circle cx="90" cy="150" r="28" fill="url(#t-red)" />
-                      <circle cx="150" cy="170" r="24" fill="url(#t-red)" />
-                      <circle cx="200" cy="140" r="20" fill="url(#t-red)" />
-                      <path d="M82 124l8 8 8-8" stroke="#2f9a55" stroke-width="3" fill="none" stroke-linecap="round" />
-                      <path d="M143 148l7 7 7-7" stroke="#2f9a55" stroke-width="3" fill="none" stroke-linecap="round" />
-                    </g>
-                    <rect x="58" y="118" width="64" height="64" rx="3" fill="none" stroke="#cffd7a" stroke-width="2" />
-                    <rect x="58" y="102" width="46" height="16" rx="3" fill="#cffd7a" />
-                    <text x="63" y="114" font-family="Manrope, sans-serif" font-size="10" font-weight="700" fill="#04130d">tomato</text>
-
-                    <rect x="272" y="24" width="228" height="200" rx="12" fill="#0d2a44" />
-                    <g>
-                      <circle cx="342" cy="150" r="28" fill="url(#t-depth)" />
-                      <circle cx="402" cy="170" r="24" fill="url(#t-depth)" opacity="0.85" />
-                      <circle cx="452" cy="140" r="20" fill="url(#t-depth)" opacity="0.7" />
-                    </g>
-                    <path d="M314 150H370M314 140V160M370 140V160" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" />
-                    <rect x="290" y="94" width="104" height="18" rx="4" fill="#fff" />
-                    <text x="297" y="107" font-family="Manrope, sans-serif" font-size="11" font-weight="800" fill="#0b1a24">Ø from 3D points</text>
-
-                    <g font-family="Manrope, sans-serif" font-size="12" font-weight="600" fill="#fff" fill-opacity="0.6">
-                      <text x="20" y="246">Left image (RGB)</text>
-                      <text x="272" y="246">Disparity → depth</text>
-                      <text x="272" y="288">near</text>
-                      <text x="500" y="288" text-anchor="end">far</text>
-                    </g>
-                    <rect x="272" y="258" width="228" height="8" rx="4" fill="url(#t-scale)" />
-                  </svg>
+                  <div class="win-bar"><i></i><i></i><i></i><span>stereo_sizing · yield_frame</span></div>
+                  <img src="./img/tomato/card.webp" alt="Greenhouse frame with each tomato labelled by ripeness, diameter and mass" width="1040" height="600" loading="lazy" />
                 </div>
               </div>
             </article>
@@ -174,37 +126,8 @@
               </div>
               <div class="shot">
                 <div class="win">
-                  <div class="win-bar"><i></i><i></i><i></i><span>pairwise_stress · rgb_only</span></div>
-                  <svg viewBox="0 0 520 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Leaf with warmer and cooler regions highlighted">
-                    <defs>
-                      <radialGradient id="s-bg" cx="0.5" cy="0.45" r="0.8">
-                        <stop offset="0" stop-color="#1a3b2f" />
-                        <stop offset="1" stop-color="#0a1a1a" />
-                      </radialGradient>
-                      <linearGradient id="s-leaf" x1="0" y1="0" x2="1" y2="1">
-                        <stop offset="0" stop-color="#3f9b53" />
-                        <stop offset="1" stop-color="#1f6a3b" />
-                      </linearGradient>
-                    </defs>
-                    <rect width="520" height="300" fill="url(#s-bg)" />
-                    <path d="M120 250C80 150 150 50 300 40C420 34 470 100 440 190C410 270 220 300 120 250Z" fill="url(#s-leaf)" />
-                    <path d="M130 245C220 190 320 130 440 60" stroke="#a6e3a1" stroke-opacity="0.45" stroke-width="3" fill="none" />
-                    <g stroke-opacity="0.2" stroke="#a6e3a1" stroke-width="2" fill="none">
-                      <path d="M200 205C230 170 250 150 270 120" />
-                      <path d="M270 160C310 150 340 130 370 100" />
-                      <path d="M180 140C210 130 240 110 262 80" />
-                    </g>
-                    <g>
-                      <path d="M170 120C150 90 185 70 210 88C232 104 214 142 188 140C180 139 174 130 170 120Z" fill="#ff5f57" fill-opacity="0.55" stroke="#ff5f57" stroke-width="2" />
-                      <path d="M320 190C300 170 322 148 346 156C366 164 362 196 340 202C332 204 326 198 320 190Z" fill="#ffc857" fill-opacity="0.55" stroke="#ffc857" stroke-width="2" />
-                      <path d="M360 80C350 66 372 54 386 64C398 74 388 92 374 92C368 92 364 86 360 80Z" fill="#ff5f57" fill-opacity="0.55" stroke="#ff5f57" stroke-width="2" />
-                    </g>
-                    <g font-family="Manrope, sans-serif" font-size="11" font-weight="700" fill="#fff">
-                      <rect x="24" y="24" width="12" height="12" rx="3" fill="#ff5f57" /><text x="42" y="34">Warmer</text>
-                      <rect x="24" y="46" width="12" height="12" rx="3" fill="#ffc857" /><text x="42" y="56">Mixed</text>
-                      <rect x="24" y="68" width="12" height="12" rx="3" fill="#3f9b53" /><text x="42" y="78">Cooler</text>
-                    </g>
-                  </svg>
+                  <div class="win-bar"><i></i><i></i><i></i><span>thermal_teacher · banana rgb-t</span></div>
+                  <img src="./img/water-stress/card.webp" alt="A fully watered and a stressed banana plant: alike in RGB, 6.5 °C apart in thermal" width="1040" height="600" loading="lazy" />
                 </div>
               </div>
             </article>
@@ -518,10 +441,10 @@
             </article>
             <article class="card post reveal">
               <div>
-                <span class="pill">In preparation · 2026</span>
-                <h3>Non-destructive Tomato Sizing: A Three-Model Comparison</h3>
+                <span class="pill">Conference paper · 2026</span>
+                <h3>A Low-Cost Stereo Pipeline for On-Plant Tomato Ripeness, Stereo Sizing and Yield Estimation for Smart Greenhouses</h3>
               </div>
-              <p class="post-meta">Rule-based, RGB-only CNN and RGB+Depth fusion approaches</p>
+              <p class="post-meta">With co-authors from GTU Molecular Biology and Genetics and NUST, Pakistan</p>
             </article>
           </div>
         </div>

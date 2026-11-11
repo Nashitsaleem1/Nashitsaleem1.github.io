@@ -18,7 +18,7 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap"
     />
-    <link rel="stylesheet" href="../style.css?v=22" />
+    <link rel="stylesheet" href="../style.css?v=24" />
     <script>
       document.documentElement.classList.add("js");
     </script>
@@ -45,41 +45,10 @@
           <div><dt>Context</dt><dd>MS thesis at Gebze Technical University, second workstream of the TÜBİTAK 1071 / 124N905 project</dd></div>
           <div><dt>Tools</dt><dd>Small CNN, FLIR thermal imaging, RGB-thermal registration</dd></div>
         </dl>
-        <div class="cs-visual">
-          <div class="win">
-                  <div class="win-bar"><i></i><i></i><i></i><span>pairwise_stress · rgb_only</span></div>
-                  <svg viewBox="0 0 520 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Leaf with warmer and cooler regions highlighted">
-                    <defs>
-                      <radialGradient id="s-bg" cx="0.5" cy="0.45" r="0.8">
-                        <stop offset="0" stop-color="#1a3b2f" />
-                        <stop offset="1" stop-color="#0a1a1a" />
-                      </radialGradient>
-                      <linearGradient id="s-leaf" x1="0" y1="0" x2="1" y2="1">
-                        <stop offset="0" stop-color="#3f9b53" />
-                        <stop offset="1" stop-color="#1f6a3b" />
-                      </linearGradient>
-                    </defs>
-                    <rect width="520" height="300" fill="url(#s-bg)" />
-                    <path d="M120 250C80 150 150 50 300 40C420 34 470 100 440 190C410 270 220 300 120 250Z" fill="url(#s-leaf)" />
-                    <path d="M130 245C220 190 320 130 440 60" stroke="#a6e3a1" stroke-opacity="0.45" stroke-width="3" fill="none" />
-                    <g stroke-opacity="0.2" stroke="#a6e3a1" stroke-width="2" fill="none">
-                      <path d="M200 205C230 170 250 150 270 120" />
-                      <path d="M270 160C310 150 340 130 370 100" />
-                      <path d="M180 140C210 130 240 110 262 80" />
-                    </g>
-                    <g>
-                      <path d="M170 120C150 90 185 70 210 88C232 104 214 142 188 140C180 139 174 130 170 120Z" fill="#ff5f57" fill-opacity="0.55" stroke="#ff5f57" stroke-width="2" />
-                      <path d="M320 190C300 170 322 148 346 156C366 164 362 196 340 202C332 204 326 198 320 190Z" fill="#ffc857" fill-opacity="0.55" stroke="#ffc857" stroke-width="2" />
-                      <path d="M360 80C350 66 372 54 386 64C398 74 388 92 374 92C368 92 364 86 360 80Z" fill="#ff5f57" fill-opacity="0.55" stroke="#ff5f57" stroke-width="2" />
-                    </g>
-                    <g font-family="Manrope, sans-serif" font-size="11" font-weight="700" fill="#fff">
-                      <rect x="24" y="24" width="12" height="12" rx="3" fill="#ff5f57" /><text x="42" y="34">Warmer</text>
-                      <rect x="24" y="46" width="12" height="12" rx="3" fill="#ffc857" /><text x="42" y="56">Mixed</text>
-                      <rect x="24" y="68" width="12" height="12" rx="3" fill="#3f9b53" /><text x="42" y="78">Cooler</text>
-                    </g>
-                  </svg>
-                </div>
-        </div>
+        <figure class="cs-visual cs-fig photo">
+          <img src="../img/water-stress/card.webp" alt="A fully watered and a 40%-watered banana plant: they look alike in RGB but are 6.5 °C apart in thermal" width="1046" height="606" />
+          <figcaption>Two banana plants on the same afternoon. In colour they look alike; in thermal the plant on 40% water is 6.5 °C warmer. The model learns to see that difference from the colour image.</figcaption>
+        </figure>
       </header>
 
       <div class="cs-wrap">
@@ -100,6 +69,14 @@
           <h2>What needed solving</h2>
           <p>Irrigation is usually decided without measuring the plant. Growers measure the schedule, substrate moisture at a few points and the air, but not whether the plant needed water now or two hours ago. Over-irrigation wastes water and energy, leaches nutrients and invites root disease. Under-irrigation silently costs yield.</p>
           <p>Leaf temperature carries that missing signal. A leaf with enough water evaporates it and cools. When water runs short the stomata close, transpiration drops and the leaf warms, minutes after the stomata respond and before any visible wilting. In the banana data, on one afternoon with 36 °C air, a fully irrigated plant sat 9.45 °C below air while a plant on 40% water sat 2.92 °C below: a 6.53 °C gap caused only by water supply. A thermal camera sees it clearly. In an RGB photo the plants look much alike.</p>
+          <figure class="cs-fig">
+            <img src="../img/water-stress/irrigation-thermal.webp" alt="Thermal images of four banana plants on 100%, 80%, 60% and 40% irrigation, with leaf temperatures rising from 26.55 °C to 33.08 °C" width="1600" height="566" loading="lazy" />
+            <figcaption>Four plants on the same afternoon, air at 36 °C. Less water, warmer leaf: from 9.45 °C below air on full irrigation to 2.92 °C below on 40%.</figcaption>
+          </figure>
+          <figure class="cs-fig">
+            <img src="../img/water-stress/before-treatment.webp" alt="The same four plants before the irrigation treatment, all within 0.17 °C of each other" width="1600" height="566" loading="lazy" />
+            <figcaption>The same four plants before the treatment started, when all were watered alike: a spread of only 0.17 °C. The gap appears exactly when the treatment does.</figcaption>
+          </figure>
         </section>
         <section class="cs-block reveal" id="role">
           <span class="eyebrow">My role</span>
@@ -125,6 +102,14 @@
             <li><div><h3>Split by plant</h3><p>88 plants for training, 16 for validation and 16 held out until the end. Plants, never images, are split, and disjointness is checked in code before every run.</p></div></li>
             <li><div><h3>Controls</h3><p>Baselines were built before training, and eight leakage and shortcut controls test whether the model really uses the leaf pixels.</p></div></li>
           </ol>
+          <figure class="cs-fig">
+            <img src="../img/water-stress/labels.webp" alt="The segmented RGB input, the thermal image in degrees, and the 16 by 16 label windows inside the leaf" width="1600" height="427" loading="lazy" />
+            <figcaption>What the model gets: the RGB leaf (left) as input; the thermal image (middle) only provides the labels, taken from small windows inside the leaf (right).</figcaption>
+          </figure>
+          <figure class="cs-fig">
+            <img src="../img/water-stress/pairwise-model.webp" alt="Two windows from the same image go through one shared encoder; the predicted temperature difference is the difference of their two scores" width="1600" height="569" loading="lazy" />
+            <figcaption>The pairwise design: both windows come from the same photo, so lighting and air temperature cancel out. The answer is score(B) − score(A).</figcaption>
+          </figure>
         </section>
         <section class="cs-block reveal" id="stack">
           <span class="eyebrow">Tech stack</span>
@@ -149,10 +134,22 @@
           </div>
           <p>On 195,376 held-out pairs from 16 plants the model never saw. Simple baselines were built first:</p>
           <div class="table-wrap"><table><thead><tr><th>Predictor</th><th>Error (°C)</th><th>Sign accuracy</th></tr></thead><tbody><tr><td>Always predict zero (the floor)</td><td>1.143</td><td>n/a</td></tr><tr><td>Patch brightness only</td><td>1.016</td><td>66.3%</td></tr><tr><td>Position in the leaf only</td><td>1.005</td><td>66.9%</td></tr><tr><td>Shuffled labels (leak check)</td><td>1.143</td><td>49.9%</td></tr><tr><td>Pairwise CNN</td><td>0.764</td><td>75.5%</td></tr></tbody></table></div>
+          <figure class="cs-fig">
+            <img src="../img/water-stress/prediction-good.webp" alt="A held-out plant: RGB input, temperature map predicted from RGB, the measured thermal map, and their difference" width="1600" height="477" loading="lazy" />
+            <figcaption>A plant the model never saw: the map predicted from colour alone (second) closely matches the thermal camera (third), r = 0.73. It finds the warm midribs and cool leaf blades but understates the peaks.</figcaption>
+          </figure>
           <p>Accuracy depends on how big the real temperature gap is:</p>
           <div class="table-wrap"><table><thead><tr><th>True gap between patches</th><th>Sign accuracy</th></tr></thead><tbody><tr><td>0 – 0.25 °C</td><td>55.3%</td></tr><tr><td>0.5 – 1 °C</td><td>73.7%</td></tr><tr><td>2 – 3 °C</td><td>92.7%</td></tr><tr><td>Above 3 °C</td><td>91.9%</td></tr></tbody></table></div>
           <p class="note">It is close to chance where the difference is too small to matter, and above 90% where it is large enough to act on.</p>
+          <figure class="cs-fig">
+            <img src="../img/water-stress/accuracy-by-gap.webp" alt="Two charts: error against the floor for each size of temperature gap, and sign accuracy rising from 55% to over 90% as the gap grows" width="1600" height="580" loading="lazy" />
+            <figcaption>Accuracy grows with the real temperature gap: near chance for tiny differences, above 90% once two leaf patches differ by 2 °C or more.</figcaption>
+          </figure>
           <p>Plant to plant, scored so that a rule knowing only the irrigation group gets exactly 50, the pilot reaches 64.8 against a floor of 50.4 across 7,236 pairs. Accuracy rises steadily with the true temperature gap (r = +0.97), which a group recogniser cannot produce.</p>
+          <figure class="cs-fig">
+            <img src="../img/water-stress/prediction-failure.webp" alt="A held-out plant where the model fails: it paints midribs, but the real pattern follows leaf orientation" width="1600" height="488" loading="lazy" />
+            <figcaption>An honest failure on another held-out plant. This one is thermally almost flat, and the model paints midribs that are not there: 0.811 °C error against a 0.390 °C floor.</figcaption>
+          </figure>
           <p>What it cannot do, stated plainly:</p>
           <ul class="ticks">
             <li>It is a relative sensor. It tells you which part of a canopy is running warmer, not how warm.</li>
